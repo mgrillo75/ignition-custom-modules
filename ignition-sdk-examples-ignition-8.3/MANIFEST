@@ -1,0 +1,8 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema#",
+	"name": "CSS Animation Guide: A Robot Example",
+	"ignition-version": "8.1.26",
+	"version": "1.0.0",
+	"modules": []
+
+}

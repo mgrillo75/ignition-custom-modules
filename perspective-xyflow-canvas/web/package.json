@@ -1,0 +1,18 @@
+{
+  "name": "@miguelgrillo/perspective-xyflow-canvas-web",
+  "private": true,
+  "version": "0.1.0",
+  "description": "Workspace for Perspective XY Flow Canvas web assets",
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "build": "yarn workspace @miguelgrillo/perspective-xyflow-canvas-client build",
+    "clean": "yarn workspace @miguelgrillo/perspective-xyflow-canvas-client clean",
+    "deepClean": "yarn workspace @miguelgrillo/perspective-xyflow-canvas-client deepClean"
+  },
+  "devDependencies": {
+    "webpack": "5.72.0",
+    "webpack-cli": "4.9.2"
+  }
+}

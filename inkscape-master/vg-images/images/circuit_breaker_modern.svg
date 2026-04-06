@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="980" height="1280" viewBox="0 0 980 1280">
+
+<defs>
+  <linearGradient id="bodyGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+    <stop offset="0%" stop-color="#f6f7f5"/>
+    <stop offset="45%" stop-color="#ecece8"/>
+    <stop offset="100%" stop-color="#d8d8d3"/>
+  </linearGradient>
+
+  <linearGradient id="bodyInset" x1="0%" y1="0%" x2="0%" y2="100%">
+    <stop offset="0%" stop-color="#f8f9f7"/>
+    <stop offset="100%" stop-color="#e1e2dc"/>
+  </linearGradient>
+
+  <linearGradient id="bodyEdge" x1="0%" y1="0%" x2="100%" y2="0%">
+    <stop offset="0%" stop-color="#c5c8c5"/>
+    <stop offset="50%" stop-color="#f7f7f4"/>
+    <stop offset="100%" stop-color="#c2c5c2"/>
+  </linearGradient>
+
+  <linearGradient id="terminalBezel" x1="0%" y1="0%" x2="100%" y2="100%">
+    <stop offset="0%" stop-color="#f0f3f5"/>
+    <stop offset="45%" stop-color="#c8ced3"/>
+    <stop offset="100%" stop-color="#8a9199"/>
+  </linearGradient>
+
+  <radialGradient id="terminalCore" cx="40%" cy="35%" r="70%">
+    <stop offset="0%" stop-color="#505b66"/>
+    <stop offset="42%" stop-color="#1e232a"/>
+    <stop offset="100%" stop-color="#0a0c10"/>
+  </radialGradient>
+
+  <linearGradient id="screwGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+    <stop offset="0%" stop-color="#f5f8fd"/>
+    <stop offset="100%" stop-color="#8f98a5"/>
+  </linearGradient>
+
+  <linearGradient id="switchSlot" x1="0%" y1="0%" x2="0%" y2="100%">
+    <stop offset="0%" stop-color="#d5d7d3"/>
+    <stop offset="100%" stop-color="#f2f2ef"/>
+  </linearGradient>
+
+  <linearGradient id="toggleGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+    <stop offset="0%" stop-color="#121822"/>
+    <stop offset="55%" stop-color="#03060a"/>
+    <stop offset="100%" stop-color="#171f2a"/>
+  </linearGradient>
+
+  <linearGradient id="toggleGrip" x1="0%" y1="0%" x2="100%" y2="100%">
+    <stop offset="0%" stop-color="#4a5f72"/>
+    <stop offset="100%" stop-color="#1a242d"/>
+  </linearGradient>
+
+  <linearGradient id="redLabel" x1="0%" y1="0%" x2="0%" y2="100%">
+    <stop offset="0%" stop-color="#de2227"/>
+    <stop offset="100%" stop-color="#ba141b"/>
+  </linearGradient>
+
+  <filter id="bodyShadow" x="-15%" y="-10%" width="130%" height="140%">
+    <feGaussianBlur in="SourceAlpha" stdDeviation="7" result="b"/>
+    <feOffset in="b" dx="0" dy="8" result="o"/>
+    <feColorMatrix in="o" type="matrix"
+      values="0 0 0 0 0
+              0 0 0 0 0
+              0 0 0 0 0
+              0 0 0 0.30 0"/>
+    <feMerge>
+      <feMergeNode/>
+      <feMergeNode in="SourceGraphic"/>
+    </feMerge>
+  </filter>
+
+  <filter id="matteNoise" x="-10%" y="-10%" width="120%" height="120%">
+    <feTurbulence type="fractalNoise" baseFrequency="0.75" numOctaves="2" seed="4" result="noise"/>
+    <feColorMatrix in="noise" type="saturate" values="0"/>
+    <feComponentTransfer>
+      <feFuncA type="table" tableValues="0 0 0.03 0.07"/>
+    </feComponentTransfer>
+    <feBlend mode="multiply" in2="SourceGraphic"/>
+  </filter>
+</defs>
+
+
+<g filter="url(#bodyShadow)">
+  <rect x="210" y="70" width="520" height="1110" rx="18" fill="url(#bodyGrad)" stroke="url(#bodyEdge)" stroke-width="3" filter="url(#matteNoise)"/>
+
+  <!-- Top terminal bay -->
+  <rect x="224" y="86" width="492" height="190" rx="10" fill="url(#bodyInset)" stroke="#cbcfcf" stroke-width="1.4"/>
+  
+  <circle cx="286" cy="172" r="33" fill="url(#terminalBezel)" stroke="#7d8184" stroke-width="1.8"/>
+  <circle cx="286" cy="172" r="17" fill="url(#terminalCore)"/>
+  <circle cx="281" cy="166" r="6.5" fill="#ffffff40"/>
+
+  <circle cx="404" cy="172" r="33" fill="url(#terminalBezel)" stroke="#7d8184" stroke-width="1.8"/>
+  <circle cx="404" cy="172" r="17" fill="url(#terminalCore)"/>
+  <circle cx="399" cy="166" r="6.5" fill="#ffffff40"/>
+
+  <circle cx="522" cy="172" r="33" fill="url(#terminalBezel)" stroke="#7d8184" stroke-width="1.8"/>
+  <circle cx="522" cy="172" r="17" fill="url(#terminalCore)"/>
+  <circle cx="517" cy="166" r="6.5" fill="#ffffff40"/>
+
+  <circle cx="640" cy="172" r="33" fill="url(#terminalBezel)" stroke="#7d8184" stroke-width="1.8"/>
+  <circle cx="640" cy="172" r="17" fill="url(#terminalCore)"/>
+  <circle cx="635" cy="166" r="6.5" fill="#ffffff40"/>
+
+  <circle cx="344" cy="238" r="7" fill="#1a1c1f" stroke="#a4a7aa" stroke-width="0.8"/><circle cx="341.5" cy="236.0" r="3.15" fill="#ffffff2d"/><circle cx="463" cy="238" r="7" fill="#1a1c1f" stroke="#a4a7aa" stroke-width="0.8"/><circle cx="460.5" cy="236.0" r="3.15" fill="#ffffff2d"/><circle cx="582" cy="238" r="7" fill="#1a1c1f" stroke="#a4a7aa" stroke-width="0.8"/><circle cx="579.5" cy="236.0" r="3.15" fill="#ffffff2d"/>
+
+  <!-- Top key slots -->
+  <rect x="300" y="98" width="16" height="42" rx="4" fill="#8e9398"/>
+  <rect x="446" y="98" width="16" height="42" rx="4" fill="#8e9398"/>
+  <rect x="594" y="98" width="16" height="42" rx="4" fill="#8e9398"/>
+
+  <!-- Bottom terminal bay -->
+  <rect x="224" y="946" width="492" height="220" rx="10" fill="url(#bodyInset)" stroke="#cbcfcf" stroke-width="1.4"/>
+  
+  <circle cx="286" cy="1046" r="33" fill="url(#terminalBezel)" stroke="#7d8184" stroke-width="1.8"/>
+  <circle cx="286" cy="1046" r="17" fill="url(#terminalCore)"/>
+  <circle cx="281" cy="1040" r="6.5" fill="#ffffff40"/>
+
+  <circle cx="404" cy="1046" r="33" fill="url(#terminalBezel)" stroke="#7d8184" stroke-width="1.8"/>
+  <circle cx="404" cy="1046" r="17" fill="url(#terminalCore)"/>
+  <circle cx="399" cy="1040" r="6.5" fill="#ffffff40"/>
+
+  <circle cx="522" cy="1046" r="33" fill="url(#terminalBezel)" stroke="#7d8184" stroke-width="1.8"/>
+  <circle cx="522" cy="1046" r="17" fill="url(#terminalCore)"/>
+  <circle cx="517" cy="1040" r="6.5" fill="#ffffff40"/>
+
+  <circle cx="640" cy="1046" r="33" fill="url(#terminalBezel)" stroke="#7d8184" stroke-width="1.8"/>
+  <circle cx="640" cy="1046" r="17" fill="url(#terminalCore)"/>
+  <circle cx="635" cy="1040" r="6.5" fill="#ffffff40"/>
+
+  <circle cx="344" cy="980" r="7" fill="#1a1c1f" stroke="#a4a7aa" stroke-width="0.8"/><circle cx="341.5" cy="978.0" r="3.15" fill="#ffffff2d"/><circle cx="463" cy="980" r="7" fill="#1a1c1f" stroke="#a4a7aa" stroke-width="0.8"/><circle cx="460.5" cy="978.0" r="3.15" fill="#ffffff2d"/><circle cx="582" cy="980" r="7" fill="#1a1c1f" stroke="#a4a7aa" stroke-width="0.8"/><circle cx="579.5" cy="978.0" r="3.15" fill="#ffffff2d"/>
+
+  
+  <circle cx="255" cy="138" r="10" fill="url(#screwGrad)" stroke="#7d8288" stroke-width="1"/>
+  <path d="M249.5,137.0 L260.5,139.0" stroke="#49505a" stroke-width="1.5" stroke-linecap="round"/>
+
+  <circle cx="671" cy="138" r="10" fill="url(#screwGrad)" stroke="#7d8288" stroke-width="1"/>
+  <path d="M665.5,137.0 L676.5,139.0" stroke="#49505a" stroke-width="1.5" stroke-linecap="round"/>
+
+  <circle cx="255" cy="1080" r="10" fill="url(#screwGrad)" stroke="#7d8288" stroke-width="1"/>
+  <path d="M249.5,1079.0 L260.5,1081.0" stroke="#49505a" stroke-width="1.5" stroke-linecap="round"/>
+
+  <circle cx="671" cy="1080" r="10" fill="url(#screwGrad)" stroke="#7d8288" stroke-width="1"/>
+  <path d="M665.5,1079.0 L676.5,1081.0" stroke="#49505a" stroke-width="1.5" stroke-linecap="round"/>
+
+
+  <!-- Inner information fields -->
+  <rect x="242" y="300" width="236" height="624" rx="4" fill="#f0f1ef" stroke="#c9cdd1" stroke-width="1"/>
+  <rect x="516" y="300" width="198" height="624" rx="4" fill="#efefeb" stroke="#c9cdd1" stroke-width="1"/>
+
+  <rect x="396" y="362" width="120" height="478" rx="16" fill="url(#switchSlot)" stroke="#c3c7c8" stroke-width="1.2"/>
+
+  <!-- ON/OFF emboss -->
+  <text x="432" y="420" font-family="Segoe UI, Arial, sans-serif" font-size="37" fill="#d2d4d1" font-weight="700">UP</text>
+  <text x="470" y="420" font-family="Segoe UI, Arial, sans-serif" font-size="34" fill="#cfd2cf" font-weight="700">On</text>
+  <text x="432" y="468" font-family="Segoe UI, Arial, sans-serif" font-size="37" fill="#d2d4d1" font-weight="700">DN</text>
+  <text x="470" y="468" font-family="Segoe UI, Arial, sans-serif" font-size="34" fill="#cfd2cf" font-weight="700">Off</text>
+
+  <!-- Toggle handle -->
+  <rect x="428" y="545" width="56" height="168" rx="10" fill="url(#toggleGrad)" stroke="#171a20" stroke-width="2"/>
+  <rect x="438" y="566" width="36" height="54" rx="7" fill="url(#toggleGrip)"/>
+  <text x="456" y="605" text-anchor="middle" font-family="Consolas, 'Courier New', monospace" font-size="31" fill="#cdd8e4" font-weight="700">50</text>
+  <rect x="420" y="618" width="72" height="12" rx="3" fill="#7e1213"/>
+  <rect x="436" y="682" width="40" height="26" rx="3" fill="#07090d"/>
+  <rect x="451" y="689" width="10" height="14" rx="2" fill="#dde3ec"/>
+
+  <!-- Brand/info text blocks -->
+  
+  <text x="264" y="346" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#353c45" font-weight="600">Industrial Circuit Breaker</text>
+
+  <rect x="252" y="426" width="134" height="38" rx="3" fill="url(#redLabel)"/>
+  <text x="319" y="452" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="22" fill="#ffffff" font-weight="800">VG 65k</text>
+
+  <text x="264" y="510" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#111" font-weight="700">50 AMPS  3 POLES</text>
+  <text x="264" y="536" font-family="Segoe UI, Arial, sans-serif" font-size="13" fill="#202832">600 VAC - 250 VDC 40 C</text>
+  <text x="264" y="560" font-family="Segoe UI, Arial, sans-serif" font-size="13" fill="#202832">CAT. VG3050C</text>
+  <text x="264" y="584" font-family="Segoe UI, Arial, sans-serif" font-size="13" fill="#202832">STYLE 693C96G91</text>
+
+  <text x="264" y="634" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#2f3843">Suitable for use on</text>
+  <text x="264" y="654" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#2f3843">two 100% protected poles.</text>
+  <text x="264" y="674" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#2f3843">Use in enclosure listed type 1.</text>
+
+  <line x1="252" y1="704" x2="386" y2="704" stroke="#b6bcc2"/>
+  <text x="264" y="730" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#48515b">Terminal Information</text>
+  <text x="264" y="752" font-family="Consolas, 'Courier New', monospace" font-size="11" fill="#2d3540">3/16 in  120 lb-in</text>
+  <text x="264" y="772" font-family="Consolas, 'Courier New', monospace" font-size="11" fill="#2d3540">5/16 in  275 lb-in</text>
+
+  
+  <text x="522" y="340" font-family="Segoe UI, Arial, sans-serif" font-size="13" fill="#3d4550">VG Interrupting Capacity</text>
+  <text x="522" y="361" font-family="Segoe UI, Arial, sans-serif" font-size="13" fill="#3d4550">RMS Sym. Amperes</text>
+
+  <line x1="520" y1="374" x2="706" y2="374" stroke="#b9c0c6"/>
+  <text x="526" y="400" font-family="Consolas, 'Courier New', monospace" font-size="13" fill="#2a313b">240V  100k</text>
+  <text x="526" y="420" font-family="Consolas, 'Courier New', monospace" font-size="13" fill="#2a313b">480V   65k</text>
+  <text x="526" y="440" font-family="Consolas, 'Courier New', monospace" font-size="13" fill="#2a313b">600V   22k</text>
+
+  <line x1="520" y1="466" x2="706" y2="466" stroke="#b9c0c6"/>
+  <text x="526" y="492" font-family="Segoe UI, Arial, sans-serif" font-size="13" fill="#2a313b">IEC 157-1</text>
+  <text x="526" y="514" font-family="Consolas, 'Courier New', monospace" font-size="13" fill="#2a313b">415V   100k</text>
+  <text x="526" y="534" font-family="Consolas, 'Courier New', monospace" font-size="13" fill="#2a313b">250V    22k</text>
+
+  <line x1="520" y1="560" x2="706" y2="560" stroke="#b9c0c6"/>
+  <text x="526" y="586" font-family="Segoe UI, Arial, sans-serif" font-size="13" fill="#2a313b">~ 50/60 Hz</text>
+
+  <rect x="520" y="614" width="186" height="2" fill="#b9c0c6"/>
+  <rect x="540" y="821" width="140" height="34" fill="#f7f8fa" stroke="#c0c6cc" stroke-width="1"/>
+  <g stroke="#23262c" stroke-width="1.2">
+    <line x1="548" y1="826" x2="548" y2="850"/>
+    <line x1="553" y1="826" x2="553" y2="850"/>
+    <line x1="559" y1="826" x2="559" y2="850"/>
+    <line x1="566" y1="826" x2="566" y2="850"/>
+    <line x1="571" y1="826" x2="571" y2="850"/>
+    <line x1="578" y1="826" x2="578" y2="850"/>
+    <line x1="586" y1="826" x2="586" y2="850"/>
+    <line x1="592" y1="826" x2="592" y2="850"/>
+  </g>
+  <text x="520" y="878" font-family="Segoe UI, Arial, sans-serif" font-size="13" fill="#3f4853">Modification Code</text>
+
+
+  <!-- Bottom trip indicator -->
+  <rect x="446" y="930" width="44" height="11" rx="2" fill="#d6312f" stroke="#6f1213" stroke-width="1"/>
+</g>
+
+</svg>

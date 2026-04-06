@@ -1,0 +1,99 @@
+{
+    "type": "object",
+    "additionalProperties": false,
+    "required": [
+        "energized",
+        "energizedLeftColor",
+        "energizedRightColor",
+        "strokeColor"
+    ],
+    "properties": {
+        "energized": {
+            "type": "boolean",
+            "default": true
+        },
+        "energizedLeftColor": {
+            "type": "string",
+            "format": "color",
+            "default": "#ef4444"
+        },
+        "energizedRightColor": {
+            "type": "string",
+            "format": "color",
+            "default": "#dc2626"
+        },
+        "deenergizedLeftColor": {
+            "type": "string",
+            "format": "color",
+            "default": "#94a3b8"
+        },
+        "deenergizedRightColor": {
+            "type": "string",
+            "format": "color",
+            "default": "#64748b"
+        },
+        "strokeColor": {
+            "type": "string",
+            "format": "color",
+            "default": "#f87171"
+        },
+        "deenergizedStrokeColor": {
+            "type": "string",
+            "format": "color",
+            "default": "#cbd5e1"
+        },
+        "glowColor": {
+            "type": "string",
+            "format": "color",
+            "default": "#ef4444"
+        },
+        "glowOpacity": {
+            "type": "number",
+            "default": 0.5,
+            "minimum": 0.0,
+            "maximum": 1.0
+        },
+        "highlightColor": {
+            "type": "string",
+            "format": "color",
+            "default": "#ffffff"
+        },
+        "highlightOpacity": {
+            "type": "number",
+            "default": 0.12,
+            "minimum": 0.0,
+            "maximum": 1.0
+        },
+        "barLength": {
+            "type": "number",
+            "default": 300,
+            "minimum": 20,
+            "maximum": 2000
+        },
+        "barWidth": {
+            "type": "number",
+            "default": 10,
+            "minimum": 2,
+            "maximum": 100
+        },
+        "showLabel": {
+            "type": "boolean",
+            "default": false
+        },
+        "label": {
+            "type": "string",
+            "default": "Busbar V Vertical"
+        },
+        "labelColor": {
+            "type": "string",
+            "format": "color",
+            "default": "#1f2937"
+        },
+        "style": {
+            "$ref": "urn:ignition-schema:schemas/style-properties.schema.json",
+            "default": {
+                "classes": ""
+            }
+        }
+    }
+}

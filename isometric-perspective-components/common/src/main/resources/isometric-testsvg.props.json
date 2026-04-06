@@ -1,0 +1,43 @@
+{
+    "type": "object",
+    "additionalProperties": false,
+    "required": [
+        "fillColor",
+        "strokeColor"
+    ],
+    "properties": {
+        "fillColor": {
+            "type": "string",
+            "format": "color",
+            "default": "#22C55E",
+            "description": "Main fill color for the test shape."
+        },
+        "strokeColor": {
+            "type": "string",
+            "format": "color",
+            "default": "#1F2937",
+            "description": "Outline color for the test shape."
+        },
+        "indicatorOn": {
+            "type": "boolean",
+            "default": false,
+            "description": "Turns the top-right indicator on/off."
+        },
+        "label": {
+            "type": "string",
+            "default": "Test SVG",
+            "description": "Label displayed under the icon."
+        },
+        "labelColor": {
+            "type": "string",
+            "format": "color",
+            "default": "#1F2937"
+        },
+        "style": {
+            "$ref": "urn:ignition-schema:schemas/style-properties.schema.json",
+            "default": {
+                "classes": ""
+            }
+        }
+    }
+}

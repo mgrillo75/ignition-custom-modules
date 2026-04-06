@@ -1,0 +1,148 @@
+{
+    "type": "object",
+    "additionalProperties": false,
+    "required": [
+        "targetId",
+        "showBackground",
+        "backgroundColor",
+        "panelStrokeColor",
+        "accentColor",
+        "glowIntensity",
+        "showAnchorPoints",
+        "anchorPoints",
+        "style"
+    ],
+    "properties": {
+        "targetId": {
+            "type": "string",
+            "default": "modernValveControl"
+        },
+        "showBackground": {
+            "type": "boolean",
+            "default": true
+        },
+        "backgroundColor": {
+            "type": "string",
+            "format": "color",
+            "default": "#0f172a"
+        },
+        "panelStrokeColor": {
+            "type": "string",
+            "format": "color",
+            "default": "#1e293b"
+        },
+        "accentColor": {
+            "type": "string",
+            "format": "color",
+            "default": "#10b981"
+        },
+        "glowIntensity": {
+            "type": "number",
+            "default": 0.7,
+            "minimum": 0,
+            "maximum": 1
+        },
+        "showAnchorPoints": {
+            "type": "boolean",
+            "default": false
+        },
+        "anchorPoints": {
+            "type": "array",
+            "default": [
+                {
+                    "id": "left",
+                    "label": "Left",
+                    "x": 0.05,
+                    "y": 0.5,
+                    "snapRadius": 16
+                },
+                {
+                    "id": "center_left",
+                    "label": "Center Left",
+                    "x": 0.33,
+                    "y": 0.5,
+                    "snapRadius": 16
+                },
+                {
+                    "id": "center",
+                    "label": "Center",
+                    "x": 0.5,
+                    "y": 0.5,
+                    "snapRadius": 16
+                },
+                {
+                    "id": "center_right",
+                    "label": "Center Right",
+                    "x": 0.67,
+                    "y": 0.5,
+                    "snapRadius": 16
+                },
+                {
+                    "id": "right",
+                    "label": "Right",
+                    "x": 0.95,
+                    "y": 0.5,
+                    "snapRadius": 16
+                },
+                {
+                    "id": "top",
+                    "label": "Top",
+                    "x": 0.5,
+                    "y": 0.12,
+                    "snapRadius": 16
+                },
+                {
+                    "id": "bottom",
+                    "label": "Bottom",
+                    "x": 0.5,
+                    "y": 0.88,
+                    "snapRadius": 16
+                }
+            ],
+            "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                    "id",
+                    "label",
+                    "x",
+                    "y",
+                    "snapRadius"
+                ],
+                "properties": {
+                    "id": {
+                        "type": "string",
+                        "default": "anchor"
+                    },
+                    "label": {
+                        "type": "string",
+                        "default": ""
+                    },
+                    "x": {
+                        "type": "number",
+                        "minimum": 0,
+                        "maximum": 1,
+                        "default": 0.5
+                    },
+                    "y": {
+                        "type": "number",
+                        "minimum": 0,
+                        "maximum": 1,
+                        "default": 0.5
+                    },
+                    "snapRadius": {
+                        "type": "number",
+                        "default": 16,
+                        "minimum": 0
+                    }
+                }
+            }
+        },
+        "style": {
+            "$ref": "urn:ignition-schema:schemas/style-properties.schema.json",
+            "default": {
+                "classes": ""
+            }
+        }
+    }
+}

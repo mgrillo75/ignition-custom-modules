@@ -1,0 +1,16 @@
+{
+  "name": "@miguelgrillo/perspective-anchor-connectors-designer",
+  "private": true,
+  "version": "0.1.0",
+  "description": "Designer web bundle scaffold for Perspective Anchor Connectors",
+  "main": "dist/designer.js",
+  "scripts": {
+    "build": "webpack --mode development",
+    "clean": "node -e \"require('fs').rmSync('dist', { recursive: true, force: true }); require('fs').rmSync('.awcache', { recursive: true, force: true });\"",
+    "deepClean": "node -e \"require('fs').rmSync('dist', { recursive: true, force: true }); require('fs').rmSync('.awcache', { recursive: true, force: true }); require('fs').rmSync('node_modules', { recursive: true, force: true });\""
+  },
+  "devDependencies": {
+    "webpack": "5.72.0",
+    "webpack-cli": "4.9.2"
+  }
+}

@@ -1,0 +1,122 @@
+{
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {
+        "colorOverrides": {
+            "type": "object",
+            "description": "Map source hex color tokens to replacement colors.",
+            "default": {},
+            "additionalProperties": {
+                "type": "string",
+                "format": "color"
+            }
+        },
+        "textOverrides": {
+            "type": "object",
+            "description": "Map source SVG text fragments to replacement text values.",
+            "default": {},
+            "additionalProperties": {
+                "type": "string"
+            }
+        },
+        "globalFillColor": {
+            "type": "string",
+            "format": "color",
+            "default": "#64748b"
+        },
+        "applyGlobalFill": {
+            "type": "boolean",
+            "default": false
+        },
+        "globalStrokeColor": {
+            "type": "string",
+            "format": "color",
+            "default": "#334155"
+        },
+        "applyGlobalStroke": {
+            "type": "boolean",
+            "default": false
+        },
+        "svgOpacity": {
+            "type": "number",
+            "default": 1.0,
+            "minimum": 0.0,
+            "maximum": 1.0
+        },
+        "preserveAspectRatio": {
+            "type": "string",
+            "default": "xMidYMid meet"
+        },
+        "lineColor": {
+            "type": "string",
+            "format": "color",
+            "default": "#10b981"
+        },
+        "glowColor": {
+            "type": "string",
+            "format": "color",
+            "default": "#10b981"
+        },
+        "coreGlowOpacity": {
+            "type": "number",
+            "default": 0.15,
+            "minimum": 0.0,
+            "maximum": 1.0
+        },
+        "glowPrimaryOpacity": {
+            "type": "number",
+            "default": 0.8,
+            "minimum": 0.0,
+            "maximum": 1.0
+        },
+        "glowSecondaryOpacity": {
+            "type": "number",
+            "default": 0.6,
+            "minimum": 0.0,
+            "maximum": 1.0
+        },
+        "glowTertiaryOpacity": {
+            "type": "number",
+            "default": 0.4,
+            "minimum": 0.0,
+            "maximum": 1.0
+        },
+        "glowPrimaryBlur": {
+            "type": "number",
+            "default": 2.2,
+            "minimum": 0.0,
+            "maximum": 24.0
+        },
+        "glowSecondaryBlur": {
+            "type": "number",
+            "default": 5.5,
+            "minimum": 0.0,
+            "maximum": 24.0
+        },
+        "glowTertiaryBlur": {
+            "type": "number",
+            "default": 10.5,
+            "minimum": 0.0,
+            "maximum": 32.0
+        },
+        "showLabel": {
+            "type": "boolean",
+            "default": false
+        },
+        "label": {
+            "type": "string",
+            "default": "Valve"
+        },
+        "labelColor": {
+            "type": "string",
+            "format": "color",
+            "default": "#1f2937"
+        },
+        "style": {
+            "$ref": "urn:ignition-schema:schemas/style-properties.schema.json",
+            "default": {
+                "classes": ""
+            }
+        }
+    }
+}

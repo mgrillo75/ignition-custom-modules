@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="114" height="114" viewBox="0 0 114 114" fill="none" aria-label="Breaker 52I" overflow="visible">
+  <defs>
+    <filter id="breaker-glow" x="-24" y="-24" width="162" height="162" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feDropShadow dx="0" dy="0" stdDeviation="6" flood-color="#56c89b" flood-opacity="0.18"/>
+    </filter>
+    <style>
+      text {
+        fill: #eef2f7;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        font-size: 40px;
+        font-style: normal;
+        font-weight: 400;
+        letter-spacing: -0.03em;
+        text-anchor: middle;
+        dominant-baseline: middle;
+      }
+    </style>
+  </defs>
+
+  <g filter="url(#breaker-glow)">
+    <rect x="1" y="1" width="112" height="112" rx="0" fill="none" stroke="#56c89b" stroke-width="2"/>
+    <rect x="2" y="2" width="110" height="110" rx="0" stroke="#56c89b" stroke-opacity="0.04" stroke-width="1"/>
+    <rect x="0.5" y="0.5" width="113" height="113" rx="0" stroke="#56c89b" stroke-opacity="0.04" stroke-width="1"/>
+  </g>
+
+  <text x="57" y="57">52I</text>
+</svg>

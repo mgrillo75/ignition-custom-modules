@@ -1,0 +1,164 @@
+{
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {
+        "colorOverrides": {
+            "type": "object",
+            "description": "Map source SVG color tokens to replacement colors.",
+            "default": {},
+            "additionalProperties": {
+                "type": "string"
+            }
+        },
+        "textOverrides": {
+            "type": "object",
+            "description": "Map source SVG text fragments to replacement values.",
+            "default": {},
+            "additionalProperties": {
+                "type": "string"
+            }
+        },
+        "globalFillColor": {
+            "type": "string",
+            "format": "color",
+            "default": "#64748b"
+        },
+        "applyGlobalFill": {
+            "type": "boolean",
+            "default": false
+        },
+        "globalStrokeColor": {
+            "type": "string",
+            "format": "color",
+            "default": "#334155"
+        },
+        "applyGlobalStroke": {
+            "type": "boolean",
+            "default": false
+        },
+        "svgOpacity": {
+            "type": "number",
+            "default": 1.0,
+            "minimum": 0.0,
+            "maximum": 1.0
+        },
+        "preserveAspectRatio": {
+            "type": "string",
+            "default": "xMidYMid meet"
+        },
+        "showOverlay": {
+            "type": "boolean",
+            "default": true
+        },
+        "overlayTitleText": {
+            "type": "string",
+            "default": "MV Genset"
+        },
+        "overlayValueText": {
+            "type": "string",
+            "default": "Standby"
+        },
+        "overlayStatusText": {
+            "type": "string",
+            "default": "Ready"
+        },
+        "overlayXPercent": {
+            "type": "number",
+            "default": 50.0,
+            "minimum": 0.0,
+            "maximum": 100.0
+        },
+        "overlayYPercent": {
+            "type": "number",
+            "default": 50.0,
+            "minimum": 0.0,
+            "maximum": 100.0
+        },
+        "overlayAnchor": {
+            "type": "string",
+            "default": "middle"
+        },
+        "overlayBackgroundColor": {
+            "type": "string",
+            "default": "rgba(15,23,42,0.55)"
+        },
+        "overlayBorderColor": {
+            "type": "string",
+            "default": "rgba(148,163,184,0.45)"
+        },
+        "overlayBorderWidth": {
+            "type": "number",
+            "default": 1.0,
+            "minimum": 0.0,
+            "maximum": 8.0
+        },
+        "overlayBorderRadius": {
+            "type": "number",
+            "default": 8.0,
+            "minimum": 0.0,
+            "maximum": 64.0
+        },
+        "overlayPadding": {
+            "type": "number",
+            "default": 10.0,
+            "minimum": 0.0,
+            "maximum": 48.0
+        },
+        "overlayTitleColor": {
+            "type": "string",
+            "format": "color",
+            "default": "#e2e8f0"
+        },
+        "overlayValueColor": {
+            "type": "string",
+            "format": "color",
+            "default": "#f8fafc"
+        },
+        "overlayStatusColor": {
+            "type": "string",
+            "format": "color",
+            "default": "#22c55e"
+        },
+        "overlayTitleSize": {
+            "type": "number",
+            "default": 12.0,
+            "minimum": 8.0,
+            "maximum": 48.0
+        },
+        "overlayValueSize": {
+            "type": "number",
+            "default": 20.0,
+            "minimum": 8.0,
+            "maximum": 72.0
+        },
+        "overlayStatusSize": {
+            "type": "number",
+            "default": 12.0,
+            "minimum": 8.0,
+            "maximum": 48.0
+        },
+        "overlayFontFamily": {
+            "type": "string",
+            "default": "Segoe UI, sans-serif"
+        },
+        "showLabel": {
+            "type": "boolean",
+            "default": false
+        },
+        "label": {
+            "type": "string",
+            "default": "MV Genset Screen"
+        },
+        "labelColor": {
+            "type": "string",
+            "format": "color",
+            "default": "#1f2937"
+        },
+        "style": {
+            "$ref": "urn:ignition-schema:schemas/style-properties.schema.json",
+            "default": {
+                "classes": ""
+            }
+        }
+    }
+}

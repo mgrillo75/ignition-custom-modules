@@ -1,0 +1,146 @@
+{
+    "type": "object",
+    "additionalProperties": false,
+    "required": [
+        "targetId",
+        "showBackground",
+        "backgroundColor",
+        "panelStrokeColor",
+        "lineColor",
+        "lineThickness",
+        "panelCornerRadius",
+        "glowIntensity",
+        "showAnchorPoints",
+        "anchorPoints",
+        "style"
+    ],
+    "properties": {
+        "targetId": {
+            "type": "string",
+            "default": "modernLineRev2"
+        },
+        "showBackground": {
+            "type": "boolean",
+            "default": false
+        },
+        "backgroundColor": {
+            "type": "string",
+            "format": "color",
+            "default": "#0f172a"
+        },
+        "panelStrokeColor": {
+            "type": "string",
+            "format": "color",
+            "default": "#1e293b"
+        },
+        "lineColor": {
+            "type": "string",
+            "format": "color",
+            "default": "#10b981"
+        },
+        "lineThickness": {
+            "type": "number",
+            "default": 2,
+            "minimum": 0.25
+        },
+        "panelCornerRadius": {
+            "type": "number",
+            "default": 8,
+            "minimum": 0
+        },
+        "glowIntensity": {
+            "type": "number",
+            "default": 0.75,
+            "minimum": 0,
+            "maximum": 1
+        },
+        "showAnchorPoints": {
+            "type": "boolean",
+            "default": false
+        },
+        "anchorPoints": {
+            "type": "array",
+            "default": [
+                {
+                    "id": "start",
+                    "label": "Start",
+                    "x": 0.05,
+                    "y": 0.5,
+                    "snapRadius": 16
+                },
+                {
+                    "id": "quarter_1",
+                    "label": "Quarter 1",
+                    "x": 0.25,
+                    "y": 0.5,
+                    "snapRadius": 16
+                },
+                {
+                    "id": "middle",
+                    "label": "Middle",
+                    "x": 0.5,
+                    "y": 0.5,
+                    "snapRadius": 16
+                },
+                {
+                    "id": "quarter_3",
+                    "label": "Quarter 3",
+                    "x": 0.75,
+                    "y": 0.5,
+                    "snapRadius": 16
+                },
+                {
+                    "id": "end",
+                    "label": "End",
+                    "x": 0.95,
+                    "y": 0.5,
+                    "snapRadius": 16
+                }
+            ],
+            "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                    "id",
+                    "label",
+                    "x",
+                    "y",
+                    "snapRadius"
+                ],
+                "properties": {
+                    "id": {
+                        "type": "string",
+                        "default": "anchor"
+                    },
+                    "label": {
+                        "type": "string",
+                        "default": ""
+                    },
+                    "x": {
+                        "type": "number",
+                        "minimum": 0,
+                        "maximum": 1,
+                        "default": 0.5
+                    },
+                    "y": {
+                        "type": "number",
+                        "minimum": 0,
+                        "maximum": 1,
+                        "default": 0.5
+                    },
+                    "snapRadius": {
+                        "type": "number",
+                        "default": 16,
+                        "minimum": 0
+                    }
+                }
+            }
+        },
+        "style": {
+            "$ref": "urn:ignition-schema:schemas/style-properties.schema.json",
+            "default": {
+                "classes": ""
+            }
+        }
+    }
+}

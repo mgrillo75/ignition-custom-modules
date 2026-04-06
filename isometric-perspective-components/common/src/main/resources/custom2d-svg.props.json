@@ -1,0 +1,70 @@
+{
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {
+        "colorOverrides": {
+            "type": "object",
+            "description": "Map source hex color tokens (for example #ef4444) to replacement colors.",
+            "default": {},
+            "additionalProperties": {
+                "type": "string",
+                "format": "color"
+            }
+        },
+        "textOverrides": {
+            "type": "object",
+            "description": "Map source SVG text fragments to replacement text values.",
+            "default": {},
+            "additionalProperties": {
+                "type": "string"
+            }
+        },
+        "globalFillColor": {
+            "type": "string",
+            "format": "color",
+            "default": "#64748b"
+        },
+        "applyGlobalFill": {
+            "type": "boolean",
+            "default": false
+        },
+        "globalStrokeColor": {
+            "type": "string",
+            "format": "color",
+            "default": "#334155"
+        },
+        "applyGlobalStroke": {
+            "type": "boolean",
+            "default": false
+        },
+        "svgOpacity": {
+            "type": "number",
+            "default": 1.0,
+            "minimum": 0.0,
+            "maximum": 1.0
+        },
+        "preserveAspectRatio": {
+            "type": "string",
+            "default": "xMidYMid meet"
+        },
+        "showLabel": {
+            "type": "boolean",
+            "default": false
+        },
+        "label": {
+            "type": "string",
+            "default": "Custom SVG"
+        },
+        "labelColor": {
+            "type": "string",
+            "format": "color",
+            "default": "#1f2937"
+        },
+        "style": {
+            "$ref": "urn:ignition-schema:schemas/style-properties.schema.json",
+            "default": {
+                "classes": ""
+            }
+        }
+    }
+}

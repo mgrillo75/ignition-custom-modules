@@ -1,0 +1,90 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 440 640" width="440" height="640" role="img" aria-labelledby="modern-genset-panel-v8-title modern-genset-panel-v8-desc">
+  <title id="modern-genset-panel-v8-title">Modern genset panel v8</title>
+  <desc id="modern-genset-panel-v8-desc">A grid-backed modern genset panel with upper breaker chain, generator symbol, and generator status card.</desc>
+  <defs>
+    <radialGradient id="modern-genset-panel-v8-page" cx="50%" cy="0%" r="78%">
+      <stop offset="0%" stop-color="#0f172a"/>
+      <stop offset="72%" stop-color="#050b14"/>
+      <stop offset="100%" stop-color="#050b14"/>
+    </radialGradient>
+    <pattern id="modern-genset-panel-v8-grid" width="20" height="20" patternUnits="userSpaceOnUse">
+      <path d="M20 0H0V20" fill="none" stroke="#94a3b8" stroke-opacity="0.09" stroke-width="1"/>
+    </pattern>
+    <linearGradient id="modern-genset-panel-v8-shell" x1="107" y1="0" x2="107" y2="544.8" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#0f172a" stop-opacity="0.98"/>
+      <stop offset="100%" stop-color="#0a101d" stop-opacity="0.98"/>
+    </linearGradient>
+    <radialGradient id="modern-genset-panel-v8-generator-fill" cx="50%" cy="50%" r="70%">
+      <stop offset="0%" stop-color="#10b981" stop-opacity="0.15"/>
+      <stop offset="70%" stop-color="#10b981" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="modern-genset-panel-v8-shell-shadow" x="-30%" y="-8%" width="160%" height="150%" color-interpolation-filters="sRGB">
+      <feDropShadow dx="0" dy="20" stdDeviation="20" flood-color="#000000" flood-opacity="0.28"/>
+    </filter>
+    <filter id="modern-genset-panel-v8-accent-glow" x="-120%" y="-120%" width="340%" height="340%" color-interpolation-filters="sRGB">
+      <feDropShadow dx="0" dy="0" stdDeviation="5.5" flood-color="#10b981" flood-opacity="0.2"/>
+    </filter>
+  </defs>
+
+  <rect width="440" height="640" fill="url(#modern-genset-panel-v8-page)"/>
+  <rect width="440" height="640" fill="url(#modern-genset-panel-v8-grid)"/>
+
+  <g transform="translate(113 47.6)" font-family="system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif">
+    <rect x="0.5" y="0.5" width="213" height="543.8" rx="12" fill="url(#modern-genset-panel-v8-shell)" stroke="#1e293b" filter="url(#modern-genset-panel-v8-shell-shadow)"/>
+    <path d="M12.5 1.5H201.5" stroke="#ffffff" stroke-opacity="0.03" stroke-linecap="round"/>
+
+    <g transform="translate(90 17)">
+      <g filter="url(#modern-genset-panel-v8-accent-glow)">
+        <line x1="17" y1="0" x2="17" y2="18" stroke="#10b981" stroke-width="2" stroke-linecap="square" stroke-linejoin="round"/>
+        <rect x="1" y="18" width="32" height="32" fill="#10b981" fill-opacity="0.02" stroke="#10b981" stroke-width="2"/>
+        <line x1="17" y1="50" x2="17" y2="71" stroke="#10b981" stroke-width="2" stroke-linecap="square" stroke-linejoin="round"/>
+        <line x1="17" y1="71" x2="17" y2="79" stroke="#10b981" stroke-width="2" stroke-linecap="square" stroke-linejoin="round"/>
+        <circle cx="17" cy="92" r="13" fill="#10b981" fill-opacity="0.02" stroke="#10b981" stroke-width="2"/>
+        <circle cx="17" cy="102" r="13" fill="#10b981" fill-opacity="0.02" stroke="#10b981" stroke-width="2"/>
+        <line x1="17" y1="115" x2="17" y2="136" stroke="#10b981" stroke-width="2" stroke-linecap="square" stroke-linejoin="round"/>
+        <rect x="1" y="136" width="32" height="32" fill="#10b981" fill-opacity="0.02" stroke="#10b981" stroke-width="2"/>
+      </g>
+      <text x="17" y="34" fill="#f1f5f9" font-size="10.5" letter-spacing="0.02em" text-anchor="middle" dominant-baseline="middle">52I</text>
+      <text x="17" y="152" fill="#f1f5f9" font-size="10.5" letter-spacing="0.02em" text-anchor="middle" dominant-baseline="middle">52G</text>
+    </g>
+
+    <g>
+      <rect x="106" y="185" width="2" height="48" fill="#10b981" filter="url(#modern-genset-panel-v8-accent-glow)"/>
+      <g filter="url(#modern-genset-panel-v8-accent-glow)">
+        <circle cx="107" cy="288" r="54" fill="url(#modern-genset-panel-v8-generator-fill)" stroke="#10b981" stroke-width="2"/>
+      </g>
+      <path d="M91 288 Q99 276 107 288 T123 288" fill="none" stroke="#10b981" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+    </g>
+
+    <g transform="translate(33 351)">
+      <rect x="0.5" y="0.5" width="147" height="175" rx="8" fill="#070c14" fill-opacity="0.92" stroke="#f1f5f9" stroke-opacity="0.58"/>
+      <path d="M8.5 1.5H139.5" stroke="#ffffff" stroke-opacity="0.02" stroke-linecap="round"/>
+      <rect x="7" y="5" width="134" height="20" rx="4" fill="none" stroke="#f1f5f9" stroke-opacity="0.58"/>
+      <text x="74" y="15" fill="#f1f5f9" font-size="13" font-weight="500" letter-spacing="0.04em" text-anchor="middle" dominant-baseline="middle">G01</text>
+
+      <g fill="#f1f5f9" fill-opacity="0.88" font-size="11" letter-spacing="0.02em" dominant-baseline="middle">
+        <text x="9" y="35.5">RUN :</text>
+        <text x="9" y="51.5">LOCAL :</text>
+        <text x="9" y="67.5">MODE :</text>
+        <text x="9" y="83.5">KW :</text>
+        <text x="9" y="99.5">KVAR :</text>
+        <text x="9" y="115.5">KVA :</text>
+        <text x="9" y="131.5">KV :</text>
+        <text x="9" y="147.5">A :</text>
+        <text x="9" y="163.5">HZ :</text>
+      </g>
+
+      <g>
+        <rect x="83" y="29" width="58" height="12" fill="#ffffff" fill-opacity="0.01" stroke="#f1f5f9" stroke-opacity="0.58"/>
+        <rect x="83" y="45" width="58" height="12" fill="#ffffff" fill-opacity="0.01" stroke="#f1f5f9" stroke-opacity="0.58"/>
+        <rect x="83" y="61" width="58" height="12" fill="#ffffff" fill-opacity="0.01" stroke="#f1f5f9" stroke-opacity="0.58"/>
+        <rect x="83" y="77" width="58" height="12" fill="#ffffff" fill-opacity="0.01" stroke="#f1f5f9" stroke-opacity="0.58"/>
+        <rect x="83" y="93" width="58" height="12" fill="#ffffff" fill-opacity="0.01" stroke="#f1f5f9" stroke-opacity="0.58"/>
+        <rect x="83" y="109" width="58" height="12" fill="#ffffff" fill-opacity="0.01" stroke="#f1f5f9" stroke-opacity="0.58"/>
+        <rect x="83" y="125" width="58" height="12" fill="#ffffff" fill-opacity="0.01" stroke="#f1f5f9" stroke-opacity="0.58"/>
+        <rect x="83" y="141" width="58" height="12" fill="#ffffff" fill-opacity="0.01" stroke="#f1f5f9" stroke-opacity="0.58"/>
+        <rect x="83" y="157" width="58" height="12" fill="#ffffff" fill-opacity="0.01" stroke="#f1f5f9" stroke-opacity="0.58"/>
+      </g>
+    </g>
+  </g>
+</svg>

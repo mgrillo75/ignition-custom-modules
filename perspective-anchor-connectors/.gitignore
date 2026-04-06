@@ -1,0 +1,25 @@
+### Java
+*.class
+hs_err_pid*
+
+### IDE
+.idea/
+*.iml
+.project
+.classpath
+.settings/
+out/
+
+### Build
+.gradle/
+build/
+**/build/
+**/out/
+
+### OS
+.DS_Store
+Thumbs.db
+
+### Module signing secrets
+private/
+sign.props

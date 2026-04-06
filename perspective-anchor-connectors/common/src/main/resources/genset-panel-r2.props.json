@@ -1,0 +1,315 @@
+{
+    "type": "object",
+    "additionalProperties": false,
+    "required": [
+        "targetId",
+        "showBackground",
+        "backgroundColor",
+        "shellFillColor",
+        "shellStrokeColor",
+        "accentColor",
+        "textColor",
+        "fieldBorderColor",
+        "fieldFillColor",
+        "glowIntensity",
+        "showAnchorPoints",
+        "anchorPoints",
+        "generatorTitle",
+        "generatorTitleFontSize",
+        "breakerTopLabel",
+        "breakerBottomLabel",
+        "breakerLabelFontSize",
+        "runLabel",
+        "localLabel",
+        "modeLabel",
+        "kwLabel",
+        "kvarLabel",
+        "kvaLabel",
+        "kvLabel",
+        "ampsLabel",
+        "hzLabel",
+        "runValue",
+        "localValue",
+        "modeValue",
+        "kwValue",
+        "kvarValue",
+        "kvaValue",
+        "kvValue",
+        "ampsValue",
+        "hzValue",
+        "statusLabelFontSize",
+        "statusValueFontSize",
+        "style"
+    ],
+    "properties": {
+        "targetId": {
+            "type": "string",
+            "default": "gensetPanelR2"
+        },
+        "showBackground": {
+            "type": "boolean",
+            "default": true
+        },
+        "backgroundColor": {
+            "type": "string",
+            "format": "color",
+            "default": "#050b14"
+        },
+        "shellFillColor": {
+            "type": "string",
+            "format": "color",
+            "default": "#0f172a"
+        },
+        "shellStrokeColor": {
+            "type": "string",
+            "format": "color",
+            "default": "#1e293b"
+        },
+        "accentColor": {
+            "type": "string",
+            "format": "color",
+            "default": "#10b981"
+        },
+        "textColor": {
+            "type": "string",
+            "format": "color",
+            "default": "#f1f5f9"
+        },
+        "fieldBorderColor": {
+            "type": "string",
+            "format": "color",
+            "default": "#f1f5f9"
+        },
+        "fieldFillColor": {
+            "type": "string",
+            "format": "color",
+            "default": "#ffffff"
+        },
+        "glowIntensity": {
+            "type": "number",
+            "default": 0.24,
+            "minimum": 0,
+            "maximum": 1
+        },
+        "showAnchorPoints": {
+            "type": "boolean",
+            "default": false
+        },
+        "anchorPoints": {
+            "type": "array",
+            "default": [
+                {
+                    "id": "breaker_top",
+                    "label": "Breaker Top",
+                    "x": 0.5,
+                    "y": 0.06,
+                    "snapRadius": 16
+                },
+                {
+                    "id": "breaker_bottom",
+                    "label": "Breaker Bottom",
+                    "x": 0.5,
+                    "y": 0.23,
+                    "snapRadius": 16
+                },
+                {
+                    "id": "generator_top",
+                    "label": "Generator Top",
+                    "x": 0.5,
+                    "y": 0.41,
+                    "snapRadius": 16
+                },
+                {
+                    "id": "generator_left",
+                    "label": "Generator Left",
+                    "x": 0.28,
+                    "y": 0.5,
+                    "snapRadius": 16
+                },
+                {
+                    "id": "generator_right",
+                    "label": "Generator Right",
+                    "x": 0.72,
+                    "y": 0.5,
+                    "snapRadius": 16
+                },
+                {
+                    "id": "status_top",
+                    "label": "Status Top",
+                    "x": 0.5,
+                    "y": 0.58,
+                    "snapRadius": 16
+                },
+                {
+                    "id": "status_left",
+                    "label": "Status Left",
+                    "x": 0.18,
+                    "y": 0.82,
+                    "snapRadius": 16
+                },
+                {
+                    "id": "status_right",
+                    "label": "Status Right",
+                    "x": 0.82,
+                    "y": 0.82,
+                    "snapRadius": 16
+                },
+                {
+                    "id": "status_bottom",
+                    "label": "Status Bottom",
+                    "x": 0.5,
+                    "y": 0.98,
+                    "snapRadius": 16
+                }
+            ],
+            "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                    "id",
+                    "label",
+                    "x",
+                    "y",
+                    "snapRadius"
+                ],
+                "properties": {
+                    "id": {
+                        "type": "string",
+                        "default": "anchor"
+                    },
+                    "label": {
+                        "type": "string",
+                        "default": ""
+                    },
+                    "x": {
+                        "type": "number",
+                        "minimum": 0,
+                        "maximum": 1,
+                        "default": 0.5
+                    },
+                    "y": {
+                        "type": "number",
+                        "minimum": 0,
+                        "maximum": 1,
+                        "default": 0.5
+                    },
+                    "snapRadius": {
+                        "type": "number",
+                        "default": 16,
+                        "minimum": 0
+                    }
+                }
+            }
+        },
+        "generatorTitle": {
+            "type": "string",
+            "default": "G01"
+        },
+        "generatorTitleFontSize": {
+            "type": "number",
+            "default": 19.5,
+            "minimum": 6
+        },
+        "breakerTopLabel": {
+            "type": "string",
+            "default": "52I"
+        },
+        "breakerBottomLabel": {
+            "type": "string",
+            "default": "52G"
+        },
+        "breakerLabelFontSize": {
+            "type": "number",
+            "default": 10.5,
+            "minimum": 6
+        },
+        "runLabel": {
+            "type": "string",
+            "default": "RUN :"
+        },
+        "localLabel": {
+            "type": "string",
+            "default": "LOCAL :"
+        },
+        "modeLabel": {
+            "type": "string",
+            "default": "MODE :"
+        },
+        "kwLabel": {
+            "type": "string",
+            "default": "KW :"
+        },
+        "kvarLabel": {
+            "type": "string",
+            "default": "KVAR :"
+        },
+        "kvaLabel": {
+            "type": "string",
+            "default": "KVA :"
+        },
+        "kvLabel": {
+            "type": "string",
+            "default": "KV :"
+        },
+        "ampsLabel": {
+            "type": "string",
+            "default": "A :"
+        },
+        "hzLabel": {
+            "type": "string",
+            "default": "HZ :"
+        },
+        "runValue": {
+            "type": "string",
+            "default": ""
+        },
+        "localValue": {
+            "type": "string",
+            "default": ""
+        },
+        "modeValue": {
+            "type": "string",
+            "default": ""
+        },
+        "kwValue": {
+            "type": "string",
+            "default": ""
+        },
+        "kvarValue": {
+            "type": "string",
+            "default": ""
+        },
+        "kvaValue": {
+            "type": "string",
+            "default": ""
+        },
+        "kvValue": {
+            "type": "string",
+            "default": ""
+        },
+        "ampsValue": {
+            "type": "string",
+            "default": ""
+        },
+        "hzValue": {
+            "type": "string",
+            "default": ""
+        },
+        "statusLabelFontSize": {
+            "type": "number",
+            "default": 11,
+            "minimum": 6
+        },
+        "statusValueFontSize": {
+            "type": "number",
+            "default": 11,
+            "minimum": 6
+        },
+        "style": {
+            "$ref": "urn:ignition-schema:schemas/style-properties.schema.json",
+            "default": {
+                "classes": ""
+            }
+        }
+    }
+}

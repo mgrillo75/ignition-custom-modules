@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 144 168" width="144" height="168" role="img" aria-labelledby="modern-xfmr-rev2-title modern-xfmr-rev2-desc">
+  <title id="modern-xfmr-rev2-title">Modern transformer symbol rev2</title>
+  <desc id="modern-xfmr-rev2-desc">A glowing emerald transformer on a transparent background.</desc>
+  <defs>
+    <radialGradient id="modern-xfmr-rev2-radial" cx="50%" cy="42%" r="56%">
+      <stop offset="0%" stop-color="#10b981" stop-opacity="0.15"/>
+      <stop offset="72%" stop-color="#10b981" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="modern-xfmr-rev2-glow" x="-100%" y="-100%" width="300%" height="300%" color-interpolation-filters="sRGB">
+      <feDropShadow dx="0" dy="0" stdDeviation="2.2" flood-color="#10b981" flood-opacity="0.8"/>
+      <feDropShadow dx="0" dy="0" stdDeviation="5.5" flood-color="#10b981" flood-opacity="0.6"/>
+      <feDropShadow dx="0" dy="0" stdDeviation="10.5" flood-color="#10b981" flood-opacity="0.4"/>
+    </filter>
+  </defs>
+
+  <g transform="translate(38 36)" filter="url(#modern-xfmr-rev2-glow)">
+    <ellipse cx="34" cy="44" rx="26" ry="30" fill="url(#modern-xfmr-rev2-radial)"/>
+    <line x1="34" y1="4" x2="34" y2="18" fill="none" stroke="#10b981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle cx="34" cy="33" r="14" fill="none" stroke="#10b981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle cx="34" cy="49" r="14" fill="none" stroke="#10b981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    <line x1="34" y1="63" x2="34" y2="77" fill="none" stroke="#10b981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+</svg>

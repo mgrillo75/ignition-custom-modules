@@ -1,0 +1,159 @@
+{
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {
+        "colorOverrides": {
+            "type": "object",
+            "description": "Map source SVG color tokens to replacement colors.",
+            "default": {},
+            "additionalProperties": {
+                "type": "string"
+            }
+        },
+        "textOverrides": {
+            "type": "object",
+            "description": "Map source SVG text fragments to replacement values.",
+            "default": {},
+            "additionalProperties": {
+                "type": "string"
+            }
+        },
+        "globalFillColor": {
+            "type": "string",
+            "format": "color",
+            "default": "#64748b"
+        },
+        "applyGlobalFill": {
+            "type": "boolean",
+            "default": false
+        },
+        "globalStrokeColor": {
+            "type": "string",
+            "format": "color",
+            "default": "#334155"
+        },
+        "applyGlobalStroke": {
+            "type": "boolean",
+            "default": false
+        },
+        "svgOpacity": {
+            "type": "number",
+            "default": 1.0,
+            "minimum": 0.0,
+            "maximum": 1.0
+        },
+        "preserveAspectRatio": {
+            "type": "string",
+            "default": "xMidYMid meet"
+        },
+        "unitText": {
+            "type": "string",
+            "default": "G5"
+        },
+        "runningText": {
+            "type": "string",
+            "default": "RUNNING"
+        },
+        "startingText": {
+            "type": "string",
+            "default": "STARTING"
+        },
+        "stoppingText": {
+            "type": "string",
+            "default": "STOPPING"
+        },
+        "stoppedText": {
+            "type": "string",
+            "default": "STOPPED"
+        },
+        "remoteText": {
+            "type": "string",
+            "default": "REMOTE"
+        },
+        "localText": {
+            "type": "string",
+            "default": "LOCAL"
+        },
+        "frameStrokeColor": {
+            "type": "string",
+            "default": "#1e293b"
+        },
+        "accentColor": {
+            "type": "string",
+            "default": "#10b981"
+        },
+        "accentStrongColor": {
+            "type": "string",
+            "default": "#34d399"
+        },
+        "inactiveTextColor": {
+            "type": "string",
+            "default": "#64748b"
+        },
+        "dividerColor": {
+            "type": "string",
+            "default": "rgba(255,255,255,0.35)"
+        },
+        "unitChipFillColor": {
+            "type": "string",
+            "default": "rgba(16,185,129,0.1)"
+        },
+        "unitChipStrokeColor": {
+            "type": "string",
+            "default": "rgba(16,185,129,0.2)"
+        },
+        "unitIconColor": {
+            "type": "string",
+            "default": "#34d399"
+        },
+        "statusInactiveFillColor": {
+            "type": "string",
+            "default": "rgba(16,185,129,0.04)"
+        },
+        "statusInactiveStrokeColor": {
+            "type": "string",
+            "default": "rgba(16,185,129,0.08)"
+        },
+        "statusActiveFillColor": {
+            "type": "string",
+            "default": "rgba(16,185,129,0.1)"
+        },
+        "statusActiveStrokeColor": {
+            "type": "string",
+            "default": "rgba(16,185,129,0.25)"
+        },
+        "glowBlurStdDeviation": {
+            "type": "number",
+            "default": 4.0,
+            "minimum": 0.0,
+            "maximum": 24.0
+        },
+        "stoppedIndicatorVisible": {
+            "type": "boolean",
+            "default": true
+        },
+        "localIndicatorVisible": {
+            "type": "boolean",
+            "default": true
+        },
+        "showLabel": {
+            "type": "boolean",
+            "default": false
+        },
+        "label": {
+            "type": "string",
+            "default": "Modern Genset Panel"
+        },
+        "labelColor": {
+            "type": "string",
+            "format": "color",
+            "default": "#1f2937"
+        },
+        "style": {
+            "$ref": "urn:ignition-schema:schemas/style-properties.schema.json",
+            "default": {
+                "classes": ""
+            }
+        }
+    }
+}

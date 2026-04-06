@@ -1,0 +1,148 @@
+{
+    "type": "object",
+    "additionalProperties": false,
+    "required": [
+        "targetId",
+        "showBackground",
+        "backgroundColor",
+        "panelStrokeColor",
+        "accentColor",
+        "glowIntensity",
+        "showAnchorPoints",
+        "anchorPoints",
+        "style"
+    ],
+    "properties": {
+        "targetId": {
+            "type": "string",
+            "default": "modernTank"
+        },
+        "showBackground": {
+            "type": "boolean",
+            "default": true
+        },
+        "backgroundColor": {
+            "type": "string",
+            "format": "color",
+            "default": "#0f172a"
+        },
+        "panelStrokeColor": {
+            "type": "string",
+            "format": "color",
+            "default": "#1e293b"
+        },
+        "accentColor": {
+            "type": "string",
+            "format": "color",
+            "default": "#10b981"
+        },
+        "glowIntensity": {
+            "type": "number",
+            "default": 0.7,
+            "minimum": 0,
+            "maximum": 1
+        },
+        "showAnchorPoints": {
+            "type": "boolean",
+            "default": false
+        },
+        "anchorPoints": {
+            "type": "array",
+            "default": [
+                {
+                    "id": "top",
+                    "label": "Top",
+                    "x": 0.5,
+                    "y": 0.06,
+                    "snapRadius": 16
+                },
+                {
+                    "id": "upper_left",
+                    "label": "Upper Left",
+                    "x": 0.18,
+                    "y": 0.2,
+                    "snapRadius": 16
+                },
+                {
+                    "id": "upper_right",
+                    "label": "Upper Right",
+                    "x": 0.82,
+                    "y": 0.2,
+                    "snapRadius": 16
+                },
+                {
+                    "id": "left",
+                    "label": "Left",
+                    "x": 0.05,
+                    "y": 0.5,
+                    "snapRadius": 16
+                },
+                {
+                    "id": "center",
+                    "label": "Center",
+                    "x": 0.5,
+                    "y": 0.55,
+                    "snapRadius": 16
+                },
+                {
+                    "id": "right",
+                    "label": "Right",
+                    "x": 0.95,
+                    "y": 0.5,
+                    "snapRadius": 16
+                },
+                {
+                    "id": "bottom",
+                    "label": "Bottom",
+                    "x": 0.5,
+                    "y": 0.95,
+                    "snapRadius": 16
+                }
+            ],
+            "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                    "id",
+                    "label",
+                    "x",
+                    "y",
+                    "snapRadius"
+                ],
+                "properties": {
+                    "id": {
+                        "type": "string",
+                        "default": "anchor"
+                    },
+                    "label": {
+                        "type": "string",
+                        "default": ""
+                    },
+                    "x": {
+                        "type": "number",
+                        "minimum": 0,
+                        "maximum": 1,
+                        "default": 0.5
+                    },
+                    "y": {
+                        "type": "number",
+                        "minimum": 0,
+                        "maximum": 1,
+                        "default": 0.5
+                    },
+                    "snapRadius": {
+                        "type": "number",
+                        "default": 16,
+                        "minimum": 0
+                    }
+                }
+            }
+        },
+        "style": {
+            "$ref": "urn:ignition-schema:schemas/style-properties.schema.json",
+            "default": {
+                "classes": ""
+            }
+        }
+    }
+}

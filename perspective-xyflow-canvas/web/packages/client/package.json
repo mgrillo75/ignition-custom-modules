@@ -1,0 +1,28 @@
+{
+  "name": "@miguelgrillo/perspective-xyflow-canvas-client",
+  "private": true,
+  "version": "0.1.0",
+  "description": "Client web bundle for Perspective XY Flow Canvas",
+  "main": "dist/xy-flow-canvas.js",
+  "scripts": {
+    "build": "webpack --mode production",
+    "test": "node ./src/testing/run-tests.js",
+    "clean": "node -e \"require('fs').rmSync('dist', { recursive: true, force: true }); require('fs').rmSync('.awcache', { recursive: true, force: true });\"",
+    "deepClean": "node -e \"require('fs').rmSync('dist', { recursive: true, force: true }); require('fs').rmSync('.awcache', { recursive: true, force: true }); require('fs').rmSync('node_modules', { recursive: true, force: true });\""
+  },
+  "dependencies": {
+    "@xyflow/react": "12.9.0",
+    "react": "18.3.1",
+    "react-dom": "18.3.1"
+  },
+  "devDependencies": {
+    "@babel/core": "7.28.0",
+    "@babel/preset-env": "7.28.0",
+    "@babel/preset-react": "7.27.1",
+    "babel-loader": "8.3.0",
+    "css-loader": "6.10.0",
+    "style-loader": "3.3.4",
+    "webpack": "5.72.0",
+    "webpack-cli": "4.9.2"
+  }
+}

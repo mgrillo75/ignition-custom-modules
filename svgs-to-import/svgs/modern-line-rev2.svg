@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 380 60" width="380" height="60" role="img" aria-labelledby="modern-line-rev2-title modern-line-rev2-desc">
+  <title id="modern-line-rev2-title">Modern line symbol rev2</title>
+  <desc id="modern-line-rev2-desc">A glowing emerald horizontal conductor on a transparent background.</desc>
+  <defs>
+    <filter id="modern-line-rev2-glow" x="-25%" y="-900%" width="150%" height="1900%" color-interpolation-filters="sRGB">
+      <feDropShadow dx="0" dy="0" stdDeviation="2.2" flood-color="#10b981" flood-opacity="0.8"/>
+      <feDropShadow dx="0" dy="0" stdDeviation="5.5" flood-color="#10b981" flood-opacity="0.6"/>
+      <feDropShadow dx="0" dy="0" stdDeviation="10.5" flood-color="#10b981" flood-opacity="0.4"/>
+    </filter>
+  </defs>
+
+  <rect x="17" y="29" width="346" height="2" rx="1" fill="#10b981" filter="url(#modern-line-rev2-glow)"/>
+</svg>

@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 144 150" width="144" height="150" role="img" aria-labelledby="modern-tank-title modern-tank-desc">
+  <title id="modern-tank-title">Modern tank symbol</title>
+  <desc id="modern-tank-desc">A glowing emerald tank centered inside a rounded slate panel.</desc>
+  <defs>
+    <linearGradient id="modern-tank-panel" x1="72" y1="0" x2="72" y2="150" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#0f172a" stop-opacity="0.96"/>
+      <stop offset="100%" stop-color="#0b1220" stop-opacity="0.94"/>
+    </linearGradient>
+    <radialGradient id="modern-tank-radial" cx="50%" cy="55%" r="65%">
+      <stop offset="0%" stop-color="#10b981" stop-opacity="0.16"/>
+      <stop offset="70%" stop-color="#10b981" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="modern-tank-glow" x="-40%" y="-35%" width="180%" height="200%" color-interpolation-filters="sRGB">
+      <feDropShadow dx="0" dy="0" stdDeviation="2.2" flood-color="#10b981" flood-opacity="0.8"/>
+      <feDropShadow dx="0" dy="0" stdDeviation="5.5" flood-color="#10b981" flood-opacity="0.6"/>
+      <feDropShadow dx="0" dy="0" stdDeviation="10.5" flood-color="#10b981" flood-opacity="0.4"/>
+    </filter>
+  </defs>
+
+  <rect x="0.5" y="0.5" width="143" height="149" rx="10" fill="url(#modern-tank-panel)" stroke="#1e293b"/>
+
+  <g transform="translate(17 15)" filter="url(#modern-tank-glow)">
+    <path fill="url(#modern-tank-radial)" d="M1,119 L1,25 L109,25 Q55,1 1,25 L109,25 L109,119 L1,119 Z"/>
+    <path fill="none" stroke="#10b981" stroke-width="2" stroke-linejoin="miter" stroke-linecap="butt" d="M1,119 L1,25 L109,25 Q55,1 1,25 L109,25 L109,119 L1,119 Z"/>
+  </g>
+</svg>

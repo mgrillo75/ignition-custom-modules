@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>QPAC Style F - Spinner Ring</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: "Open Sans", system-ui, sans-serif;
+      background: linear-gradient(135deg, #0e1020 0%, #111828 30%, #0e1020 60%, #131330 100%);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+    }
+    .card {
+      background: #0e0e22;
+      border: 1px solid #1a2035;
+      border-radius: 12px;
+      overflow: hidden;
+      padding: 24px;
+    }
+    .gen-wrapper {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .gen-f-breaker {
+      position: relative;
+      width: 120px;
+      height: 80px;
+      cursor: pointer;
+    }
+    .gen-f-breaker-dot {
+      position: absolute;
+      left: 50%;
+      top: 0;
+      transform: translateX(-50%);
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: #111;
+      z-index: 3;
+      transition: border-color 0.4s ease;
+    }
+    .gen-f-breaker-line {
+      position: absolute;
+      left: 50%;
+      top: 5px;
+      width: 4px;
+      height: 60px;
+      transform-origin: center top;
+      z-index: 2;
+      transition: transform 0.4s ease-in-out;
+    }
+    .gen-f-breaker-line-inner {
+      position: absolute;
+      left: 1px;
+      top: 0;
+      width: 2px;
+      height: 60px;
+      background: #fff;
+      border-radius: 1px;
+      transition: box-shadow 0.4s ease;
+    }
+    .gen-f-breaker-dot-bottom {
+      position: absolute;
+      left: 50%;
+      bottom: 5px;
+      transform: translateX(-50%);
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: #111;
+      z-index: 3;
+      transition: border-color 0.4s ease;
+    }
+    .gen-f-ring {
+      position: relative;
+      width: 110px;
+      height: 110px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+    }
+    .gen-f-ring-bg {
+      position: absolute;
+      inset: 0;
+      border-radius: 50%;
+      filter: blur(1px);
+      transition: box-shadow 0.5s ease;
+    }
+    .gen-f-ring-inner {
+      position: absolute;
+      width: 90px;
+      height: 90px;
+      border-radius: 50%;
+      background: #0a0a1a;
+    }
+    .gen-f-ring-label {
+      position: relative;
+      font-weight: 700;
+      font-size: 22px;
+      z-index: 10;
+      letter-spacing: 0.02em;
+    }
+    .gen-f-power {
+      margin-top: 8px;
+      padding: 3px 14px;
+      border-radius: 6px;
+      font-family: monospace;
+      font-weight: 700;
+      font-size: 13px;
+      min-width: 80px;
+      text-align: center;
+      background: #0a0a1a;
+      transition: all 0.3s ease;
+    }
+    .gen-f-power .unit { font-size: 11px; opacity: 0.5; }
+    .playstop-btn {
+      margin-top: 12px;
+      width: 32px;
+      height: 32px;
+      border-radius: 6px;
+      background: #111;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-left: auto;
+      margin-right: auto;
+      transition: all 0.3s;
+    }
+    @keyframes spinGenF { to { transform: rotate(360deg); } }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="gen-wrapper" id="genWrapper">
+    <svg width="120" height="55" viewBox="0 0 120 55">
+      <line id="lineTop" x1="60" y1="0" x2="60" y2="55" stroke="#ff4444" stroke-width="3" stroke-linecap="round" style="transition: stroke 0.4s ease"/>
+    </svg>
+    <div class="gen-f-breaker" id="breaker">
+      <div class="gen-f-breaker-dot" id="breakerDotTop"></div>
+      <div class="gen-f-breaker-line" id="breakerLine">
+        <div class="gen-f-breaker-line-inner" id="breakerLineInner"></div>
+      </div>
+      <div class="gen-f-breaker-dot-bottom" id="breakerDotBottom"></div>
+    </div>
+    <svg width="120" height="65" viewBox="0 0 120 65">
+      <line id="lineBottom" x1="60" y1="0" x2="60" y2="65" stroke="#ff4444" stroke-width="3" stroke-linecap="round" style="transition: stroke 0.4s ease"/>
+      <g id="particles"></g>
+    </svg>
+    <div class="gen-f-ring" id="genRing">
+      <div class="gen-f-ring-bg" id="ringBg"></div>
+      <div class="gen-f-ring-inner"></div>
+      <span class="gen-f-ring-label">G4</span>
+    </div>
+    <button class="playstop-btn" id="playstopBtn">
+      <svg width="14" height="14" viewBox="0 0 14 14" id="playstopIcon"></svg>
+    </button>
+    <div class="gen-f-power" id="genPower">1750 <span class="unit">kW</span></div>
+    </div>
+  </div>
+
+  <script>
+    (function() {
+      const POWER = 1750;
+      let status = 'running';
+      let breakerClosed = true;
+
+      const lineTop = document.getElementById('lineTop');
+      const lineBottom = document.getElementById('lineBottom');
+      const breaker = document.getElementById('breaker');
+      const breakerDotTop = document.getElementById('breakerDotTop');
+      const breakerDotBottom = document.getElementById('breakerDotBottom');
+      const breakerLine = document.getElementById('breakerLine');
+      const breakerLineInner = document.getElementById('breakerLineInner');
+      const particles = document.getElementById('particles');
+      const genRing = document.getElementById('genRing');
+      const ringBg = document.getElementById('ringBg');
+      const playstopBtn = document.getElementById('playstopBtn');
+      const playstopIcon = document.getElementById('playstopIcon');
+      const genPower = document.getElementById('genPower');
+
+      function getSaberColor() {
+        return breakerClosed ? '#ff4444' : '#6ddd3a';
+      }
+
+      function getGradient() {
+        if (status === 'running') return { start: 'rgb(0, 200, 80)', end: 'rgb(0, 225, 255)', shadowTop: 'rgb(0, 200, 80)', shadowBottom: 'rgb(0, 225, 255)' };
+        if (status === 'standby') return { start: 'rgb(255, 180, 0)', end: 'rgb(255, 100, 0)', shadowTop: 'rgb(255, 180, 0)', shadowBottom: 'rgb(255, 100, 0)' };
+        return { start: 'rgb(186, 66, 255)', end: 'rgb(0, 225, 255)', shadowTop: 'rgb(186, 66, 255)', shadowBottom: 'rgb(0, 225, 255)' };
+      }
+
+      function getAnimationDuration() {
+        return (status === 'running' || status === 'standby') ? '1.7s' : '6s';
+      }
+
+      function handleToggle() {
+        if (status === 'stopped') {
+          status = 'standby';
+        } else if (status === 'standby') {
+          status = 'running';
+          breakerClosed = true;
+        } else {
+          status = 'stopped';
+          breakerClosed = false;
+        }
+        render();
+      }
+
+      function handleBreakerClick() {
+        breakerClosed = !breakerClosed;
+        render();
+      }
+
+      function renderParticles() {
+        particles.innerHTML = '';
+        if (status === 'running' && breakerClosed) {
+          [0, 0.3, 0.6].forEach(function(delay) {
+            const c = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+            c.setAttribute('cx', '60');
+            c.setAttribute('cy', '5');
+            c.setAttribute('r', '2');
+            c.setAttribute('fill', '#f06363');
+            c.setAttribute('opacity', '0.8');
+            const anim1 = document.createElementNS('http://www.w3.org/2000/svg', 'animate');
+            anim1.setAttribute('attributeName', 'cy');
+            anim1.setAttribute('values', '5;60');
+            anim1.setAttribute('dur', '1s');
+            anim1.setAttribute('begin', delay + 's');
+            anim1.setAttribute('repeatCount', 'indefinite');
+            const anim2 = document.createElementNS('http://www.w3.org/2000/svg', 'animate');
+            anim2.setAttribute('attributeName', 'opacity');
+            anim2.setAttribute('values', '1;0');
+            anim2.setAttribute('dur', '1s');
+            anim2.setAttribute('begin', delay + 's');
+            anim2.setAttribute('repeatCount', 'indefinite');
+            c.appendChild(anim1);
+            c.appendChild(anim2);
+            particles.appendChild(c);
+          });
+        }
+      }
+
+      function render() {
+        const saberColor = getSaberColor();
+        const gradient = getGradient();
+        const isRunning = status === 'running';
+        const isStandby = status === 'standby';
+
+        lineTop.setAttribute('stroke', saberColor);
+        lineBottom.setAttribute('stroke', saberColor);
+
+        breakerDotTop.style.border = '2px solid ' + saberColor;
+        breakerDotBottom.style.border = '2px solid ' + saberColor;
+        breakerLine.style.transform = 'translateX(-50%) rotate(' + (breakerClosed ? 0 : -35) + 'deg)';
+        breakerLineInner.style.boxShadow = '0 0 4px 2px ' + saberColor;
+
+        renderParticles();
+
+        ringBg.style.backgroundImage = 'linear-gradient(' + gradient.start + ' 35%, ' + gradient.end + ')';
+        ringBg.style.animation = 'spinGenF ' + getAnimationDuration() + ' linear infinite';
+        ringBg.style.boxShadow = '0px -5px 20px 0px ' + gradient.shadowTop + ', 0px 5px 20px 0px ' + gradient.shadowBottom;
+
+        playstopBtn.style.border = '1.5px solid ' + (isRunning ? '#22c55e' : isStandby ? '#f59e0b' : '#ef4444');
+
+        playstopIcon.innerHTML = isRunning
+          ? '<rect x="1" y="1" width="12" height="12" rx="2" fill="#22c55e"/>'
+          : '<polygon points="2,0 2,14 13,7" fill="' + (isStandby ? '#f59e0b' : '#ef4444') + '"/>';
+
+        genPower.innerHTML = (isRunning ? POWER : 0) + ' <span class="unit">kW</span>';
+        genPower.style.color = isRunning ? '#22c55e' : isStandby ? '#f59e0b' : '#888';
+        genPower.style.border = '1px solid ' + (isRunning ? 'rgba(34,197,94,0.25)' : isStandby ? 'rgba(245,158,11,0.25)' : 'rgba(51,51,51,0.5)');
+      }
+
+      breaker.addEventListener('click', handleBreakerClick);
+      genRing.addEventListener('click', handleToggle);
+      playstopBtn.addEventListener('click', handleToggle);
+
+      render();
+    })();
+  </script>
+</body>
+</html>

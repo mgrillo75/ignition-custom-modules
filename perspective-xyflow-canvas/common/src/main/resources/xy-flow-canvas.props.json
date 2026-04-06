@@ -1,0 +1,315 @@
+{
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "document",
+    "viewport",
+    "settings",
+    "toolbox",
+    "selection",
+    "style"
+  ],
+  "properties": {
+    "document": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "nodes",
+        "edges"
+      ],
+      "properties": {
+        "nodes": {
+          "type": "array",
+          "default": [],
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "id",
+              "type",
+              "position",
+              "data",
+              "style"
+            ],
+            "properties": {
+              "id": {
+                "type": "string",
+                "default": "node"
+              },
+              "type": {
+                "type": "string",
+                "default": "default"
+              },
+              "position": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "x",
+                  "y"
+                ],
+                "properties": {
+                  "x": {
+                    "type": "number",
+                    "default": 0
+                  },
+                  "y": {
+                    "type": "number",
+                    "default": 0
+                  }
+                },
+                "default": {
+                  "x": 0,
+                  "y": 0
+                }
+              },
+              "origin": {
+                "type": "array",
+                "items": {
+                  "type": "number"
+                },
+                "minItems": 2,
+                "maxItems": 2,
+                "default": [
+                  0.5,
+                  0.5
+                ]
+              },
+              "draggable": {
+                "type": "boolean",
+                "default": false
+              },
+              "selectable": {
+                "type": "boolean",
+                "default": false
+              },
+              "connectable": {
+                "type": "boolean",
+                "default": false
+              },
+              "data": {
+                "type": "object",
+                "default": {}
+              },
+              "style": {
+                "type": "object",
+                "default": {}
+              }
+            }
+          }
+        },
+        "edges": {
+          "type": "array",
+          "default": [],
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "id",
+              "source",
+              "target",
+              "style"
+            ],
+            "properties": {
+              "id": {
+                "type": "string",
+                "default": "edge"
+              },
+              "source": {
+                "type": "string",
+                "default": ""
+              },
+              "sourceHandle": {
+                "type": "string",
+                "default": ""
+              },
+              "target": {
+                "type": "string",
+                "default": ""
+              },
+              "targetHandle": {
+                "type": "string",
+                "default": ""
+              },
+              "type": {
+                "type": "string",
+                "default": "default"
+              },
+              "label": {
+                "type": "string",
+                "default": ""
+              },
+              "style": {
+                "type": "object",
+                "default": {}
+              },
+              "reconnectable": {
+                "type": "boolean",
+                "default": true
+              }
+            }
+          }
+        }
+      },
+      "default": {
+        "nodes": [],
+        "edges": []
+      }
+    },
+    "viewport": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "x",
+        "y",
+        "zoom"
+      ],
+      "properties": {
+        "x": {
+          "type": "number",
+          "default": 0
+        },
+        "y": {
+          "type": "number",
+          "default": 0
+        },
+        "zoom": {
+          "type": "number",
+          "default": 1
+        }
+      },
+      "default": {
+        "x": 0,
+        "y": 0,
+        "zoom": 1
+      }
+    },
+    "settings": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "showGrid",
+        "snapToGrid",
+        "gridSize",
+        "snapDistance"
+      ],
+      "properties": {
+        "showGrid": {
+          "type": "boolean",
+          "default": true
+        },
+        "snapToGrid": {
+          "type": "boolean",
+          "default": true
+        },
+        "gridSize": {
+          "type": "number",
+          "default": 16,
+          "minimum": 1
+        },
+        "snapDistance": {
+          "type": "number",
+          "default": 18,
+          "minimum": 0
+        },
+        "readOnly": {
+          "type": "boolean",
+          "default": false
+        }
+      },
+      "default": {
+        "showGrid": true,
+        "snapToGrid": true,
+        "gridSize": 16,
+        "snapDistance": 18,
+        "readOnly": false
+      }
+    },
+    "toolbox": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "visible",
+        "items"
+      ],
+      "properties": {
+        "visible": {
+          "type": "boolean",
+          "default": true
+        },
+        "items": {
+          "type": "array",
+          "default": [],
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "id",
+              "label",
+              "kind"
+            ],
+            "properties": {
+              "id": {
+                "type": "string",
+                "default": "tool"
+              },
+              "label": {
+                "type": "string",
+                "default": "Tool"
+              },
+              "kind": {
+                "type": "string",
+                "enum": [
+                  "node",
+                  "edge"
+                ],
+                "default": "node"
+              },
+              "nodeType": {
+                "type": "string",
+                "default": "default"
+              }
+            }
+          }
+        }
+      },
+      "default": {
+        "visible": true,
+        "items": []
+      }
+    },
+    "selection": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "nodeIds",
+        "edgeIds"
+      ],
+      "properties": {
+        "nodeIds": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "default": []
+        },
+        "edgeIds": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "default": []
+        }
+      },
+      "default": {
+        "nodeIds": [],
+        "edgeIds": []
+      }
+    },
+    "style": {
+      "$ref": "urn:ignition-schema:schemas/style-properties.schema.json",
+      "default": {
+        "classes": ""
+      }
+    }
+  }
+}

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="144.00" height="453.12" viewBox="0 0 144.00 453.12" style="background-color: transparent">
+  <defs>
+    <filter id="gensetGlow" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur stdDeviation="4" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+  <rect x="0.5" y="0.5" width="143.00" height="452.12" rx="8" ry="8" fill="none" stroke="#1e293b" stroke-width="1"/>
+  <rect x="71.0" y="28.0" width="2.0" height="48.0" fill="#10b981" filter="url(#gensetGlow)"/>
+  <circle cx="72.0" cy="131.0" r="55.0" fill="rgba(16,185,129,0.08)" stroke="#10b981" stroke-width="2" filter="url(#gensetGlow)"/>
+  <g transform="translate(52.0 121.0)" filter="url(#gensetGlow)">
+    <svg width="40" height="20" viewBox="0 0 40 20" overflow="visible">
+      <path d="M 4 10 Q 12 -2 20 10 T 36 10" fill="none" stroke="#10b981" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  </g>
+  <rect x="41.441874999999996" y="202.0" width="61.11625" height="34.6" rx="17.3" fill="rgba(16,185,129,0.1)" stroke="rgba(16,185,129,0.2)" stroke-width="1"/>
+  <path transform="translate(50.441874999999996 212.3) scale(0.5833333333333334)" fill="#34d399" d="M8 5v14l11-7L8 5z"/>
+  <text x="81.79999999999998" y="225.60000000000002" font-family="Segoe UI, system-ui, sans-serif" font-size="18.0" font-weight="700" fill="#34d399" text-anchor="middle">G5</text>
+  <rect x="36.1981875" y="248.6" width="71.603625" height="23.92" rx="11.96" fill="rgba(16,185,129,0.04)" stroke="rgba(16,185,129,0.08)" stroke-width="1"/>
+  <text x="72.0" y="264.48" font-family="Segoe UI, system-ui, sans-serif" font-size="11.2" font-weight="700" fill="#64748b" text-anchor="middle">RUNNING</text>
+  <rect x="35.7241875" y="278.52" width="72.551625" height="23.92" rx="11.96" fill="rgba(16,185,129,0.04)" stroke="rgba(16,185,129,0.08)" stroke-width="1"/>
+  <text x="72.0" y="294.4" font-family="Segoe UI, system-ui, sans-serif" font-size="11.2" font-weight="700" fill="#64748b" text-anchor="middle">STARTING</text>
+  <rect x="35.20075" y="308.44" width="73.5985" height="23.92" rx="11.96" fill="rgba(16,185,129,0.04)" stroke="rgba(16,185,129,0.08)" stroke-width="1"/>
+  <text x="72.0" y="324.32" font-family="Segoe UI, system-ui, sans-serif" font-size="11.2" font-weight="700" fill="#64748b" text-anchor="middle">STOPPING</text>
+  <rect x="30.640375000000006" y="338.36" width="82.71924999999999" height="23.92" rx="11.96" fill="rgba(16,185,129,0.1)" stroke="rgba(16,185,129,0.25)" stroke-width="1"/>
+  <circle cx="43.840375" cy="350.32" r="5.0" fill="#10b981" stroke="none" filter="url(#gensetGlow)"/>
+  <text x="79.80000000000001" y="354.24" font-family="Segoe UI, system-ui, sans-serif" font-size="11.2" font-weight="700" fill="#34d399" text-anchor="middle">STOPPED</text>
+  <line x1="30.640375000000006" y1="370.28000000000003" x2="113.359625" y2="370.28000000000003" stroke="rgba(255,255,255,0.35)" stroke-width="1" stroke-dasharray="5 5"/>
+  <rect x="40.7815625" y="382.28000000000003" width="62.436875" height="23.92" rx="11.96" fill="rgba(16,185,129,0.04)" stroke="rgba(16,185,129,0.08)" stroke-width="1"/>
+  <text x="72.0" y="398.16" font-family="Segoe UI, system-ui, sans-serif" font-size="11.2" font-weight="700" fill="#64748b" text-anchor="middle">REMOTE</text>
+  <rect x="38.150875" y="412.20000000000005" width="67.69825" height="23.92" rx="11.96" fill="rgba(16,185,129,0.1)" stroke="rgba(16,185,129,0.25)" stroke-width="1"/>
+  <circle cx="51.350875" cy="424.16" r="5.0" fill="#10b981" stroke="none" filter="url(#gensetGlow)"/>
+  <text x="79.80000000000001" y="428.08000000000004" font-family="Segoe UI, system-ui, sans-serif" font-size="11.2" font-weight="700" fill="#34d399" text-anchor="middle">LOCAL</text>
+</svg>

@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 144 150" width="144" height="150" role="img" aria-labelledby="modern-tank-rev2-title modern-tank-rev2-desc">
+  <title id="modern-tank-rev2-title">Modern tank symbol rev2</title>
+  <desc id="modern-tank-rev2-desc">A glowing emerald tank on a transparent background.</desc>
+  <defs>
+    <radialGradient id="modern-tank-rev2-radial" cx="50%" cy="55%" r="65%">
+      <stop offset="0%" stop-color="#10b981" stop-opacity="0.16"/>
+      <stop offset="70%" stop-color="#10b981" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="modern-tank-rev2-glow" x="-40%" y="-35%" width="180%" height="200%" color-interpolation-filters="sRGB">
+      <feDropShadow dx="0" dy="0" stdDeviation="2.2" flood-color="#10b981" flood-opacity="0.8"/>
+      <feDropShadow dx="0" dy="0" stdDeviation="5.5" flood-color="#10b981" flood-opacity="0.6"/>
+      <feDropShadow dx="0" dy="0" stdDeviation="10.5" flood-color="#10b981" flood-opacity="0.4"/>
+    </filter>
+  </defs>
+
+  <g transform="translate(17 15)" filter="url(#modern-tank-rev2-glow)">
+    <path fill="url(#modern-tank-rev2-radial)" d="M1,119 L1,25 L109,25 Q55,1 1,25 L109,25 L109,119 L1,119 Z"/>
+    <path fill="none" stroke="#10b981" stroke-width="2" stroke-linejoin="miter" stroke-linecap="butt" d="M1,119 L1,25 L109,25 Q55,1 1,25 L109,25 L109,119 L1,119 Z"/>
+  </g>
+</svg>

@@ -1,0 +1,120 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 228 612" role="img" aria-label="Single line genset schematic with breakers 52I, 52G, 52X, generator, and EM power distribution">
+  <defs>
+    <style>
+      .gen-visual-stack {
+        --genset-stroke: #10b981;
+        --genset-stroke-w: 2.4px;
+        --genset-glow-blur: 25px;
+        --genset-glow-color: rgba(16, 185, 129, 0.55);
+        --genset-glow: 0 0 var(--genset-glow-blur) var(--genset-glow-color);
+      }
+
+      .stroke {
+        stroke: var(--genset-stroke);
+        stroke-width: var(--genset-stroke-w);
+        stroke-linecap: square;
+        stroke-linejoin: round;
+        vector-effect: non-scaling-stroke;
+        filter:
+          drop-shadow(0 0 calc(var(--genset-glow-blur) * 0.45) var(--genset-glow-color))
+          drop-shadow(var(--genset-glow, 0 0 25px rgba(16, 185, 129, 0.25)));
+      }
+
+      .fill {
+        fill: rgba(16, 185, 129, 0.035);
+        stroke: var(--genset-stroke);
+        stroke-width: var(--genset-stroke-w);
+        vector-effect: non-scaling-stroke;
+        filter:
+          drop-shadow(0 0 calc(var(--genset-glow-blur) * 0.45) var(--genset-glow-color))
+          drop-shadow(var(--genset-glow, 0 0 25px rgba(16, 185, 129, 0.2)));
+      }
+
+      .label {
+        fill: #f1f5f9;
+        font-size: 10.5px;
+        font-weight: 500;
+        letter-spacing: 0.03em;
+        text-anchor: middle;
+        dominant-baseline: middle;
+      }
+
+      .label-small {
+        fill: rgba(241, 245, 249, 0.92);
+        font-size: 9.5px;
+        font-weight: 500;
+        letter-spacing: 0.03em;
+        text-anchor: middle;
+        dominant-baseline: middle;
+      }
+
+      .terminal {
+        fill: none;
+        stroke: var(--genset-stroke);
+        stroke-width: var(--genset-stroke-w);
+        vector-effect: non-scaling-stroke;
+        filter:
+          drop-shadow(0 0 calc(var(--genset-glow-blur) * 0.45) var(--genset-glow-color))
+          drop-shadow(var(--genset-glow, 0 0 25px rgba(16, 185, 129, 0.2)));
+      }
+
+      .panel-box {
+        fill: rgba(10, 16, 29, 0.9);
+        stroke: rgba(241, 245, 249, 0.58);
+        stroke-width: 1.4;
+        vector-effect: non-scaling-stroke;
+      }
+
+      .dash {
+        stroke-dasharray: 5 4;
+      }
+
+      .muted {
+        stroke: #94a3b8;
+        filter: none;
+      }
+    </style>
+  </defs>
+
+  <g class="gen-visual-stack" font-family="system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif">
+    <rect class="fill" x="60" y="24" width="48" height="40" rx="0" ry="0" />
+    <text class="label" x="84" y="44">52I</text>
+    <line class="stroke" x1="84" y1="64" x2="84" y2="100" />
+
+    <circle class="fill" cx="84" cy="116" r="15" />
+    <circle class="fill" cx="84" cy="131" r="15" />
+    <line class="stroke" x1="84" y1="146" x2="84" y2="226" />
+
+    <rect class="fill" x="60" y="226" width="48" height="40" rx="0" ry="0" />
+    <text class="label" x="84" y="246">52G</text>
+    <line class="stroke" x1="84" y1="266" x2="84" y2="478" />
+
+    <line class="stroke" x1="84" y1="186" x2="144" y2="186" />
+    <line class="stroke" x1="144" y1="186" x2="144" y2="226" />
+    <rect class="fill" x="120" y="226" width="48" height="40" rx="0" ry="0" />
+    <text class="label" x="144" y="246">52X</text>
+    <line class="stroke" x1="144" y1="266" x2="144" y2="300" />
+
+    <circle class="fill" cx="144" cy="318" r="15" />
+    <circle class="fill" cx="144" cy="333" r="15" />
+    <line class="stroke" x1="144" y1="348" x2="144" y2="435.5" />
+
+    <rect class="panel-box" x="160" y="104" width="66" height="42" rx="0" ry="0" />
+    <text class="label-small" x="193" y="120">
+      <tspan x="193" dy="0">EM PWR</tspan>
+      <tspan x="193" dy="12">DIST</tspan>
+    </text>
+    <line class="stroke" x1="193" y1="146" x2="193" y2="435.5" />
+
+    <circle class="terminal muted" cx="144" cy="440" r="4.5" />
+    <circle class="terminal muted" cx="168" cy="482" r="4.5" />
+    <circle class="terminal muted" cx="193" cy="440" r="4.5" />
+
+    <line class="stroke dash muted" x1="168" y1="444" x2="168" y2="477.5" />
+    <line class="stroke" x1="168" y1="490" x2="168" y2="522" />
+
+    <circle class="fill" cx="84" cy="522" r="44" />
+    <path class="stroke" d="M 68 522 Q 76 508 84 522 T 100 522" fill="none" />
+    <line class="stroke" x1="128" y1="522" x2="168" y2="522" />
+  </g>
+</svg>

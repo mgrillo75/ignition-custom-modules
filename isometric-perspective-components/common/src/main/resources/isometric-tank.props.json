@@ -1,0 +1,96 @@
+{
+    "type": "object",
+    "additionalProperties": false,
+    "required": [
+        "bodyColor",
+        "accentColor",
+        "strokeColor",
+        "status"
+    ],
+    "properties": {
+        "bodyColor": {
+            "type": "string",
+            "format": "color",
+            "default": "#AFC0CE",
+            "description": "Main body fill color."
+        },
+        "accentColor": {
+            "type": "string",
+            "format": "color",
+            "default": "#38BDF8",
+            "description": "Accent color for highlights."
+        },
+        "strokeColor": {
+            "type": "string",
+            "format": "color",
+            "default": "#4A5F73",
+            "description": "Primary line/stroke color."
+        },
+        "status": {
+            "type": "string",
+            "enum": [
+                "off",
+                "running",
+                "fault"
+            ],
+            "default": "off",
+            "description": "Operational state."
+        },
+        "statusOffColor": {
+            "type": "string",
+            "format": "color",
+            "default": "#A0AEC0",
+            "description": "Status indicator color when status is off."
+        },
+        "statusRunningColor": {
+            "type": "string",
+            "format": "color",
+            "default": "#22C55E",
+            "description": "Status indicator color when status is running."
+        },
+        "statusFaultColor": {
+            "type": "string",
+            "format": "color",
+            "default": "#EF4444",
+            "description": "Status indicator color when status is fault."
+        },
+        "label": {
+            "type": "string",
+            "default": "Tank-301",
+            "description": "Primary display label."
+        },
+        "value": {
+            "type": "string",
+            "default": "65%",
+            "description": "Secondary value text."
+        },
+        "showLabel": {
+            "type": "boolean",
+            "default": true
+        },
+        "showValue": {
+            "type": "boolean",
+            "default": true
+        },
+        "showStatus": {
+            "type": "boolean",
+            "default": true
+        },
+        "labelColor": {
+            "type": "string",
+            "format": "color",
+            "default": "#1F2937"
+        },
+        "valueColor": {
+            "type": "string",
+            "format": "color",
+            "default": "#0C4A6E"
+        },
+        "style": {
+            "$ref": "urn:ignition-schema:schemas/style-properties.schema.json",
+            "default": {
+                "classes": ""
+            }
+        }
+    }
+}

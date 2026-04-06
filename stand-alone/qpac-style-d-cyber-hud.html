@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>QPAC Style D - Cyber HUD</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: "Open Sans", system-ui, sans-serif;
+      background: linear-gradient(135deg, #0e1020 0%, #111828 30%, #0e1020 60%, #131330 100%);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+    }
+    .gen-box {
+      position: relative;
+      width: 130px;
+      background: radial-gradient(ellipse at 50% 100%, hsl(200,80%,8%) 0%, #080818 70%);
+      border-radius: 12px;
+      padding: 16px 12px 12px;
+      transition: all 0.5s ease;
+    }
+    .gen-circle {
+      width: 76px;
+      height: 76px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 8px auto 0;
+      font-weight: 700;
+      font-size: 18px;
+      position: relative;
+      transition: all 0.5s ease;
+    }
+    .gen-power {
+      margin-top: 12px;
+      text-align: center;
+      font-family: monospace;
+      font-weight: 700;
+      font-size: 13px;
+      padding: 4px 12px;
+      border-radius: 4px;
+      min-width: 70px;
+      letter-spacing: 0.05em;
+      transition: all 0.3s ease;
+    }
+    .gen-power .unit { font-size: 11px; opacity: 0.5; }
+    @keyframes spin-gen-d { to { transform: rotate(360deg); } }
+    .spinner-overlay {
+      position: absolute;
+      inset: 0;
+      border-radius: 50%;
+      animation: spin-gen-d 3s linear infinite;
+    }
+    .toggle-btn {
+      margin-top: 12px;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: #0a0a20;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-left: auto;
+      margin-right: auto;
+      transition: all 0.3s ease;
+    }
+    .breaker-rect { cursor: pointer; }
+  </style>
+</head>
+<body>
+  <div class="gen-box" id="genBox">
+    <svg width="106" height="120" viewBox="0 0 106 120">
+      <defs>
+        <filter id="glow-d">
+          <feGaussianBlur stdDeviation="2.5" result="blur"/>
+          <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+        </filter>
+      </defs>
+      <line id="lineTop" x1="53" y1="0" x2="53" y2="40" stroke="#00e5ff" stroke-width="2.5" stroke-linecap="round"/>
+      <g class="breaker-rect" id="breakerGroup">
+        <rect id="breakerRect" x="33" y="40" width="40" height="35" rx="3" fill="#0a0a20" stroke="#00e5ff" stroke-width="1.5"/>
+        <g id="breakerClosed">
+          <rect x="38" y="52" width="30" height="4" rx="2" fill="#00e5ff" filter="url(#glow-d)"/>
+          <circle cx="40" cy="48" r="2" fill="#00e5ff" opacity="0.6"/>
+          <circle cx="66" cy="48" r="2" fill="#00e5ff" opacity="0.6"/>
+        </g>
+        <g id="breakerOpen" style="display: none;">
+          <line x1="42" y1="48" x2="64" y2="68" stroke="#ff1744" stroke-width="1.5"/>
+          <line x1="64" y1="48" x2="42" y2="68" stroke="#ff1744" stroke-width="1.5"/>
+        </g>
+      </g>
+      <line id="lineBottom" x1="53" y1="75" x2="53" y2="120" stroke="#00e5ff" stroke-width="2.5" stroke-linecap="round"/>
+      <g id="particles"></g>
+    </svg>
+    <div class="gen-circle" id="genCircle">
+      <div class="spinner-overlay" id="spinnerOverlay"></div>
+      <span style="position: relative; z-index: 10;">G4</span>
+    </div>
+    <button class="toggle-btn" id="toggleBtn">
+      <svg width="16" height="16" viewBox="0 0 16 16" id="toggleIcon"></svg>
+    </button>
+    <div class="gen-power" id="genPower">1400 <span class="unit">kW</span></div>
+  </div>
+
+  <script>
+    (function() {
+      const POWER = 1400;
+      let status = 'running';   // 'running' | 'standby' | 'stopped'
+      let breakerClosed = true;
+
+      const genBox = document.getElementById('genBox');
+      const lineTop = document.getElementById('lineTop');
+      const breakerRect = document.getElementById('breakerRect');
+      const breakerClosedEl = document.getElementById('breakerClosed');
+      const breakerOpenEl = document.getElementById('breakerOpen');
+      const lineBottom = document.getElementById('lineBottom');
+      const particles = document.getElementById('particles');
+      const genCircle = document.getElementById('genCircle');
+      const spinnerOverlay = document.getElementById('spinnerOverlay');
+      const toggleBtn = document.getElementById('toggleBtn');
+      const toggleIcon = document.getElementById('toggleIcon');
+      const genPower = document.getElementById('genPower');
+
+      function getColor() {
+        if (status === 'running') return '#00e5ff';
+        if (status === 'standby') return '#ffab00';
+        return '#ff1744';
+      }
+
+      function handleToggle() {
+        if (status === 'stopped') {
+          status = 'standby';
+        } else if (status === 'standby') {
+          status = 'running';
+          breakerClosed = true;
+        } else {
+          status = 'stopped';
+          breakerClosed = false;
+        }
+        render();
+      }
+
+      function handleBreakerClick() {
+        breakerClosed = !breakerClosed;
+        render();
+      }
+
+      function renderParticles() {
+        particles.innerHTML = '';
+        if (status === 'running' && breakerClosed) {
+          [0, 0.3, 0.6, 0.9].forEach(function(delay) {
+            const c = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+            c.setAttribute('cx', '53');
+            c.setAttribute('cy', '80');
+            c.setAttribute('r', '1.5');
+            c.setAttribute('fill', getColor());
+            c.setAttribute('opacity', '0.8');
+            const anim1 = document.createElementNS('http://www.w3.org/2000/svg', 'animate');
+            anim1.setAttribute('attributeName', 'cy');
+            anim1.setAttribute('values', '80;115');
+            anim1.setAttribute('dur', '0.8s');
+            anim1.setAttribute('begin', delay + 's');
+            anim1.setAttribute('repeatCount', 'indefinite');
+            const anim2 = document.createElementNS('http://www.w3.org/2000/svg', 'animate');
+            anim2.setAttribute('attributeName', 'opacity');
+            anim2.setAttribute('values', '0.9;0');
+            anim2.setAttribute('dur', '0.8s');
+            anim2.setAttribute('begin', delay + 's');
+            anim2.setAttribute('repeatCount', 'indefinite');
+            c.appendChild(anim1);
+            c.appendChild(anim2);
+            particles.appendChild(c);
+          });
+        }
+      }
+
+      function render() {
+        const color = getColor();
+        const isRunning = status === 'running';
+        const isStandby = status === 'standby';
+
+        genBox.style.border = '1px solid ' + color + '25';
+        genBox.style.boxShadow = isRunning ? '0 0 30px ' + color + '15' : 'none';
+
+        lineTop.setAttribute('stroke', breakerClosed ? color : '#3a3a5c');
+
+        breakerRect.setAttribute('stroke', breakerClosed ? color : '#ff1744');
+        breakerClosedEl.style.display = breakerClosed ? '' : 'none';
+        breakerOpenEl.style.display = breakerClosed ? 'none' : '';
+        if (breakerClosed) {
+          breakerClosedEl.querySelector('rect').setAttribute('fill', color);
+          breakerClosedEl.querySelectorAll('circle').forEach(function(c) { c.setAttribute('fill', color); });
+        }
+
+        let lineStroke = breakerClosed ? color : '#222';
+        let dashArray = '3 3';
+        if (breakerClosed && isRunning) dashArray = 'none';
+        else if (breakerClosed) dashArray = '6 3';
+        lineBottom.setAttribute('stroke', lineStroke);
+        lineBottom.setAttribute('stroke-dasharray', dashArray);
+
+        renderParticles();
+
+        genCircle.style.background = isRunning ? 'radial-gradient(circle, ' + color + '20 0%, transparent 70%)' : '#0a0a20';
+        genCircle.style.border = '2.5px solid ' + color;
+        genCircle.style.boxShadow = isRunning ? '0 0 20px ' + color + '40, 0 0 40px ' + color + '15' : 'none';
+        spinnerOverlay.style.display = isRunning ? '' : 'none';
+        spinnerOverlay.style.background = 'conic-gradient(from 0deg, transparent, ' + color + '30, transparent)';
+
+        toggleBtn.style.border = '2px solid ' + color;
+        toggleBtn.style.boxShadow = '0 0 10px ' + color + '30';
+
+        toggleIcon.innerHTML = isRunning
+          ? '<rect x="1" y="1" width="14" height="14" rx="2" fill="' + color + '"/>'
+          : '<polygon points="3,0 3,16 15,8" fill="' + color + '"/>';
+
+        genPower.innerHTML = (isRunning ? POWER : 0) + ' <span class="unit">kW</span>';
+        genPower.style.color = color;
+        genPower.style.background = color + '08';
+        genPower.style.border = '1px solid ' + color + '20';
+      }
+
+      document.getElementById('breakerGroup').addEventListener('click', handleBreakerClick);
+      toggleBtn.addEventListener('click', handleToggle);
+
+      render();
+    })();
+  </script>
+</body>
+</html>

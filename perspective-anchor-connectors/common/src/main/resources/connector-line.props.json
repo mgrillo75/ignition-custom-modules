@@ -1,0 +1,264 @@
+{
+    "type": "object",
+    "additionalProperties": false,
+    "required": [
+        "targetId",
+        "start",
+        "end",
+        "fromTargetId",
+        "fromAnchor",
+        "toTargetId",
+        "toAnchor",
+        "stroke",
+        "strokeWidth",
+        "cornerRadius",
+        "markerEnd",
+        "label",
+        "orthogonal",
+        "pollIntervalMs",
+        "showLabel",
+        "glowIntensity",
+        "anchorPoints",
+        "style"
+    ],
+    "properties": {
+        "targetId": {
+            "type": "string",
+            "default": "connectorLine"
+        },
+        "start": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+                "mode",
+                "x",
+                "y",
+                "targetId",
+                "anchorId"
+            ],
+            "default": {
+                "mode": "free",
+                "x": 120,
+                "y": 120,
+                "targetId": "",
+                "anchorId": ""
+            },
+            "properties": {
+                "mode": {
+                    "type": "string",
+                    "enum": [
+                        "free",
+                        "snapped"
+                    ],
+                    "default": "free"
+                },
+                "x": {
+                    "type": "number",
+                    "default": 120
+                },
+                "y": {
+                    "type": "number",
+                    "default": 120
+                },
+                "targetId": {
+                    "type": "string",
+                    "default": ""
+                },
+                "anchorId": {
+                    "type": "string",
+                    "default": ""
+                }
+            }
+        },
+        "end": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+                "mode",
+                "x",
+                "y",
+                "targetId",
+                "anchorId"
+            ],
+            "default": {
+                "mode": "free",
+                "x": 520,
+                "y": 320,
+                "targetId": "",
+                "anchorId": ""
+            },
+            "properties": {
+                "mode": {
+                    "type": "string",
+                    "enum": [
+                        "free",
+                        "snapped"
+                    ],
+                    "default": "free"
+                },
+                "x": {
+                    "type": "number",
+                    "default": 520
+                },
+                "y": {
+                    "type": "number",
+                    "default": 320
+                },
+                "targetId": {
+                    "type": "string",
+                    "default": ""
+                },
+                "anchorId": {
+                    "type": "string",
+                    "default": ""
+                }
+            }
+        },
+        "fromTargetId": {
+            "type": "string",
+            "default": "breakerA"
+        },
+        "fromAnchor": {
+            "type": "string",
+            "default": "right"
+        },
+        "toTargetId": {
+            "type": "string",
+            "default": "breakerB"
+        },
+        "toAnchor": {
+            "type": "string",
+            "default": "left"
+        },
+        "stroke": {
+            "type": "string",
+            "format": "color",
+            "default": "#0e7490"
+        },
+        "strokeWidth": {
+            "type": "number",
+            "default": 2,
+            "minimum": 0.1
+        },
+        "cornerRadius": {
+            "type": "number",
+            "default": 8,
+            "minimum": 0
+        },
+        "markerEnd": {
+            "type": "string",
+            "enum": [
+                "none",
+                "arrow"
+            ],
+            "default": "none"
+        },
+        "label": {
+            "type": "string",
+            "default": ""
+        },
+        "orthogonal": {
+            "type": "boolean",
+            "default": true
+        },
+        "pollIntervalMs": {
+            "type": "number",
+            "default": 250,
+            "minimum": 50
+        },
+        "showLabel": {
+            "type": "boolean",
+            "default": false
+        },
+        "glowIntensity": {
+            "type": "number",
+            "default": 0.65,
+            "minimum": 0,
+            "maximum": 1
+        },
+        "designerHandleRadius": {
+            "type": "number",
+            "default": 8,
+            "minimum": 4,
+            "maximum": 24
+        },
+        "snapRadius": {
+            "type": "number",
+            "default": 22,
+            "minimum": 8,
+            "maximum": 64
+        },
+        "anchorPoints": {
+            "type": "array",
+            "default": [
+                {
+                    "id": "start",
+                    "label": "Start",
+                    "position": 0,
+                    "snapRadius": 16
+                },
+                {
+                    "id": "quarter_1",
+                    "label": "Quarter 1",
+                    "position": 0.25,
+                    "snapRadius": 16
+                },
+                {
+                    "id": "middle",
+                    "label": "Middle",
+                    "position": 0.5,
+                    "snapRadius": 16
+                },
+                {
+                    "id": "quarter_3",
+                    "label": "Quarter 3",
+                    "position": 0.75,
+                    "snapRadius": 16
+                },
+                {
+                    "id": "end",
+                    "label": "End",
+                    "position": 1,
+                    "snapRadius": 16
+                }
+            ],
+            "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                    "id",
+                    "label",
+                    "position",
+                    "snapRadius"
+                ],
+                "properties": {
+                    "id": {
+                        "type": "string",
+                        "default": "anchor"
+                    },
+                    "label": {
+                        "type": "string",
+                        "default": ""
+                    },
+                    "position": {
+                        "type": "number",
+                        "minimum": 0,
+                        "maximum": 1,
+                        "default": 0.5
+                    },
+                    "snapRadius": {
+                        "type": "number",
+                        "minimum": 0,
+                        "default": 16
+                    }
+                }
+            }
+        },
+        "style": {
+            "$ref": "urn:ignition-schema:schemas/style-properties.schema.json",
+            "default": {
+                "classes": ""
+            }
+        }
+    }
+}

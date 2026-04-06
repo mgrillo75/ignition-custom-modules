@@ -1,0 +1,1646 @@
+{
+  "name": "",
+  "tagType": "Provider",
+  "tags": [
+    {
+      "name": "Exchange",
+      "tagType": "Folder",
+      "tags": [
+        {
+          "name": "CSSAnimation",
+          "tagType": "Folder",
+          "tags": [
+            {
+              "name": "RobotAnimation1",
+              "typeId": "Exchange/CSSAnimation/RobotAnimation",
+              "tagType": "UdtInstance",
+              "tags": [
+                {
+                  "name": "Outputs",
+                  "tagType": "Folder",
+                  "tags": [
+                    {
+                      "name": "Command",
+                      "tagType": "AtomicTag"
+                    },
+                    {
+                      "name": "PartCenterY",
+                      "tagType": "AtomicTag"
+                    },
+                    {
+                      "name": "J3X",
+                      "tagType": "AtomicTag"
+                    },
+                    {
+                      "name": "J3Y",
+                      "tagType": "AtomicTag"
+                    },
+                    {
+                      "name": "PartAngle",
+                      "tagType": "AtomicTag"
+                    },
+                    {
+                      "name": "PartCenterX",
+                      "tagType": "AtomicTag"
+                    }
+                  ]
+                },
+                {
+                  "name": "Inputs",
+                  "tagType": "Folder",
+                  "tags": [
+                    {
+                      "value": 40,
+                      "name": "PartLength",
+                      "tagType": "AtomicTag"
+                    },
+                    {
+                      "value": 100,
+                      "name": "PartWidth",
+                      "tagType": "AtomicTag"
+                    },
+                    {
+                      "value": -195.0,
+                      "name": "Theta",
+                      "tagType": "AtomicTag"
+                    },
+                    {
+                      "value": 114.615,
+                      "name": "Y",
+                      "tagType": "AtomicTag"
+                    },
+                    {
+                      "value": false,
+                      "name": "ExecuteXY",
+                      "tagType": "AtomicTag"
+                    },
+                    {
+                      "value": true,
+                      "name": "Part",
+                      "tagType": "AtomicTag"
+                    },
+                    {
+                      "value": 96.436,
+                      "name": "X",
+                      "tagType": "AtomicTag"
+                    }
+                  ]
+                },
+                {
+                  "name": "Arm1",
+                  "tagType": "UdtInstance",
+                  "tags": [
+                    {
+                      "name": "Inputs",
+                      "tagType": "Folder",
+                      "tags": [
+                        {
+                          "value": true,
+                          "name": "Enable",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "value": -270.0,
+                          "name": "Angle",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "name": "Width",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "value": 1000,
+                          "name": "Duration",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "name": "StopDelay",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "value": 110,
+                          "name": "Length",
+                          "tagType": "AtomicTag"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "Outputs",
+                      "tagType": "Folder",
+                      "tags": [
+                        {
+                          "value": 0,
+                          "name": "Offset",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "value": 90.0,
+                          "name": "Origin",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "name": "Complete",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "value": {
+                            "duration": 1000,
+                            "finishBy": 1689380913842,
+                            "transform": "rotate(-270.0deg)",
+                            "angle": -270.0,
+                            "timestamp": 1689380912842
+                          },
+                          "name": "Command",
+                          "tagType": "AtomicTag"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "name": "Arm3",
+                  "tagType": "UdtInstance",
+                  "tags": [
+                    {
+                      "name": "Outputs",
+                      "tagType": "Folder",
+                      "tags": [
+                        {
+                          "value": {
+                            "duration": 1000,
+                            "finishBy": 1689380913842,
+                            "transform": "rotate(-90.0deg)",
+                            "angle": -90.0,
+                            "timestamp": 1689380912842
+                          },
+                          "name": "Command",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "name": "Complete",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "value": 90.0,
+                          "name": "Origin",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "value": 0,
+                          "name": "Offset",
+                          "tagType": "AtomicTag"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "Inputs",
+                      "tagType": "Folder",
+                      "tags": [
+                        {
+                          "value": 1000,
+                          "name": "Duration",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "value": -90.0,
+                          "name": "Angle",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "name": "Width",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "name": "StopDelay",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "value": 75,
+                          "name": "Length",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "value": true,
+                          "name": "Enable",
+                          "tagType": "AtomicTag"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "name": "StateMachine",
+                  "tagType": "UdtInstance",
+                  "tags": [
+                    {
+                      "value": "{\"columns\":[{\"name\":\"Step\",\"type\":\"java.lang.Integer\"},{\"name\":\"Name\",\"type\":\"java.lang.String\"},{\"name\":\"DurationMS\",\"type\":\"java.lang.Integer\"},{\"name\":\"Interlocks\",\"type\":\"java.lang.String\"},{\"name\":\"TagWrites\",\"type\":\"java.lang.String\"},{\"name\":\"Permissives\",\"type\":\"java.lang.String\"},{\"name\":\"PassStep\",\"type\":\"java.lang.Integer\"},{\"name\":\"FailStep\",\"type\":\"java.lang.Integer\"}],\"rows\":[[2000,\"Move to pickup\",1000,\"[{\\\"rowAction\\\":\\\"\\\",\\\"tagPath\\\":\\\"[.]StateMachine/Controls/SafetyOK\\\",\\\"tagValue\\\":\\\"true\\\"},{\\\"rowAction\\\":\\\"\\\",\\\"tagPath\\\":\\\"[.]StateMachine/Controls/Running\\\",\\\"tagValue\\\":\\\"true\\\"}]\",\"[{\\\"rowAction\\\":\\\"\\\",\\\"tagPath\\\":\\\"[.]Inputs/Duration\\\",\\\"tagValue\\\":1000},{\\\"rowAction\\\":\\\"\\\",\\\"tagPath\\\":\\\"[.]Arm1/Inputs/Angle\\\",\\\"tagValue\\\":90},{\\\"rowAction\\\":\\\"\\\",\\\"tagPath\\\":\\\"[.]Arm2/Inputs/Angle\\\",\\\"tagValue\\\":-90},{\\\"rowAction\\\":\\\"\\\",\\\"tagPath\\\":\\\"[.]Arm3/Inputs/Angle\\\",\\\"tagValue\\\":90}]\",\"[{\\\"rowAction\\\":\\\"\\\",\\\"tagPath\\\":\\\"[.]../RobotAnimation2/StateMachine/CurrentStep/Step\\\",\\\"tagValue\\\":2300},{\\\"rowAction\\\":\\\"\\\",\\\"tagPath\\\":\\\"[.]../RobotAnimation2/StateMachine/CurrentStep/TimerComplete\\\",\\\"tagValue\\\":\\\"true\\\"}]\",2100,0],[2100,\"Pickup - On 1\",1000,\"[{\\\"rowAction\\\":\\\"\\\",\\\"tagPath\\\":\\\"[.]StateMachine/Controls/SafetyOK\\\",\\\"tagValue\\\":\\\"true\\\"},{\\\"rowAction\\\":\\\"\\\",\\\"tagPath\\\":\\\"[.]StateMachine/Controls/Running\\\",\\\"tagValue\\\":\\\"true\\\"}]\",\"[{\\\"rowAction\\\":\\\"\\\",\\\"tagPath\\\":\\\"[.]Inputs/Part\\\",\\\"tagValue\\\":true}]\",\"[]\",2110,0],[2110,\"Pickup - Off 2\",100,\"[{\\\"rowAction\\\":\\\"\\\",\\\"tagPath\\\":\\\"[.]StateMachine/Controls/SafetyOK\\\",\\\"tagValue\\\":\\\"true\\\"},{\\\"rowAction\\\":\\\"\\\",\\\"tagPath\\\":\\\"[.]StateMachine/Controls/Running\\\",\\\"tagValue\\\":\\\"true\\\"}]\",\"[{\\\"rowAction\\\":\\\"\\\",\\\"tagPath\\\":\\\"[.]../RobotAnimation2/Inputs/Part\\\",\\\"tagValue\\\":\\\"false\\\"}]\",\"null\",2200,0],[2200,\"Move to drop\",1000,\"[{\\\"rowAction\\\":\\\"\\\",\\\"tagPath\\\":\\\"[.]StateMachine/Controls/SafetyOK\\\",\\\"tagValue\\\":\\\"true\\\"},{\\\"rowAction\\\":\\\"\\\",\\\"tagPath\\\":\\\"[.]StateMachine/Controls/Running\\\",\\\"tagValue\\\":\\\"true\\\"}]\",\"[{\\\"rowAction\\\":\\\"\\\",\\\"tagPath\\\":\\\"[.]Inputs/Duration\\\",\\\"tagValue\\\":1000},{\\\"rowAction\\\":\\\"\\\",\\\"tagPath\\\":\\\"[.]Arm1/Inputs/Angle\\\",\\\"tagValue\\\":-270},{\\\"rowAction\\\":\\\"\\\",\\\"tagPath\\\":\\\"[.]Arm2/Inputs/Angle\\\",\\\"tagValue\\\":90},{\\\"rowAction\\\":\\\"\\\",\\\"tagPath\\\":\\\"[.]Arm3/Inputs/Angle\\\",\\\"tagValue\\\":-90}]\",\"[{\\\"rowAction\\\":\\\"\\\",\\\"tagPath\\\":\\\"[.]../RobotAnimation2/StateMachine/CurrentStep/Step\\\",\\\"tagValue\\\":2100},{\\\"rowAction\\\":\\\"\\\",\\\"tagPath\\\":\\\"[.]../RobotAnimation2/StateMachine/CurrentStep/TimerComplete\\\",\\\"tagValue\\\":\\\"true\\\"}]\",2300,0],[2300,\"Drop - On 2\",100,\"[{\\\"rowAction\\\":\\\"\\\",\\\"tagPath\\\":\\\"[.]StateMachine/Controls/SafetyOK\\\",\\\"tagValue\\\":\\\"true\\\"},{\\\"rowAction\\\":\\\"\\\",\\\"tagPath\\\":\\\"[.]StateMachine/Controls/Running\\\",\\\"tagValue\\\":\\\"true\\\"}]\",\"[{\\\"rowAction\\\":\\\"\\\",\\\"tagPath\\\":\\\"[.]../RobotAnimation2/Inputs/Part\\\",\\\"tagValue\\\":\\\"true\\\"}]\",\"[]\",2310,0],[2310,\"Drop - Off 1\",100,\"[{\\\"rowAction\\\":\\\"\\\",\\\"tagPath\\\":\\\"[.]StateMachine/Controls/SafetyOK\\\",\\\"tagValue\\\":\\\"true\\\"},{\\\"rowAction\\\":\\\"\\\",\\\"tagPath\\\":\\\"[.]StateMachine/Controls/Running\\\",\\\"tagValue\\\":\\\"true\\\"}]\",\"[{\\\"rowAction\\\":\\\"\\\",\\\"tagPath\\\":\\\"[.]Inputs/Part\\\",\\\"tagValue\\\":\\\"false\\\"}]\",\"null\",2000,0]]}",
+                      "name": "Steps",
+                      "tagType": "AtomicTag"
+                    },
+                    {
+                      "name": "Controls",
+                      "tagType": "Folder",
+                      "tags": [
+                        {
+                          "value": true,
+                          "name": "SafetyOK",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "name": "Running",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "value": 1,
+                          "name": "HOA",
+                          "tagType": "AtomicTag"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "CurrentStep",
+                      "tagType": "Folder",
+                      "tags": [
+                        {
+                          "value": "Move to drop",
+                          "name": "Name",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "value": 1689380912842,
+                          "name": "TimerTimestamp",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "value": false,
+                          "name": "PermissivesOK",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "name": "Script",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "value": 2300,
+                          "name": "PassStep",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "value": true,
+                          "name": "TagWritesOK",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "value": "{\"columns\":[{\"name\":\"originalPath\",\"type\":\"java.lang.String\"},{\"name\":\"tagPath\",\"type\":\"java.lang.String\"},{\"name\":\"tagValue\",\"type\":\"java.lang.String\"},{\"name\":\"currentValue\",\"type\":\"java.lang.String\"}],\"rows\":[[\"[.]../RobotAnimation2/StateMachine/CurrentStep/Step\",\"Exchange/CSSAnimation/RobotAnimation2/StateMachine/CurrentStep/Step\",\"2100\",\"2000\"],[\"[.]../RobotAnimation2/StateMachine/CurrentStep/TimerComplete\",\"Exchange/CSSAnimation/RobotAnimation2/StateMachine/CurrentStep/TimerComplete\",\"true\",\"false\"]]}",
+                          "name": "Permissives",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "value": "{\"columns\":[{\"name\":\"originalPath\",\"type\":\"java.lang.String\"},{\"name\":\"tagPath\",\"type\":\"java.lang.String\"},{\"name\":\"tagValue\",\"type\":\"java.lang.String\"},{\"name\":\"currentValue\",\"type\":\"java.lang.String\"}],\"rows\":[[\"[.]StateMachine/Controls/SafetyOK\",\"Exchange/CSSAnimation/RobotAnimation1/StateMachine/Controls/SafetyOK\",\"true\",\"true\"],[\"[.]StateMachine/Controls/Running\",\"Exchange/CSSAnimation/RobotAnimation1/StateMachine/Controls/Running\",\"true\",\"true\"]]}",
+                          "name": "Interlocks",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "value": 2200,
+                          "name": "LastStep",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "value": "{\"columns\":[{\"name\":\"originalPath\",\"type\":\"java.lang.String\"},{\"name\":\"tagPath\",\"type\":\"java.lang.String\"},{\"name\":\"tagValue\",\"type\":\"java.lang.String\"},{\"name\":\"currentValue\",\"type\":\"java.lang.String\"}],\"rows\":[[\"[.]Inputs/Duration\",\"Exchange/CSSAnimation/RobotAnimation1/Inputs/Duration\",\"1000\",\"\"],[\"[.]Arm1/Inputs/Angle\",\"Exchange/CSSAnimation/RobotAnimation1/Arm1/Inputs/Angle\",\"-270\",\"\"],[\"[.]Arm2/Inputs/Angle\",\"Exchange/CSSAnimation/RobotAnimation1/Arm2/Inputs/Angle\",\"90\",\"\"],[\"[.]Arm3/Inputs/Angle\",\"Exchange/CSSAnimation/RobotAnimation1/Arm3/Inputs/Angle\",\"-90\",\"\"]]}",
+                          "name": "TagWrites",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "name": "TimerComplete",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "value": 1000,
+                          "name": "DurationMS",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "value": 0,
+                          "name": "TimerOffset",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "value": true,
+                          "name": "InterlocksOK",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "value": {
+                            "Idle": "Waiting for permissives, step 2200"
+                          },
+                          "name": "Status",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "value": 2200,
+                          "name": "Step",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "value": 0,
+                          "name": "FailStep",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "name": "Timer",
+                          "tagType": "AtomicTag"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "UDTpath",
+                      "tagType": "AtomicTag"
+                    }
+                  ]
+                },
+                {
+                  "name": "Arm2",
+                  "tagType": "UdtInstance",
+                  "tags": [
+                    {
+                      "name": "Outputs",
+                      "tagType": "Folder",
+                      "tags": [
+                        {
+                          "name": "Complete",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "value": -90.0,
+                          "name": "Origin",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "value": 0,
+                          "name": "Offset",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "value": {
+                            "duration": 1000,
+                            "finishBy": 1689380913842,
+                            "transform": "rotate(90.0deg)",
+                            "angle": 90.0,
+                            "timestamp": 1689380912842
+                          },
+                          "name": "Command",
+                          "tagType": "AtomicTag"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "Inputs",
+                      "tagType": "Folder",
+                      "tags": [
+                        {
+                          "value": 1000,
+                          "name": "Duration",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "value": 90.0,
+                          "name": "Angle",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "name": "Width",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "value": true,
+                          "name": "Enable",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "name": "StopDelay",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "value": 60,
+                          "name": "Length",
+                          "tagType": "AtomicTag"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "RobotAnimation2",
+              "typeId": "Exchange/CSSAnimation/RobotAnimation",
+              "tagType": "UdtInstance",
+              "tags": [
+                {
+                  "name": "Inputs",
+                  "tagType": "Folder",
+                  "tags": [
+                    {
+                      "value": 60.0,
+                      "name": "Y",
+                      "tagType": "AtomicTag"
+                    },
+                    {
+                      "value": false,
+                      "name": "Part",
+                      "tagType": "AtomicTag"
+                    },
+                    {
+                      "value": 40,
+                      "name": "PartLength",
+                      "tagType": "AtomicTag"
+                    },
+                    {
+                      "value": 630.0,
+                      "name": "Theta",
+                      "tagType": "AtomicTag"
+                    },
+                    {
+                      "value": 100,
+                      "name": "PartWidth",
+                      "tagType": "AtomicTag"
+                    },
+                    {
+                      "value": -164.0,
+                      "name": "X",
+                      "tagType": "AtomicTag"
+                    },
+                    {
+                      "value": false,
+                      "name": "ExecuteXY",
+                      "tagType": "AtomicTag"
+                    }
+                  ]
+                },
+                {
+                  "name": "Arm2",
+                  "tagType": "UdtInstance",
+                  "tags": [
+                    {
+                      "name": "Inputs",
+                      "tagType": "Folder",
+                      "tags": [
+                        {
+                          "value": 100,
+                          "name": "Length",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "value": false,
+                          "name": "Enable",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "name": "StopDelay",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "value": 40,
+                          "name": "Width",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "value": 253.7875359790248,
+                          "name": "Angle",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "value": 2000,
+                          "name": "Duration",
+                          "tagType": "AtomicTag"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "Outputs",
+                      "tagType": "Folder",
+                      "tags": [
+                        {
+                          "name": "Complete",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "value": 242.14730455976658,
+                          "name": "Origin",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "value": {
+                            "duration": 2000,
+                            "finishBy": 1689380917595,
+                            "transform": "rotate(253.787535979deg)",
+                            "angle": 253.78753597902482,
+                            "timestamp": 1689380915595
+                          },
+                          "name": "Command",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "value": 0,
+                          "name": "Offset",
+                          "tagType": "AtomicTag"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "name": "Arm3",
+                  "tagType": "UdtInstance",
+                  "tags": [
+                    {
+                      "name": "Outputs",
+                      "tagType": "Folder",
+                      "tags": [
+                        {
+                          "value": 0,
+                          "name": "Offset",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "value": {
+                            "duration": 2000,
+                            "finishBy": 1689380917595,
+                            "transform": "rotate(-276.912128621deg)",
+                            "angle": -276.9121286206631,
+                            "timestamp": 1689380915595
+                          },
+                          "name": "Command",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "name": "Complete",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "value": -265.5359744879089,
+                          "name": "Origin",
+                          "tagType": "AtomicTag"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "Inputs",
+                      "tagType": "Folder",
+                      "tags": [
+                        {
+                          "value": -276.9121286206631,
+                          "name": "Angle",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "value": false,
+                          "name": "Enable",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "value": 2000,
+                          "name": "Duration",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "value": 40,
+                          "name": "Width",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "value": 60,
+                          "name": "Length",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "name": "StopDelay",
+                          "tagType": "AtomicTag"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "name": "Outputs",
+                  "tagType": "Folder",
+                  "tags": [
+                    {
+                      "name": "PartAngle",
+                      "tagType": "AtomicTag"
+                    },
+                    {
+                      "name": "Command",
+                      "tagType": "AtomicTag"
+                    },
+                    {
+                      "name": "J3X",
+                      "tagType": "AtomicTag"
+                    },
+                    {
+                      "name": "J3Y",
+                      "tagType": "AtomicTag"
+                    },
+                    {
+                      "name": "PartCenterY",
+                      "tagType": "AtomicTag"
+                    },
+                    {
+                      "name": "PartCenterX",
+                      "tagType": "AtomicTag"
+                    }
+                  ]
+                },
+                {
+                  "name": "StateMachine",
+                  "tagType": "UdtInstance",
+                  "tags": [
+                    {
+                      "name": "CurrentStep",
+                      "tagType": "Folder",
+                      "tags": [
+                        {
+                          "name": "Timer",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "value": "{\"columns\":[{\"name\":\"originalPath\",\"type\":\"java.lang.String\"},{\"name\":\"tagPath\",\"type\":\"java.lang.String\"},{\"name\":\"tagValue\",\"type\":\"java.lang.String\"},{\"name\":\"currentValue\",\"type\":\"java.lang.String\"}],\"rows\":[[\"[.]Inputs/X\",\"Exchange/CSSAnimation/RobotAnimation2/Inputs/X\",\"-164\",\"\"],[\"[.]Inputs/Y\",\"Exchange/CSSAnimation/RobotAnimation2/Inputs/Y\",\"60\",\"\"],[\"[.]Inputs/Theta\",\"Exchange/CSSAnimation/RobotAnimation2/Inputs/Theta\",\"630\",\"\"],[\"[.]Inputs/ExecuteXY\",\"Exchange/CSSAnimation/RobotAnimation2/Inputs/ExecuteXY\",\"True\",\"\"]]}",
+                          "name": "TagWrites",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "value": 0,
+                          "name": "TimerOffset",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "value": 1689380915573,
+                          "name": "TimerTimestamp",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "value": "{\"columns\":[{\"name\":\"originalPath\",\"type\":\"java.lang.String\"},{\"name\":\"tagPath\",\"type\":\"java.lang.String\"},{\"name\":\"tagValue\",\"type\":\"java.lang.String\"},{\"name\":\"currentValue\",\"type\":\"java.lang.String\"}],\"rows\":[[\"[.]StateMachine/Controls/SafetyOK\",\"Exchange/CSSAnimation/RobotAnimation2/StateMachine/Controls/SafetyOK\",\"true\",\"true\"],[\"[.]StateMachine/Controls/Running\",\"Exchange/CSSAnimation/RobotAnimation2/StateMachine/Controls/Running\",\"true\",\"true\"]]}",
+                          "name": "Interlocks",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "value": "{\"columns\":[{\"name\":\"originalPath\",\"type\":\"java.lang.String\"},{\"name\":\"tagPath\",\"type\":\"java.lang.String\"},{\"name\":\"tagValue\",\"type\":\"java.lang.String\"},{\"name\":\"currentValue\",\"type\":\"java.lang.String\"}],\"rows\":[]}",
+                          "name": "Permissives",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "name": "Script",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "value": 2100,
+                          "name": "PassStep",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "value": true,
+                          "name": "TagWritesOK",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "value": "Move to start",
+                          "name": "Name",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "value": 0,
+                          "name": "FailStep",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "value": 2000,
+                          "name": "Step",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "value": {
+                            "Running": "Moving to X: -164.0 Y: 60.0 Theta: 630.0"
+                          },
+                          "name": "Status",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "name": "TimerComplete",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "value": true,
+                          "name": "InterlocksOK",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "value": 2000,
+                          "name": "DurationMS",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "value": 2000,
+                          "name": "LastStep",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "value": true,
+                          "name": "PermissivesOK",
+                          "tagType": "AtomicTag"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "Controls",
+                      "tagType": "Folder",
+                      "tags": [
+                        {
+                          "value": 1,
+                          "name": "HOA",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "value": true,
+                          "name": "SafetyOK",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "name": "Running",
+                          "tagType": "AtomicTag"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "UDTpath",
+                      "tagType": "AtomicTag"
+                    },
+                    {
+                      "value": "{\"columns\":[{\"name\":\"Step\",\"type\":\"java.lang.Integer\"},{\"name\":\"Name\",\"type\":\"java.lang.String\"},{\"name\":\"DurationMS\",\"type\":\"java.lang.Integer\"},{\"name\":\"Interlocks\",\"type\":\"java.lang.String\"},{\"name\":\"TagWrites\",\"type\":\"java.lang.String\"},{\"name\":\"Permissives\",\"type\":\"java.lang.String\"},{\"name\":\"PassStep\",\"type\":\"java.lang.Integer\"},{\"name\":\"FailStep\",\"type\":\"java.lang.Integer\"}],\"rows\":[[1990,\"Move to pre start\",1000,\"[{\\\"rowAction\\\":\\\"\\\",\\\"tagPath\\\":\\\"[.]StateMachine/Controls/SafetyOK\\\",\\\"tagValue\\\":\\\"true\\\"},{\\\"rowAction\\\":\\\"\\\",\\\"tagPath\\\":\\\"[.]StateMachine/Controls/Running\\\",\\\"tagValue\\\":\\\"true\\\"}]\",\"[{\\\"rowAction\\\":\\\"\\\",\\\"tagPath\\\":\\\"[.]Inputs/X\\\",\\\"tagValue\\\":-144},{\\\"rowAction\\\":\\\"\\\",\\\"tagPath\\\":\\\"[.]Inputs/Y\\\",\\\"tagValue\\\":60},{\\\"rowAction\\\":\\\"\\\",\\\"tagPath\\\":\\\"[.]Inputs/Theta\\\",\\\"tagValue\\\":270},{\\\"rowAction\\\":\\\"\\\",\\\"tagPath\\\":\\\"[.]Inputs/ExecuteXY\\\",\\\"tagValue\\\":true}]\",\"[{\\\"rowAction\\\":\\\"\\\",\\\"tagPath\\\":\\\"[.]../RobotAnimation1/StateMachine/CurrentStep/Step\\\",\\\"tagValue\\\":2200},{\\\"rowAction\\\":\\\"\\\",\\\"tagPath\\\":\\\"[.]../RobotAnimation1/StateMachine/CurrentStep/TimerComplete\\\",\\\"tagValue\\\":\\\"true\\\"},{\\\"rowAction\\\":\\\"\\\",\\\"tagPath\\\":\\\"[.]../RobotAnimation1/StateMachine/Controls/Running\\\",\\\"tagValue\\\":\\\"true\\\"}]\",2000,0],[2000,\"Move to start\",2000,\"[{\\\"rowAction\\\":\\\"\\\",\\\"tagPath\\\":\\\"[.]StateMachine/Controls/SafetyOK\\\",\\\"tagValue\\\":\\\"true\\\"},{\\\"rowAction\\\":\\\"\\\",\\\"tagPath\\\":\\\"[.]StateMachine/Controls/Running\\\",\\\"tagValue\\\":\\\"true\\\"}]\",\"[{\\\"rowAction\\\":\\\"\\\",\\\"tagPath\\\":\\\"[.]Inputs/X\\\",\\\"tagValue\\\":-164},{\\\"rowAction\\\":\\\"\\\",\\\"tagPath\\\":\\\"[.]Inputs/Y\\\",\\\"tagValue\\\":60},{\\\"rowAction\\\":\\\"\\\",\\\"tagPath\\\":\\\"[.]Inputs/Theta\\\",\\\"tagValue\\\":630},{\\\"rowAction\\\":\\\"\\\",\\\"tagPath\\\":\\\"[.]Inputs/ExecuteXY\\\",\\\"tagValue\\\":true}]\",\"[]\",2100,0],[2100,\"Pickup\",100,\"[{\\\"rowAction\\\":\\\"\\\",\\\"tagPath\\\":\\\"[.]StateMachine/Controls/SafetyOK\\\",\\\"tagValue\\\":\\\"true\\\"},{\\\"rowAction\\\":\\\"\\\",\\\"tagPath\\\":\\\"[.]StateMachine/Controls/Running\\\",\\\"tagValue\\\":\\\"true\\\"}]\",\"[]\",\"[{\\\"rowAction\\\":\\\"\\\",\\\"tagPath\\\":\\\"[.]Inputs/Part\\\",\\\"tagValue\\\":\\\"true\\\"}]\",2150,0],[2150,\"Wait before move\",300,\"[{\\\"rowAction\\\":\\\"\\\",\\\"tagPath\\\":\\\"[.]StateMachine/Controls/SafetyOK\\\",\\\"tagValue\\\":\\\"true\\\"},{\\\"rowAction\\\":\\\"\\\",\\\"tagPath\\\":\\\"[.]StateMachine/Controls/Running\\\",\\\"tagValue\\\":\\\"true\\\"}]\",\"null\",\"null\",2500,0],[2190,\"Move to pre drop\",1000,\"[{\\\"rowAction\\\":\\\"\\\",\\\"tagPath\\\":\\\"[.]StateMachine/Controls/SafetyOK\\\",\\\"tagValue\\\":\\\"true\\\"},{\\\"rowAction\\\":\\\"\\\",\\\"tagPath\\\":\\\"[.]StateMachine/Controls/Running\\\",\\\"tagValue\\\":\\\"true\\\"}]\",\"[{\\\"rowAction\\\":\\\"\\\",\\\"tagPath\\\":\\\"[.]Inputs/X\\\",\\\"tagValue\\\":-144},{\\\"rowAction\\\":\\\"\\\",\\\"tagPath\\\":\\\"[.]Inputs/Y\\\",\\\"tagValue\\\":-60},{\\\"rowAction\\\":\\\"\\\",\\\"tagPath\\\":\\\"[.]Inputs/Theta\\\",\\\"tagValue\\\":270},{\\\"rowAction\\\":\\\"\\\",\\\"tagPath\\\":\\\"[.]Inputs/ExecuteXY\\\",\\\"tagValue\\\":true}]\",\"[{\\\"rowAction\\\":\\\"\\\",\\\"tagPath\\\":\\\"[.]../RobotAnimation1/StateMachine/CurrentStep/Step\\\",\\\"tagValue\\\":2000},{\\\"rowAction\\\":\\\"\\\",\\\"tagPath\\\":\\\"[.]../RobotAnimation1/StateMachine/CurrentStep/TimerComplete\\\",\\\"tagValue\\\":\\\"true\\\"},{\\\"rowAction\\\":\\\"\\\",\\\"tagPath\\\":\\\"[.]../RobotAnimation1/StateMachine/Controls/Running\\\",\\\"tagValue\\\":\\\"true\\\"}]\",2200,3000],[2200,\"Move to drop\",2000,\"[{\\\"rowAction\\\":\\\"\\\",\\\"tagPath\\\":\\\"[.]StateMachine/Controls/SafetyOK\\\",\\\"tagValue\\\":\\\"true\\\"},{\\\"rowAction\\\":\\\"\\\",\\\"tagPath\\\":\\\"[.]StateMachine/Controls/Running\\\",\\\"tagValue\\\":\\\"true\\\"}]\",\"[{\\\"rowAction\\\":\\\"\\\",\\\"tagPath\\\":\\\"[.]Inputs/X\\\",\\\"tagValue\\\":-164},{\\\"rowAction\\\":\\\"\\\",\\\"tagPath\\\":\\\"[.]Inputs/Y\\\",\\\"tagValue\\\":-60},{\\\"rowAction\\\":\\\"\\\",\\\"tagPath\\\":\\\"[.]Inputs/Theta\\\",\\\"tagValue\\\":270},{\\\"rowAction\\\":\\\"\\\",\\\"tagPath\\\":\\\"[.]Inputs/ExecuteXY\\\",\\\"tagValue\\\":true}]\",\"[]\",2300,0],[2300,\"Drop\",100,\"[{\\\"rowAction\\\":\\\"\\\",\\\"tagPath\\\":\\\"[.]StateMachine/Controls/SafetyOK\\\",\\\"tagValue\\\":\\\"true\\\"},{\\\"rowAction\\\":\\\"\\\",\\\"tagPath\\\":\\\"[.]StateMachine/Controls/Running\\\",\\\"tagValue\\\":\\\"true\\\"}]\",\"[]\",\"[{\\\"rowAction\\\":\\\"\\\",\\\"tagPath\\\":\\\"[.]Inputs/Part\\\",\\\"tagValue\\\":\\\"false\\\"}]\",2350,0],[2350,\"Wait before move\",300,\"[{\\\"rowAction\\\":\\\"\\\",\\\"tagPath\\\":\\\"[.]StateMachine/Controls/SafetyOK\\\",\\\"tagValue\\\":\\\"true\\\"},{\\\"rowAction\\\":\\\"\\\",\\\"tagPath\\\":\\\"[.]StateMachine/Controls/Running\\\",\\\"tagValue\\\":\\\"true\\\"}]\",\"null\",\"null\",2500,0],[2500,\"Rotate 180\",1000,\"[{\\\"rowAction\\\":\\\"\\\",\\\"tagPath\\\":\\\"[.]StateMachine/Controls/SafetyOK\\\",\\\"tagValue\\\":\\\"true\\\"},{\\\"rowAction\\\":\\\"\\\",\\\"tagPath\\\":\\\"[.]StateMachine/Controls/Running\\\",\\\"tagValue\\\":\\\"true\\\"}]\",\"[{\\\"rowAction\\\":\\\"\\\",\\\"tagPath\\\":\\\"[.]Arm1/Inputs/Angle\\\",\\\"tagValue\\\":150},{\\\"rowAction\\\":\\\"\\\",\\\"tagPath\\\":\\\"[.]Arm2/Inputs/Angle\\\",\\\"tagValue\\\":240},{\\\"rowAction\\\":\\\"\\\",\\\"tagPath\\\":\\\"[.]Arm3/Inputs/Angle\\\",\\\"tagValue\\\":-120}]\",\"[{\\\"rowAction\\\":\\\"\\\",\\\"tagPath\\\":\\\"[.]Inputs/Part\\\",\\\"tagValue\\\":\\\"false\\\"}]\",1990,2190],[3000,\"Dance left\",1000,\"[{\\\"rowAction\\\":\\\"\\\",\\\"tagPath\\\":\\\"[.]StateMachine/Controls/SafetyOK\\\",\\\"tagValue\\\":\\\"true\\\"},{\\\"rowAction\\\":\\\"\\\",\\\"tagPath\\\":\\\"[.]StateMachine/Controls/Running\\\",\\\"tagValue\\\":\\\"true\\\"}]\",\"[{\\\"rowAction\\\":\\\"\\\",\\\"tagPath\\\":\\\"[.]Arm1/Inputs/Angle\\\",\\\"tagValue\\\":-15},{\\\"rowAction\\\":\\\"\\\",\\\"tagPath\\\":\\\"[.]Arm2/Inputs/Angle\\\",\\\"tagValue\\\":-15},{\\\"rowAction\\\":\\\"\\\",\\\"tagPath\\\":\\\"[.]Arm3/Inputs/Angle\\\",\\\"tagValue\\\":-60}]\",\"[{\\\"rowAction\\\":\\\"\\\",\\\"tagPath\\\":\\\"[.]../RobotAnimation1/StateMachine/CurrentStep/Step\\\",\\\"tagValue\\\":2000},{\\\"rowAction\\\":\\\"\\\",\\\"tagPath\\\":\\\"[.]../RobotAnimation1/StateMachine/CurrentStep/TimerComplete\\\",\\\"tagValue\\\":\\\"true\\\"}]\",2190,3100],[3100,\"Dance right\",1000,\"[{\\\"rowAction\\\":\\\"\\\",\\\"tagPath\\\":\\\"[.]StateMachine/Controls/SafetyOK\\\",\\\"tagValue\\\":\\\"true\\\"},{\\\"rowAction\\\":\\\"\\\",\\\"tagPath\\\":\\\"[.]StateMachine/Controls/Running\\\",\\\"tagValue\\\":\\\"true\\\"}]\",\"[{\\\"rowAction\\\":\\\"\\\",\\\"tagPath\\\":\\\"[.]Arm1/Inputs/Angle\\\",\\\"tagValue\\\":15},{\\\"rowAction\\\":\\\"\\\",\\\"tagPath\\\":\\\"[.]Arm2/Inputs/Angle\\\",\\\"tagValue\\\":15},{\\\"rowAction\\\":\\\"\\\",\\\"tagPath\\\":\\\"[.]Arm3/Inputs/Angle\\\",\\\"tagValue\\\":60}]\",\"[{\\\"rowAction\\\":\\\"\\\",\\\"tagPath\\\":\\\"[.]../RobotAnimation1/StateMachine/CurrentStep/Step\\\",\\\"tagValue\\\":2000},{\\\"rowAction\\\":\\\"\\\",\\\"tagPath\\\":\\\"[.]../RobotAnimation1/StateMachine/CurrentStep/TimerComplete\\\",\\\"tagValue\\\":\\\"true\\\"}]\",2190,3000]]}",
+                      "name": "Steps",
+                      "tagType": "AtomicTag"
+                    }
+                  ]
+                },
+                {
+                  "name": "Arm1",
+                  "tagType": "UdtInstance",
+                  "tags": [
+                    {
+                      "name": "Outputs",
+                      "tagType": "Folder",
+                      "tags": [
+                        {
+                          "name": "Complete",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "value": {
+                            "duration": 2000,
+                            "finishBy": 1689380917595,
+                            "transform": "rotate(293.124592642deg)",
+                            "angle": 293.1245926416383,
+                            "timestamp": 1689380915595
+                          },
+                          "name": "Command",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "value": 293.38866992814235,
+                          "name": "Origin",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "value": 0,
+                          "name": "Offset",
+                          "tagType": "AtomicTag"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "Inputs",
+                      "tagType": "Folder",
+                      "tags": [
+                        {
+                          "value": 40,
+                          "name": "Width",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "name": "StopDelay",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "value": false,
+                          "name": "Enable",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "value": 100,
+                          "name": "Length",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "value": 293.1245926416383,
+                          "name": "Angle",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "value": 2000,
+                          "name": "Duration",
+                          "tagType": "AtomicTag"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "_types_",
+      "tagType": "Folder",
+      "tags": [
+        {
+          "name": "Exchange",
+          "tagType": "Folder",
+          "tags": [
+            {
+              "name": "CSSAnimation",
+              "tagType": "Folder",
+              "tags": [
+                {
+                  "name": "Joint",
+                  "tagType": "UdtType",
+                  "tags": [
+                    {
+                      "name": "Inputs",
+                      "tagType": "Folder",
+                      "tags": [
+                        {
+                          "valueSource": "memory",
+                          "documentation": "Value of duration in milliseconds.",
+                          "name": "Duration",
+                          "tooltip": "",
+                          "value": 1000,
+                          "tagType": "AtomicTag",
+                          "engUnit": "ms"
+                        },
+                        {
+                          "valueSource": "memory",
+                          "documentation": "Length of the arm.",
+                          "name": "Length",
+                          "value": 100,
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "valueSource": "memory",
+                          "documentation": "Delay in milliseconds before animation comes to a stop.",
+                          "name": "StopDelay",
+                          "value": 300,
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "valueSource": "memory",
+                          "documentation": "Width of the arm.",
+                          "name": "Width",
+                          "value": 40,
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "valueSource": "memory",
+                          "eventScripts": [
+                            {
+                              "eventid": "valueChanged",
+                              "script": "\ttags \u003d system.tag.readBlocking([\n\t\t \"[.]../Outputs/Command\"\n\t\t,\"[.]StopDelay\"\n\t\t,\"[.]Duration\"\n\t\t,\"[.]Angle\"\n\t\t,\"[.]../Outputs/Offset\"\n\t\t,\"[.]../Outputs/Origin\"\n\t])\n\tcommand   \u003d tags[0]\n\tstopDelay \u003d tags[1].value\n\tduration  \u003d tags[2].value\n\tangle     \u003d tags[3].value\n\toffset    \u003d tags[4].value\n\torigin    \u003d tags[5].value\n\t\t\n\tif currentValue.value \u003d\u003d False:\n\t\tlastAction \u003d max(command.timestamp, previousValue.timestamp)\n\t\t\n\t\toffset \u003d offset + stopDelay + system.date.millisBetween(lastAction, currentValue.timestamp)\n\t\tif offset\u003e\u003dduration:\n\t\t\toffset \u003d duration\n\t\t\tpauseAngle \u003d angle\n\t\telse:\n\t\t\tpauseAngle \u003d origin + 1.0*offset/duration*(angle-origin)\n\t\t\n\t\tnewCommand \u003d {\n\t\t\t\u0027finishBy\u0027: system.date.toMillis(currentValue.timestamp) + stopDelay\n\t\t\t,\u0027transform\u0027:\u0027rotate(%sdeg)\u0027%pauseAngle\n\t\t\t,\u0027angle\u0027: pauseAngle\n\t\t\t,\u0027duration\u0027: stopDelay\n\t\t\t,\u0027timestamp\u0027 : system.date.toMillis(currentValue.timestamp)\n\t\t}\n\telse:\n\t\tnewCommand \u003d {\n\t\t\t\u0027finishBy\u0027: system.date.toMillis(currentValue.timestamp) + duration - offset\n\t\t\t,\u0027transform\u0027:\u0027rotate(%sdeg)\u0027%angle\n\t\t\t,\u0027angle\u0027: angle\n\t\t\t,\u0027duration\u0027: duration - offset\n\t\t\t,\u0027timestamp\u0027 : system.date.toMillis(currentValue.timestamp)\n\t\t}\n\t\t\n\ttagPaths \u003d [\"[.]../Outputs/Command\",\"[.]../Outputs/Offset\"]\n\tvalues \u003d [system.util.jsonEncode(newCommand),offset]\n\tsystem.tag.writeBlocking(tagPaths, values)"
+                            }
+                          ],
+                          "dataType": "Boolean",
+                          "documentation": "Determines if animation should be running or not, see script.",
+                          "name": "Enable",
+                          "value": true,
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "tooltip": {
+                            "bindType": "parameter",
+                            "binding": "{InstanceName} Angle"
+                          },
+                          "valueSource": "memory",
+                          "eventScripts": [
+                            {
+                              "eventid": "valueChanged",
+                              "script": "\ttags \u003d system.tag.readBlocking([\n\t\t \"[.]../Outputs/Command\"\n\t\t,\"[.]Duration\"\n\t])\n\tcommand  \u003d tags[0]\n\tduration \u003d tags[1].value\n\t\n\tnewCommand \u003d {\n\t\t\u0027finishBy\u0027: system.date.toMillis(currentValue.timestamp) + duration\n\t\t,\u0027transform\u0027:\u0027rotate(%sdeg)\u0027%currentValue.value\n\t\t,\u0027angle\u0027: currentValue.value\n\t\t,\u0027duration\u0027: duration\n\t\t,\u0027timestamp\u0027 : system.date.toMillis(currentValue.timestamp)\n\t}\n\t\n\ttagPaths \u003d [\"[.]../Outputs/Origin\",\"[.]../Outputs/Command\",\"[.]../Outputs/Offset\",\"[.]Enable\"]\n\tvalues \u003d [command.value.angle,system.util.jsonEncode(newCommand),0,1]\n\tsystem.tag.writeBlocking(tagPaths, values)"
+                            }
+                          ],
+                          "dataType": "Float8",
+                          "documentation": "Value of current angle, see script.",
+                          "name": "Angle",
+                          "value": 0.0,
+                          "tagType": "AtomicTag"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "Outputs",
+                      "tagType": "Folder",
+                      "tags": [
+                        {
+                          "valueSource": "memory",
+                          "dataType": "Document",
+                          "documentation": "Value is generated by Angle and Enable tag scripts. By having command be one document tag many race conditions are eliminated where angle but not duration are not updated at exact same time.",
+                          "name": "Command",
+                          "value": {
+                            "finishBy": "Tue Jun 20 09:15:13 PDT 2023",
+                            "transform": "rotate(45deg)",
+                            "angle": 0,
+                            "duration": 1000
+                          },
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "valueSource": "memory",
+                          "documentation": "Updated by Enable tag to store progress if paused.",
+                          "name": "Offset",
+                          "value": 0,
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "valueSource": "memory",
+                          "dataType": "Float8",
+                          "documentation": "Previous value of Angle, used to calculate where to pause.",
+                          "name": "Origin",
+                          "value": 0.0,
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "valueSource": "expr",
+                          "expression": "toMillis(now(100))\u003e{[.]Command}[\u0027finishBy\u0027]\r\n\u0026\u0026 round({[.]../Inputs/Angle},3) \u003d round({[.]Command}[\u0027angle\u0027],3)",
+                          "dataType": "Boolean",
+                          "documentation": "Determines if animation finished.",
+                          "name": "Complete",
+                          "formatString": "#,##0.##",
+                          "tagType": "AtomicTag"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "name": "StateMachine",
+                  "parameters": {
+                    "TimeStepMS": {
+                      "dataType": "Integer",
+                      "value": 100
+                    }
+                  },
+                  "tagType": "UdtType",
+                  "tags": [
+                    {
+                      "name": "Controls",
+                      "tagType": "Folder",
+                      "tags": [
+                        {
+                          "valueSource": "memory",
+                          "documentation": "Control values, Hand-2 / Off-0 / Auto-1",
+                          "name": "HOA",
+                          "value": 0,
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "valueSource": "memory",
+                          "dataType": "Boolean",
+                          "documentation": "Safety input, stop motion if used as an interlock.",
+                          "name": "SafetyOK",
+                          "value": true,
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "valueSource": "expr",
+                          "expression": "{[.]HOA}!\u003d0",
+                          "dataType": "Boolean",
+                          "documentation": "On when HOA is not off.",
+                          "name": "Running",
+                          "tagType": "AtomicTag"
+                        }
+                      ]
+                    },
+                    {
+                      "valueSource": "memory",
+                      "dataType": "DataSet",
+                      "documentation": "Dataset of all steps in this state machine.",
+                      "name": "Steps",
+                      "value": "{\"columns\":[{\"name\":\"Step\",\"type\":\"java.lang.Integer\"},{\"name\":\"Name\",\"type\":\"java.lang.String\"},{\"name\":\"DurationMS\",\"type\":\"java.lang.Integer\"},{\"name\":\"Interlocks\",\"type\":\"java.lang.String\"},{\"name\":\"TagWrites\",\"type\":\"java.lang.String\"},{\"name\":\"Permissives\",\"type\":\"java.lang.String\"},{\"name\":\"PassStep\",\"type\":\"java.lang.Integer\"},{\"name\":\"FailStep\",\"type\":\"java.lang.Integer\"}],\"rows\":[[2000,\"Start\",1000,\"\",\"\",\"\",0,0]]}",
+                      "tagType": "AtomicTag"
+                    },
+                    {
+                      "valueSource": "expr",
+                      "expression": "left({PathToParentFolder},lastIndexOf({PathToParentFolder},\u0027/\u0027)+1)",
+                      "dataType": "String",
+                      "documentation": "Path of this UDT, used for dynamic tag paths.",
+                      "name": "UDTpath",
+                      "tagType": "AtomicTag"
+                    },
+                    {
+                      "name": "CurrentStep",
+                      "tagType": "Folder",
+                      "tags": [
+                        {
+                          "valueSource": "expr",
+                          "eventScripts": [
+                            {
+                              "eventid": "valueChanged",
+                              "script": "\t# one long script to prevent race conditions\n\t\n\timport traceback\n\t\n\t# read all dataset tags\n\trwPaths \u003d [\n\t\t \"[.]Interlocks\"\n \t\t,\"[.]InterlocksOK\"\n \t\t,\"[.]TagWrites\"\n \t\t,\"[.]TagWritesOK\"\n \t\t,\"[.]Permissives\"\n \t\t,\"[.]PermissivesOK\"\n \t\t,\"[.]Status\"\n \t\t,\"[.]Step\"\n \t\t,\"[.]LastStep\"\n\t]\n\troPaths \u003d [\n\t\t \"[.]TimerComplete\"\n \t\t,\"[.]PassStep\"\n \t\t,\"[.]FailStep\"\n \t\t,\"[.]../Controls/HOA\"\n \t\t,\"[.]../UDTpath\"\n\t]\n\ttags \u003d system.tag.readBlocking(rwPaths+roPaths)\n\tinterlocks    \u003d tags[0].value\n\tinterlocksOK  \u003d tags[1].value\n\ttagWrites     \u003d tags[2].value\n\ttagWritesOK   \u003d tags[3].value\n\tpermissives   \u003d tags[4].value\n\tpermissivesOK \u003d tags[5].value\n\tstatus_\t\t  \u003d tags[6].value\n\tstep \t\t  \u003d tags[7].value\n\tlastStep      \u003d tags[8].value\n\t\n\ttimerComplete \u003d tags[len(rwPaths)+0].value\n\tpassStep \t  \u003d tags[len(rwPaths)+1].value\n\tfailStep \t  \u003d tags[len(rwPaths)+2].value\n\tHOA \t      \u003d tags[len(rwPaths)+3].value\n\tudtPath\t      \u003d tags[len(rwPaths)+4].value\n\t\n\t# if step has changed load new step\n\tstatus \u003d {}\n\tstepChangePaths \u003d []\n\tstepChangeValues \u003d []\n\tif lastStep !\u003d step:\n\t\tlastStep \u003d step\n\t\tsystem.tag.writeBlocking([\"[.]Status\",\"[.]LastStep\"], [{\u0027Running\u0027:\u0027Changing to step %s\u0027 % step}, lastStep])\n\t\n\t\tatomics \u003d [\"Name\",\"DurationMS\",\"PassStep\",\"FailStep\"]\n\t\theaders \u003d [\"originalPath\",\"tagPath\",\"tagValue\",\"currentValue\"]\n\t\t\n\t\tsteps \u003d system.tag.readBlocking(\"[.]../Steps\")[0].value\n\t\tstepFound \u003d False\n\t\t\n\t\tfor i in range(steps.getRowCount()):\n\t\t\tif step \u003d\u003d steps.getValueAt(i,\u0027Step\u0027):\n\t\t\t\tstepFound \u003d True\n\t\t\t\ttry:\n\t\t\t\t\tpassStep \u003d steps.getValueAt(i,\u0027PassStep\u0027)\n\t\t\t\t\tfailStep \u003d steps.getValueAt(i,\u0027FailStep\u0027)\n\t\t\t\t\tfor atomic in atomics:\n\t\t\t\t\t\tstepChangePaths.append(\u0027[.]%s\u0027%atomic)\n\t\t\t\t\t\tstepChangeValues.append(steps.getValueAt(i,atomic))\n\t\t\t\t\t\t\n\t\t\t\t\tdef decodePath(fullTagPath, dynamicPath):\n\t\t\t\t\t\tfoldersBack \u003d dynamicPath.count(\u0027[.]\u0027) + dynamicPath.count(\u0027../\u0027)\n\t\t\t\t\t\tif foldersBack \u003e 0:\n\t\t\t\t\t\t\treturn \u0027%s/%s\u0027%(fullTagPath.rsplit(\u0027/\u0027,foldersBack)[0] ,dynamicPath.replace(\u0027[.]\u0027,\u0027\u0027).replace(\u0027../\u0027,\u0027\u0027))\n\t\t\t\t\t\telse:\n\t\t\t\t\t\t\treturn dynamicPath\n\t\t\t\t\t\t\t\n\t\t\t\t\tdef columnToDataset(column):\n\t\t\t\t\t\tdata \u003d []\n\t\t\t\t\t\tjson \u003d system.util.jsonDecode(steps.getValueAt(i,column))\n\t\t\t\t\t\tif json:\n\t\t\t\t\t\t\tfor element in json:\n\t\t\t\t\t\t\t\tdata.append([\n\t\t\t\t\t\t\t\t\t str(element[\u0027tagPath\u0027])\n\t\t\t\t\t\t\t\t\t,decodePath(udtPath,str(element[\u0027tagPath\u0027]))\n\t\t\t\t\t\t\t\t\t,str(element[\u0027tagValue\u0027])\n\t\t\t\t\t\t\t\t\t,\u0027\u0027\n\t\t\t\t\t\t\t\t])\n\t\t\t\t\t\treturn system.dataset.toDataSet(headers, data)\n\t\t\t\t\t\t\n\t\t\t\t\tinterlocks    \u003d columnToDataset(\u0027Interlocks\u0027)\n\t\t\t\t\tinterlocksOK  \u003d False\n\t\t\t\t\ttagWrites     \u003d columnToDataset(\u0027TagWrites\u0027)\n\t\t\t\t\ttagWritesOK   \u003d False\n\t\t\t\t\tpermissives   \u003d columnToDataset(\u0027Permissives\u0027)\n\t\t\t\t\tpermissivesOK \u003d False\n\t\t\t\t\ttimerComplete \u003d False\n\t\t\t\t\n\t\t\t\t\tstepChangePaths.append(\"[.]TimerTimestamp\")\n#\t\t\t\t\tstepChangeValues.append(currentValue.timestamp)\n\t\t\t\t\tstepChangeValues.append(system.date.now())\n\t\t\t\t\t\n\t\t\t\t\tstepChangePaths.append(\"[.]TimerOffset\")\n\t\t\t\t\tstepChangeValues.append(0)\n\t\t\t\t\t\n\t\t\t\t\tstatus \u003d {\u0027Running\u0027:\u0027Changed to step %s\u0027%step}\n\t\t\t\t\tbreak\n\t\t\t\texcept:\n\t\t\t\t\tsystem.tag.writeBlocking([\"[.]Status\"], [{\u0027Faulted\u0027:\u0027Failed settings step %s, error: %s\u0027%(step, traceback.format_exc())}])\n\t\t\t\t\treturn\n\t\t\telse:\n\t\t\t\tcontinue\n\t\t\t\t\n\t\tif not stepFound:\n\t\t\tsystem.tag.writeBlocking([\"[.]Status\"], [{\u0027Faulted\u0027:\u0027Step %s does not exist!\u0027%step}])\n\t\t\treturn\n\t\n\t# compile a list of all tags to read, interlocks + permissives\n\ttagPaths\u003d[]\n\tfor i in range(interlocks.getRowCount()):\n\t\ttagPaths.append(interlocks.getValueAt(i,\u0027tagPath\u0027))\n\tfor i in range(permissives.getRowCount()):\n\t\ttagPaths.append(permissives.getValueAt(i,\u0027tagPath\u0027))\n\ttagPaths \u003d list(set(tagPaths)) # removes duplicates\n\ttagDict \u003d {}\n\tif tagPaths:\n\t\ttagValues \u003d system.tag.readBlocking(tagPaths)\n\t\tfor i, tagPath_ in enumerate(tagPaths):\n\t\t\ttagDict.update({tagPath_:tagValues[i].value})\n\t\n\t# common function used by interlocks and permissives\n\tdef checkTags(dataset):\n\t\tallOK \u003d True\n\t\tfor i in range(dataset.getRowCount()):\n\t\t\tcurrValue \u003d tagDict[dataset.getValueAt(i,\u0027tagPath\u0027)]\n\t\t\tdataset \u003d system.dataset.setValue(dataset, i,\u0027currentValue\u0027,currValue)\n\t\t\tif str(currValue).upper() !\u003d str(dataset.getValueAt(i,\u0027tagValue\u0027)).upper():\n\t\t\t\tallOK \u003d False\n\t\treturn dataset, allOK\n\t\t\t\n\t# check interlocks, pause if not ok\n\tinterlocks, interlocksOK \u003d checkTags(interlocks)\n\t\n\t# execute tag writes once\n\twritePaths \u003d []\n\twriteValues \u003d []\n\tif not tagWritesOK and interlocksOK and HOA !\u003d 0:\n\t\tfor i in range(tagWrites.getRowCount()):\n\t\t\twritePaths.append(tagWrites.getValueAt(i,\u0027tagPath\u0027))\n\t\t\twriteValues.append(tagWrites.getValueAt(i,\u0027tagValue\u0027))\n\t\ttagWritesOK \u003d True\n\t\tstatus \u003d {\u0027Running\u0027:\u0027Executed tag writes for step %s\u0027%step}\n\t\n\t# check permissives, PassStep if ok, FailStep if not ok\n\tpermissives, permissivesOK \u003d checkTags(permissives)\n\t\n\tif not interlocksOK:\n\t\tstatus \u003d {\u0027Idle\u0027:\u0027Waiting for interlocks, step %s\u0027%step}\n\telif not tagWritesOK:\n\t\tstatus \u003d {\u0027Idle\u0027:\u0027Waiting for tag writes, step %s\u0027%step}\n\telse:\n\t\tif timerComplete:\n\t\t\tif permissivesOK:\n\t\t\t\tif HOA \u003d\u003d 1: step \u003d passStep\n\t\t\telse:\n\t\t\t\tif failStep \u003e 0:\n\t\t\t\t\tstatus \u003d {\u0027Faulted\u0027:\u0027Waiting for permissives, step %s\u0027%step}\n\t\t\t\t\tif HOA \u003d\u003d 1: step \u003d failStep\n\t\t\t\telse:\n\t\t\t\t\tstatus \u003d {\u0027Idle\u0027:\u0027Waiting for permissives, step %s\u0027%step}\n\t\t\t\t\t\n\tif status !\u003d {}:\n\t\tnewStatus \u003d system.util.jsonEncode(status)\n\telse:\n\t\tnewStatus \u003d status_\n\t\t\t\n\trwValues \u003d [\t\n\t\t interlocks   \n\t\t,interlocksOK \n\t\t,tagWrites    \n\t\t,tagWritesOK  \n\t\t,permissives  \n\t\t,permissivesOK\n\t\t,newStatus\n\t\t,step\n\t\t,lastStep\n\t]\n\t\n\tsystem.tag.writeBlocking(rwPaths+stepChangePaths+writePaths, rwValues+stepChangeValues+writeValues)"
+                            }
+                          ],
+                          "expression": "now({TimeStepMS})",
+                          "dataType": "DateTime",
+                          "documentation": "Main script where logic occurs.",
+                          "name": "Script",
+                          "formatString": "yyyy-MM-dd h:mm:ss aa",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "valueSource": "memory",
+                          "dataType": "String",
+                          "documentation": "Name of the current step.",
+                          "name": "Name",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "valueSource": "memory",
+                          "documentation": "Step to which state machine will proceed if permissives are not met by the time the step timer finishes. If 0 the state machine will remain on the current step.",
+                          "name": "FailStep",
+                          "value": 0,
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "valueSource": "memory",
+                          "dataType": "Document",
+                          "documentation": "Status of the current step.",
+                          "name": "Status",
+                          "value": "",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "valueSource": "memory",
+                          "dataType": "DataSet",
+                          "documentation": "Dataset of interlock tags that must be true for a state machine to run.",
+                          "name": "Interlocks",
+                          "value": "{\"columns\":[{\"name\":\"tagPath\",\"type\":\"java.lang.String\"},{\"name\":\"tagValue\",\"type\":\"java.lang.String\"},{\"name\":\"currentValue\",\"type\":\"java.lang.String\"}],\"rows\":[]}",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "valueSource": "memory",
+                          "documentation": "Duration of the step.",
+                          "name": "DurationMS",
+                          "tooltip": "Duration (ms)",
+                          "value": 0,
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "valueSource": "expr",
+                          "expression": "{[.]Timer}\u003e\u003d{[.]DurationMS}",
+                          "dataType": "Boolean",
+                          "documentation": "Boolean for when the timer has finished.",
+                          "name": "TimerComplete",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "valueSource": "memory",
+                          "dataType": "Boolean",
+                          "documentation": "All permissives are satisfied or empty.",
+                          "name": "PermissivesOK",
+                          "value": true,
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "valueSource": "memory",
+                          "dataType": "DataSet",
+                          "documentation": "Dataset of tag paths that will be executed during this step.",
+                          "name": "TagWrites",
+                          "value": "{\"columns\":[{\"name\":\"tagPath\",\"type\":\"java.lang.String\"},{\"name\":\"tagValue\",\"type\":\"java.lang.String\"},{\"name\":\"currentValue\",\"type\":\"java.lang.String\"}],\"rows\":[]}",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "valueSource": "memory",
+                          "dataType": "Boolean",
+                          "documentation": "Tag writes were completed successfully.",
+                          "name": "TagWritesOK",
+                          "value": true,
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "valueSource": "memory",
+                          "documentation": "Previous step of the state machine, used to determine when a new step is started.",
+                          "name": "LastStep",
+                          "value": 0,
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "valueSource": "expr",
+                          "expression": "min(\r\n\t {[.]DurationMS}\r\n\t,if({[.]InterlocksOK}\r\n\t\t,{[.]TimerOffset}+now({TimeStepMS})-{[.]TimerTimestamp}\r\n\t\t,{[.]TimerOffset}\r\n\t)\r\n)",
+                          "documentation": "How long has a specific step been running, paused with interlocks are not ok.",
+                          "name": "Timer",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "valueSource": "memory",
+                          "documentation": "Current step.",
+                          "name": "Step",
+                          "value": 0,
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "valueSource": "memory",
+                          "eventScripts": [
+                            {
+                              "eventid": "valueChanged",
+                              "script": "\tif currentValue.value \u003d\u003d False:\n\t\ttagPaths \u003d [\"[.]TimerOffset\",\"[.]Step\"]\n\t\ttags \u003d system.tag.readBlocking(tagPaths)\n\t\toffset \u003d tags[0].value\n\t\tstep \u003d tags[1]\n\t\ttimestamp \u003d max(step.timestamp, previousValue.timestamp)\n\t\t\n\t\ttagPaths \u003d [\"[.]TimerOffset\",\"[.]TimerTimestamp\"]\n\t\tvalues \u003d [offset + system.date.millisBetween(timestamp, system.date.now()), currentValue.timestamp]\n\t\tsystem.tag.writeBlocking(tagPaths, values)\n\telse:\n\t\ttagPaths \u003d [\"[.]TimerTimestamp\"]\n\t\tvalues \u003d [currentValue.timestamp]\n\t\tsystem.tag.writeBlocking(tagPaths, values)"
+                            }
+                          ],
+                          "dataType": "Boolean",
+                          "documentation": "All interlocks are satisfied or empty.",
+                          "name": "InterlocksOK",
+                          "value": true,
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "valueSource": "memory",
+                          "documentation": "Timer offset used for pausing and resuming a step.",
+                          "name": "TimerOffset",
+                          "value": 0,
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "valueSource": "memory",
+                          "dataType": "DateTime",
+                          "documentation": "Tag used by Timer as the starting timestamp. It is written by Script and InterlocksOK tag change scripts.",
+                          "name": "TimerTimestamp",
+                          "formatString": "yyyy-MM-dd h:mm:ss aa",
+                          "value": 0,
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "valueSource": "memory",
+                          "dataType": "DataSet",
+                          "documentation": "Dataset of permissive tags that must be true for a state machine to proceed to PassStep.",
+                          "name": "Permissives",
+                          "value": "{\"columns\":[{\"name\":\"tagPath\",\"type\":\"java.lang.String\"},{\"name\":\"tagValue\",\"type\":\"java.lang.String\"},{\"name\":\"currentValue\",\"type\":\"java.lang.String\"}],\"rows\":[]}",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "valueSource": "memory",
+                          "documentation": "Step to which state machine will proceed if permissives are met by the time the step timer finishes.",
+                          "name": "PassStep",
+                          "value": 0,
+                          "tagType": "AtomicTag"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "name": "RobotAnimation",
+                  "tagType": "UdtType",
+                  "tags": [
+                    {
+                      "documentation": "Joint UDT.",
+                      "name": "Arm3",
+                      "typeId": "Exchange/CSSAnimation/Joint",
+                      "tagType": "UdtInstance",
+                      "tags": [
+                        {
+                          "name": "Inputs",
+                          "tagType": "Folder",
+                          "tags": [
+                            {
+                              "name": "Width",
+                              "tagType": "AtomicTag"
+                            },
+                            {
+                              "valueSource": "reference",
+                              "sourceTagPath": "[.]../../StateMachine/CurrentStep/InterlocksOK",
+                              "name": "Enable",
+                              "tagType": "AtomicTag"
+                            },
+                            {
+                              "valueSource": "reference",
+                              "sourceTagPath": "[.]../../StateMachine/CurrentStep/DurationMS",
+                              "name": "Duration",
+                              "tagType": "AtomicTag"
+                            },
+                            {
+                              "name": "Angle",
+                              "tagType": "AtomicTag"
+                            },
+                            {
+                              "name": "StopDelay",
+                              "tagType": "AtomicTag"
+                            },
+                            {
+                              "name": "Length",
+                              "tagType": "AtomicTag"
+                            }
+                          ]
+                        },
+                        {
+                          "name": "Outputs",
+                          "tagType": "Folder",
+                          "tags": [
+                            {
+                              "name": "Offset",
+                              "tagType": "AtomicTag"
+                            },
+                            {
+                              "name": "Origin",
+                              "tagType": "AtomicTag"
+                            },
+                            {
+                              "name": "Complete",
+                              "tagType": "AtomicTag"
+                            },
+                            {
+                              "name": "Command",
+                              "tagType": "AtomicTag"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "name": "Inputs",
+                      "tagType": "Folder",
+                      "tags": [
+                        {
+                          "valueSource": "memory",
+                          "dataType": "Boolean",
+                          "documentation": "Boolean to display part or not.",
+                          "name": "Part",
+                          "value": true,
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "valueSource": "memory",
+                          "documentation": "Width of the part.",
+                          "name": "PartWidth",
+                          "value": 100,
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "valueSource": "memory",
+                          "dataType": "Float8",
+                          "documentation": "X location for the XY move.",
+                          "name": "X",
+                          "value": 0.0,
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "valueSource": "memory",
+                          "dataType": "Boolean",
+                          "documentation": "Used to re-trigger /Output/Command when X,Y,Theta have not changed.",
+                          "name": "ExecuteXY",
+                          "value": false,
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "valueSource": "memory",
+                          "dataType": "Float8",
+                          "documentation": "Angle of the part during XY move.",
+                          "name": "Theta",
+                          "value": 0.0,
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "valueSource": "memory",
+                          "dataType": "Float8",
+                          "documentation": "Y location for XY move.",
+                          "name": "Y",
+                          "value": 0.0,
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "valueSource": "memory",
+                          "documentation": "Length of the part.",
+                          "name": "PartLength",
+                          "value": 50,
+                          "tagType": "AtomicTag"
+                        }
+                      ]
+                    },
+                    {
+                      "documentation": "Joint UDT.",
+                      "name": "Arm2",
+                      "typeId": "Exchange/CSSAnimation/Joint",
+                      "tagType": "UdtInstance",
+                      "tags": [
+                        {
+                          "name": "Outputs",
+                          "tagType": "Folder",
+                          "tags": [
+                            {
+                              "name": "Origin",
+                              "tagType": "AtomicTag"
+                            },
+                            {
+                              "name": "Complete",
+                              "tagType": "AtomicTag"
+                            },
+                            {
+                              "name": "Command",
+                              "tagType": "AtomicTag"
+                            },
+                            {
+                              "name": "Offset",
+                              "tagType": "AtomicTag"
+                            }
+                          ]
+                        },
+                        {
+                          "name": "Inputs",
+                          "tagType": "Folder",
+                          "tags": [
+                            {
+                              "name": "Angle",
+                              "tagType": "AtomicTag"
+                            },
+                            {
+                              "name": "Width",
+                              "tagType": "AtomicTag"
+                            },
+                            {
+                              "valueSource": "reference",
+                              "sourceTagPath": "[.]../../StateMachine/CurrentStep/InterlocksOK",
+                              "name": "Enable",
+                              "tagType": "AtomicTag"
+                            },
+                            {
+                              "valueSource": "reference",
+                              "sourceTagPath": "[.]../../StateMachine/CurrentStep/DurationMS",
+                              "name": "Duration",
+                              "tagType": "AtomicTag"
+                            },
+                            {
+                              "name": "Length",
+                              "tagType": "AtomicTag"
+                            },
+                            {
+                              "name": "StopDelay",
+                              "tagType": "AtomicTag"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "documentation": "Joint UDT.",
+                      "name": "Arm1",
+                      "typeId": "Exchange/CSSAnimation/Joint",
+                      "tagType": "UdtInstance",
+                      "tags": [
+                        {
+                          "name": "Outputs",
+                          "tagType": "Folder",
+                          "tags": [
+                            {
+                              "name": "Command",
+                              "tagType": "AtomicTag"
+                            },
+                            {
+                              "name": "Complete",
+                              "tagType": "AtomicTag"
+                            },
+                            {
+                              "name": "Origin",
+                              "tagType": "AtomicTag"
+                            },
+                            {
+                              "name": "Offset",
+                              "tagType": "AtomicTag"
+                            }
+                          ]
+                        },
+                        {
+                          "name": "Inputs",
+                          "tagType": "Folder",
+                          "tags": [
+                            {
+                              "valueSource": "reference",
+                              "sourceTagPath": "[.]../../StateMachine/CurrentStep/InterlocksOK",
+                              "name": "Enable",
+                              "tagType": "AtomicTag"
+                            },
+                            {
+                              "name": "Angle",
+                              "tagType": "AtomicTag"
+                            },
+                            {
+                              "name": "Length",
+                              "tagType": "AtomicTag"
+                            },
+                            {
+                              "name": "StopDelay",
+                              "tagType": "AtomicTag"
+                            },
+                            {
+                              "name": "Width",
+                              "tagType": "AtomicTag"
+                            },
+                            {
+                              "valueSource": "reference",
+                              "sourceTagPath": "[.]../../StateMachine/CurrentStep/DurationMS",
+                              "name": "Duration",
+                              "tagType": "AtomicTag"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "documentation": "StateMachine UDT.",
+                      "name": "StateMachine",
+                      "typeId": "Exchange/CSSAnimation/StateMachine",
+                      "tagType": "UdtInstance",
+                      "tags": [
+                        {
+                          "name": "CurrentStep",
+                          "tagType": "Folder",
+                          "tags": [
+                            {
+                              "name": "TimerOffset",
+                              "tagType": "AtomicTag"
+                            },
+                            {
+                              "name": "TimerComplete",
+                              "tagType": "AtomicTag"
+                            },
+                            {
+                              "name": "DurationMS",
+                              "tagType": "AtomicTag"
+                            },
+                            {
+                              "name": "Timer",
+                              "tagType": "AtomicTag"
+                            },
+                            {
+                              "name": "Name",
+                              "tagType": "AtomicTag"
+                            },
+                            {
+                              "name": "PassStep",
+                              "tagType": "AtomicTag"
+                            },
+                            {
+                              "name": "Interlocks",
+                              "tagType": "AtomicTag"
+                            },
+                            {
+                              "name": "Script",
+                              "tagType": "AtomicTag"
+                            },
+                            {
+                              "name": "TimerTimestamp",
+                              "tagType": "AtomicTag"
+                            },
+                            {
+                              "name": "Permissives",
+                              "tagType": "AtomicTag"
+                            },
+                            {
+                              "name": "TagWrites",
+                              "tagType": "AtomicTag"
+                            },
+                            {
+                              "name": "LastStep",
+                              "tagType": "AtomicTag"
+                            },
+                            {
+                              "name": "TagWritesOK",
+                              "tagType": "AtomicTag"
+                            },
+                            {
+                              "name": "FailStep",
+                              "tagType": "AtomicTag"
+                            },
+                            {
+                              "name": "Status",
+                              "tagType": "AtomicTag"
+                            },
+                            {
+                              "name": "Step",
+                              "tagType": "AtomicTag"
+                            },
+                            {
+                              "name": "PermissivesOK",
+                              "tagType": "AtomicTag"
+                            },
+                            {
+                              "name": "InterlocksOK",
+                              "tagType": "AtomicTag"
+                            }
+                          ]
+                        },
+                        {
+                          "name": "Controls",
+                          "tagType": "Folder",
+                          "tags": [
+                            {
+                              "name": "Running",
+                              "tagType": "AtomicTag"
+                            },
+                            {
+                              "name": "SafetyOK",
+                              "tagType": "AtomicTag"
+                            },
+                            {
+                              "name": "HOA",
+                              "tagType": "AtomicTag"
+                            }
+                          ]
+                        },
+                        {
+                          "name": "Steps",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "name": "UDTpath",
+                          "tagType": "AtomicTag"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "Outputs",
+                      "tagType": "Folder",
+                      "tags": [
+                        {
+                          "valueSource": "expr",
+                          "expression": "round(\r\n\t{[.]../Arm1/Inputs/Length}*sin(toradians({[.]../Arm1/Inputs/Angle}))+\r\n\t{[.]../Arm2/Inputs/Length}*sin(toradians({[.]../Arm1/Inputs/Angle}+{[.]../Arm2/Inputs/Angle}))+\r\n\t{[.]../Arm3/Inputs/Length}*sin(toradians({[.]../Arm1/Inputs/Angle}+{[.]../Arm2/Inputs/Angle}+{[.]../Arm3/Inputs/Angle}))\r\n,3)",
+                          "dataType": "Float8",
+                          "documentation": "Current X location of the part center.",
+                          "name": "PartCenterX",
+                          "tooltip": "Part Center X Position",
+                          "engLimitMode": "No_Clamp",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "valueSource": "expr",
+                          "expression": "round({[.]../Arm1/Inputs/Angle}+{[.]../Arm2/Inputs/Angle}+{[.]../Arm3/Inputs/Angle},3)",
+                          "dataType": "Float8",
+                          "documentation": "Current part angle.",
+                          "name": "PartAngle",
+                          "tooltip": "Part Angle",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "valueSource": "expr",
+                          "expression": "-{[.]../Arm1/Inputs/Length}*cos(toradians({[.]../Arm1/Inputs/Angle}))\r\n-{[.]../Arm2/Inputs/Length}*cos(toradians({[.]../Arm1/Inputs/Angle}+{[.]../Arm2/Inputs/Angle}))",
+                          "dataType": "Float8",
+                          "documentation": "Joint 3 Y current position, used in Command calculations.",
+                          "name": "J3Y",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "valueSource": "expr",
+                          "expression": "round(\r\n\t-{[.]../Arm1/Inputs/Length}*cos(toradians({[.]../Arm1/Inputs/Angle}))\r\n\t-{[.]../Arm2/Inputs/Length}*cos(toradians({[.]../Arm1/Inputs/Angle}+{[.]../Arm2/Inputs/Angle}))\r\n\t-{[.]../Arm3/Inputs/Length}*cos(toradians({[.]../Arm1/Inputs/Angle}+{[.]../Arm2/Inputs/Angle}+{[.]../Arm3/Inputs/Angle}))\r\n,3)",
+                          "dataType": "Float8",
+                          "documentation": "Current Y location of the part center.",
+                          "name": "PartCenterY",
+                          "tooltip": "Part Center Y Position",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "valueSource": "expr",
+                          "expression": "{[.]../Arm1/Inputs/Length}*sin(toradians({[.]../Arm1/Inputs/Angle}))+\r\n{[.]../Arm2/Inputs/Length}*sin(toradians({[.]../Arm1/Inputs/Angle}+{[.]../Arm2/Inputs/Angle}))",
+                          "dataType": "Float8",
+                          "documentation": "Joint 3 X current position, used in Command calculations.",
+                          "name": "J3X",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "valueSource": "expr",
+                          "eventScripts": [
+                            {
+                              "eventid": "valueChanged",
+                              "script": "\timport math\n\t\t\n\ttagPaths\u003d [tagPath.rsplit(\u0027/\u0027,2)[0]]\n\tudt \u003d system.tag.readBlocking(tagPaths)[0].value\n\t\n\tpartAngle \u003d udt.Outputs.PartAngle\n\tj3X \u003d udt.Outputs.J3X\n\tj3Y \u003d -udt.Outputs.J3Y\n\tL1 \u003d udt.Arm1.Inputs.Length\n\tL2 \u003d udt.Arm2.Inputs.Length\n\tL3 \u003d udt.Arm3.Inputs.Length\n\tarm2current \u003d udt.Arm2.Inputs.Angle\n\t\n\tdef shortestAngle(a, b):\n\t\tif a-b\u003e180:\n\t\t\treturn a-b-360\n\t\telif a-b\u003c-180:\n\t\t\treturn a-b+360\n\t\telse:\n\t\t\treturn a-b\n\t\t\t\n\tdef getJointAngles(len1, len2, x, y):\n\t\tlenXY \u003d (x**2+y**2)**0.5 # length of third imaginary edge at x,y location\n\t\tif lenXY\u003d\u003dlen1+len2:\n\t\t\tangleXY \u003d 180\n\t\t\tangle2 \u003d 0\n\t\telse:\n\t\t\tangleXY \u003d math.degrees(math.acos((len1**2+len2**2-lenXY**2)/(2*len1*len2))) # law of cosine, angle opposing lenXY\n\t\t\tangle2 \u003d math.degrees(math.asin(len2/lenXY*math.sin(math.radians(angleXY)))) # law of sine, angle opposing len2\n\t\talpha \u003d math.degrees(math.asin(y/lenXY)) # angloe from x plane\n\t\tif shortestAngle(arm2current,0) \u003e\u003d0:\n\t\t\tif x\u003e\u003d0:\n\t\t\t\tjoint1    \u003d 90-alpha-angle2\n\t\t\telse:\n\t\t\t\tjoint1    \u003d -90+alpha-angle2\n\t\t\tjoint2 \u003d 180-angleXY\n\t\telse:\n\t\t\tif x\u003e\u003d0:\n\t\t\t\tjoint1 \u003d 90-alpha+angle2\n\t\t\telse:\n\t\t\t\tjoint1 \u003d -90+alpha+angle2\n\t\t\tjoint2 \u003d -180+angleXY\n\t\treturn joint1%360, joint2%360\n\t\t\n\tarm1origin, arm2origin \u003d getJointAngles(L1,L2,j3X,j3Y)\n\tarm3origin \u003d partAngle-arm1origin-arm2origin\n\t\n\tnewTheta \u003d udt.Inputs.Theta\n\tnewX \u003d udt.Inputs.X - L3 * math.sin(math.radians(newTheta))\n\tnewY \u003d - udt.Inputs.Y - L3 * math.cos(math.radians(newTheta))\n\n\ttry:\n\t\tarm1angle, arm2angle \u003d getJointAngles(L1,L2,newX,newY)\n\t\tarm3angle  \u003d newTheta-arm1angle-arm2angle\n\texcept:\n\t\ttagPaths \u003d [\"[.]../StateMachine/CurrentStep/Status\"]\n\t\tvalues \u003d [system.util.jsonEncode({\u0027Faulted\u0027:\u0027Move not possible, X: %s Y: %s Theta: %s\u0027%(udt.Inputs.X, udt.Inputs.Y, udt.Inputs.Theta)})]\n\t\tsystem.tag.writeBlocking(tagPaths, values)\n\t\treturn\n\t\t\n\tarm1delta \u003d shortestAngle(arm1angle,arm1origin)\n\tarm2delta \u003d shortestAngle(arm2angle,arm2origin)\n\tarm3delta \u003d shortestAngle(arm3angle,arm3origin)\n\t\n\ttagPaths \u003d [\n\t\t \"[.]../Inputs/ExecuteXY\"\n\t\t,\"[.]../Arm1/Inputs/Angle\"\n\t\t,\"[.]../Arm2/Inputs/Angle\"\n\t\t,\"[.]../Arm3/Inputs/Angle\"\n\t\t,\"[.]../StateMachine/CurrentStep/Status\"\n\t]\n\t\n\tvalues \u003d [\n\t\t False\n\t\t,udt.Arm1.Inputs.Angle + arm1delta\n\t\t,udt.Arm2.Inputs.Angle + arm2delta\n\t\t,udt.Arm3.Inputs.Angle + arm3delta\n\t\t,system.util.jsonEncode({\u0027Running\u0027:\u0027Moving to X: %s Y: %s Theta: %s\u0027%(udt.Inputs.X, udt.Inputs.Y, udt.Inputs.Theta)})\n\t]\n\t\n\tsystem.tag.writeBlocking(tagPaths, values)"
+                            }
+                          ],
+                          "expression": "\u0027{\"X\":\"\u0027+{[.]../Inputs/X}+\u0027\",\"Y\":\"\u0027+{[.]../Inputs/Y}+\u0027\",\"Theta\":\"\u0027+{[.]../Inputs/Theta}+\u0027\",\"ExecuteXY\":\u0027+{[.]../Inputs/ExecuteXY}+\u0027}\u0027",
+                          "dataType": "Document",
+                          "documentation": "Combination of X, Y, Theta, ExecuteXY tags to avoid race conditions. This tag\u0027s event script calculates and sends appropriate angles to all of the joints within this UDT.",
+                          "name": "Command",
+                          "tagType": "AtomicTag"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

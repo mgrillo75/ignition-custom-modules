@@ -1,0 +1,106 @@
+{
+    "type": "object",
+    "additionalProperties": false,
+    "required": [
+        "energized",
+        "energizedLeftColor",
+        "energizedRightColor",
+        "strokeColor",
+        "markerColor"
+    ],
+    "properties": {
+        "energized": {
+            "type": "boolean",
+            "default": true
+        },
+        "energizedLeftColor": {
+            "type": "string",
+            "format": "color",
+            "default": "#d32f2f"
+        },
+        "energizedRightColor": {
+            "type": "string",
+            "format": "color",
+            "default": "#f44336"
+        },
+        "deenergizedLeftColor": {
+            "type": "string",
+            "format": "color",
+            "default": "#94a3b8"
+        },
+        "deenergizedRightColor": {
+            "type": "string",
+            "format": "color",
+            "default": "#64748b"
+        },
+        "strokeColor": {
+            "type": "string",
+            "format": "color",
+            "default": "#ef5350"
+        },
+        "deenergizedStrokeColor": {
+            "type": "string",
+            "format": "color",
+            "default": "#cbd5e1"
+        },
+        "glowColor": {
+            "type": "string",
+            "format": "color",
+            "default": "#ef4444"
+        },
+        "glowOpacity": {
+            "type": "number",
+            "default": 0.45,
+            "minimum": 0.0,
+            "maximum": 1.0
+        },
+        "markerColor": {
+            "type": "string",
+            "format": "color",
+            "default": "#ef9a9a"
+        },
+        "markerOpacity": {
+            "type": "number",
+            "default": 0.6,
+            "minimum": 0.0,
+            "maximum": 1.0
+        },
+        "markerCount": {
+            "type": "integer",
+            "default": 5,
+            "minimum": 2,
+            "maximum": 32
+        },
+        "barLength": {
+            "type": "number",
+            "default": 300,
+            "minimum": 20,
+            "maximum": 2000
+        },
+        "barWidth": {
+            "type": "number",
+            "default": 10,
+            "minimum": 2,
+            "maximum": 100
+        },
+        "showLabel": {
+            "type": "boolean",
+            "default": false
+        },
+        "label": {
+            "type": "string",
+            "default": "Busbar Segment Vertical"
+        },
+        "labelColor": {
+            "type": "string",
+            "format": "color",
+            "default": "#1f2937"
+        },
+        "style": {
+            "$ref": "urn:ignition-schema:schemas/style-properties.schema.json",
+            "default": {
+                "classes": ""
+            }
+        }
+    }
+}
