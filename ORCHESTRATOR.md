@@ -15,8 +15,6 @@
   - Loose prototypes and source assets, including `custom-component-additions`.
 - `sdk-examples-upstream`, `ignition-sdk-examples-ignition-8.3`, `ignition-sdk-documentation`, `ignition-module-tools-master`
   - Reference docs/examples/tooling, not production module code.
-- `Genset-Dashboard`
-  - Separate web app, unrelated to the Perspective module.
 
 ## Active Module Architecture
 

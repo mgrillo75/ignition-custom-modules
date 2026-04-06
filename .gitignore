@@ -13,5 +13,4 @@
 Thumbs.db
 
 # Nested repositories should be pushed independently or added as submodules.
-Genset-Dashboard/
 sdk-examples-upstream/
