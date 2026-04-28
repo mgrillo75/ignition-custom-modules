@@ -1,0 +1,223 @@
+{
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {
+        "colorOverrides": {
+            "type": "object",
+            "description": "Map source SVG color tokens to replacement colors.",
+            "default": {},
+            "additionalProperties": {
+                "type": "string"
+            }
+        },
+        "textOverrides": {
+            "type": "object",
+            "description": "Map source SVG text fragments to replacement values.",
+            "default": {},
+            "additionalProperties": {
+                "type": "string"
+            }
+        },
+        "globalFillColor": {
+            "type": "string",
+            "format": "color",
+            "default": "#64748b"
+        },
+        "applyGlobalFill": {
+            "type": "boolean",
+            "default": false
+        },
+        "globalStrokeColor": {
+            "type": "string",
+            "format": "color",
+            "default": "#334155"
+        },
+        "applyGlobalStroke": {
+            "type": "boolean",
+            "default": false
+        },
+        "svgOpacity": {
+            "type": "number",
+            "default": 1.0,
+            "minimum": 0.0,
+            "maximum": 1.0
+        },
+        "preserveAspectRatio": {
+            "type": "string",
+            "default": "xMidYMid meet"
+        },
+        "lineColor": {
+            "type": "string",
+            "format": "color",
+            "default": "#10b981"
+        },
+        "topLineColor": {
+            "type": "string",
+            "format": "color",
+            "default": "#10b981"
+        },
+        "breakerColor": {
+            "type": "string",
+            "format": "color",
+            "default": "#10b981"
+        },
+        "lowerLineColor": {
+            "type": "string",
+            "format": "color",
+            "default": "#10b981"
+        },
+        "generatorColor": {
+            "type": "string",
+            "format": "color",
+            "default": "#10b981"
+        },
+        "symbolFillColor": {
+            "type": "string",
+            "format": "color",
+            "default": "#10b981"
+        },
+        "symbolFillOpacity": {
+            "type": "number",
+            "default": 0.02,
+            "minimum": 0.0,
+            "maximum": 1.0
+        },
+        "generatorFillColor": {
+            "type": "string",
+            "format": "color",
+            "default": "#10b981"
+        },
+        "generatorFillOpacity": {
+            "type": "number",
+            "default": 0.15,
+            "minimum": 0.0,
+            "maximum": 1.0
+        },
+        "glowColor": {
+            "type": "string",
+            "format": "color",
+            "default": "#10b981"
+        },
+        "glowIntensity": {
+            "type": "number",
+            "default": 1.0,
+            "minimum": 0.0,
+            "maximum": 4.0
+        },
+        "strokeWidth": {
+            "type": "number",
+            "default": 2.0,
+            "minimum": 0.5,
+            "maximum": 12.0
+        },
+        "waveStrokeWidth": {
+            "type": "number",
+            "default": 3.0,
+            "minimum": 0.5,
+            "maximum": 16.0
+        },
+        "gradientCoreOpacity": {
+            "type": "number",
+            "default": 0.15,
+            "minimum": 0.0,
+            "maximum": 1.0
+        },
+        "fillGlowOpacity": {
+            "type": "number",
+            "default": 0.02,
+            "minimum": 0.0,
+            "maximum": 1.0
+        },
+        "chainGlowPrimaryOpacity": {
+            "type": "number",
+            "default": 0.8,
+            "minimum": 0.0,
+            "maximum": 1.0
+        },
+        "chainGlowSecondaryOpacity": {
+            "type": "number",
+            "default": 0.6,
+            "minimum": 0.0,
+            "maximum": 1.0
+        },
+        "chainGlowTertiaryOpacity": {
+            "type": "number",
+            "default": 0.4,
+            "minimum": 0.0,
+            "maximum": 1.0
+        },
+        "generatorGlowPrimaryOpacity": {
+            "type": "number",
+            "default": 0.5,
+            "minimum": 0.0,
+            "maximum": 1.0
+        },
+        "generatorGlowSecondaryOpacity": {
+            "type": "number",
+            "default": 0.3,
+            "minimum": 0.0,
+            "maximum": 1.0
+        },
+        "generatorGlowTertiaryOpacity": {
+            "type": "number",
+            "default": 0.15,
+            "minimum": 0.0,
+            "maximum": 1.0
+        },
+        "circleGlowPrimaryBlur": {
+            "type": "number",
+            "default": 8.0,
+            "minimum": 0.0,
+            "maximum": 80.0
+        },
+        "circleGlowSecondaryBlur": {
+            "type": "number",
+            "default": 15.0,
+            "minimum": 0.0,
+            "maximum": 120.0
+        },
+        "circleGlowTertiaryBlur": {
+            "type": "number",
+            "default": 30.0,
+            "minimum": 0.0,
+            "maximum": 160.0
+        },
+        "circleGlowPrimaryOpacity": {
+            "type": "number",
+            "default": 0.5,
+            "minimum": 0.0,
+            "maximum": 1.0
+        },
+        "circleGlowSecondaryOpacity": {
+            "type": "number",
+            "default": 0.3,
+            "minimum": 0.0,
+            "maximum": 1.0
+        },
+        "circleGlowTertiaryOpacity": {
+            "type": "number",
+            "default": 0.15,
+            "minimum": 0.0,
+            "maximum": 1.0
+        },
+        "showLabel": {
+            "type": "boolean",
+            "default": false
+        },
+        "label": {
+            "type": "string",
+            "default": "Genset SLD S32"
+        },
+        "labelColor": {
+            "type": "string",
+            "format": "color",
+            "default": "#1f2937"
+        },
+        "style": {
+            "$ref": "urn:ignition-schema:schemas/style-properties.schema.json",
+            "default": {
+                "classes": ""
+            }
+        }
+    }
+}

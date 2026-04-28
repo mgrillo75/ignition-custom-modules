@@ -1,0 +1,124 @@
+<svg xmlns="http://www.w3.org/2000/svg"
+     viewBox="-60 -60 200 416"
+     width="200" height="416"
+     overflow="visible"
+     aria-label="Modern genset panel schematic">
+
+  <defs>
+    <!-- Radial gradient for the generator circle interior -->
+    <radialGradient id="circleGrad" cx="50%" cy="50%" r="50%">
+      <stop offset="0%"  stop-color="#10b981" stop-opacity="0.15"/>
+      <stop offset="70%" stop-color="#10b981" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <style>
+    /* Chain stroke: wires / bus lines */
+    .chain-stroke {
+      stroke: #10b981;
+      stroke-width: 2;
+      stroke-linecap: square;
+      stroke-linejoin: round;
+      fill: none;
+      vector-effect: non-scaling-stroke;
+      filter:
+        drop-shadow(0 0 15px rgba(16,185,129,0.8))
+        drop-shadow(0 0 30px rgba(16,185,129,0.6))
+        drop-shadow(0 0 60px rgba(16,185,129,0.4));
+    }
+
+    /* Chain fill: breaker boxes and transformer circles */
+    .chain-fill {
+      fill: rgba(16, 185, 129, 0.02);
+      stroke: #10b981;
+      stroke-width: 2;
+      vector-effect: non-scaling-stroke;
+      filter:
+        drop-shadow(0 0 15px rgba(16,185,129,0.8))
+        drop-shadow(0 0 30px rgba(16,185,129,0.6))
+        drop-shadow(0 0 60px rgba(16,185,129,0.4));
+    }
+
+    /* Generator stem line */
+    .gen-line {
+      stroke: #10b981;
+      stroke-width: 2;
+      stroke-linecap: square;
+      fill: none;
+      vector-effect: non-scaling-stroke;
+      filter:
+        drop-shadow(0 0 15px rgba(16,185,129,0.8))
+        drop-shadow(0 0 30px rgba(16,185,129,0.6))
+        drop-shadow(0 0 60px rgba(16,185,129,0.4));
+    }
+
+    /* Generator circle border */
+    .gen-circle-el {
+      stroke: #10b981;
+      stroke-width: 2;
+      vector-effect: non-scaling-stroke;
+      filter:
+        drop-shadow(0 0 8px  rgba(16,185,129,0.5))
+        drop-shadow(0 0 15px rgba(16,185,129,0.3))
+        drop-shadow(0 0 30px rgba(16,185,129,0.15));
+    }
+
+    /* Sine wave inside generator circle */
+    .sine-wave {
+      stroke: #10b981;
+      stroke-width: 3;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      fill: none;
+      filter:
+        drop-shadow(0 0 8px  rgba(16,185,129,0.5))
+        drop-shadow(0 0 15px rgba(16,185,129,0.3))
+        drop-shadow(0 0 30px rgba(16,185,129,0.15));
+    }
+  </style>
+
+  <!-- PPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPP
+       Upper chain: Breaker 52I � Transformer � Breaker 52G
+       Original viewBox "0 0 34 168", centered in 80px � translate(23, 0)
+  PPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPP -->
+  <g transform="translate(23, 0)" aria-label="Breaker 52I, transformer, and breaker 52G">
+    <!-- Top wire -->
+    <line class="chain-stroke" x1="17" y1="0"   x2="17" y2="18"/>
+    <!-- Breaker 52I -->
+    <rect class="chain-fill"   x="1"  y="18"  width="32" height="32"/>
+    <!-- Wire between breaker and transformer -->
+    <line class="chain-stroke" x1="17" y1="50"  x2="17" y2="71"/>
+    <!-- Transformer (two overlapping circles) -->
+    <circle class="chain-fill" cx="17" cy="86"  r="13"/>
+    <circle class="chain-fill" cx="17" cy="102" r="13"/>
+    <!-- Wire between transformer and breaker -->
+    <line class="chain-stroke" x1="17" y1="115" x2="17" y2="136"/>
+    <!-- Breaker 52G -->
+    <rect class="chain-fill"   x="1"  y="136" width="32" height="32"/>
+  </g>
+
+  <!-- PPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPP
+       Generator symbol
+       gen-line-up: 2px wide � 48px tall (3rem), centered at x=40
+       gen-circle:  80�80px, border-box � r=39 with 2px stroke, center (40,256)
+       sine wave:   40�20 viewbox centered in circle � translate(20,246)
+  PPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPP -->
+
+  <!-- Stem line (gen-line-up) -->
+  <line class="gen-line" x1="40" y1="168" x2="40" y2="216" aria-hidden="true"/>
+
+  <!-- Generator circle -->
+  <circle class="gen-circle-el"
+          cx="40" cy="256" r="39"
+          fill="url(#circleGrad)"
+          aria-label="Generator symbol"/>
+
+  <!-- Sine wave (~G~ symbol) inside circle
+       Original path in 40�20 viewbox, placed centered in 80�80 circle:
+       top-left corner of 40�20 area = (40-20, 256-10) = (20, 246) -->
+  <path class="sine-wave"
+        transform="translate(20, 246)"
+        d="M 4 10 Q 12 -2 20 10 T 36 10"
+        aria-hidden="true"/>
+
+</svg>

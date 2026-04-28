@@ -1,0 +1,225 @@
+{
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {
+        "colorOverrides": {
+            "type": "object",
+            "description": "Map source SVG color tokens to replacement colors. This raster-backed asset only applies these to wrapper markup, not the embedded PNG pixels.",
+            "default": {},
+            "additionalProperties": {
+                "type": "string",
+                "format": "color"
+            }
+        },
+        "textOverrides": {
+            "type": "object",
+            "description": "Map source SVG text fragments to replacement values. This raster-backed asset uses the explicit overlay props for visible text updates.",
+            "default": {},
+            "additionalProperties": {
+                "type": "string"
+            }
+        },
+        "globalFillColor": {
+            "type": "string",
+            "format": "color",
+            "default": "#64748b"
+        },
+        "applyGlobalFill": {
+            "type": "boolean",
+            "default": false
+        },
+        "globalStrokeColor": {
+            "type": "string",
+            "format": "color",
+            "default": "#334155"
+        },
+        "applyGlobalStroke": {
+            "type": "boolean",
+            "default": false
+        },
+        "svgOpacity": {
+            "type": "number",
+            "default": 1.0,
+            "minimum": 0.0,
+            "maximum": 1.0
+        },
+        "preserveAspectRatio": {
+            "type": "string",
+            "default": "xMidYMid meet"
+        },
+        "showOverlay": {
+            "type": "boolean",
+            "default": true
+        },
+        "showValue": {
+            "type": "boolean",
+            "default": true
+        },
+        "showUnit": {
+            "type": "boolean",
+            "default": true
+        },
+        "showTitleText": {
+            "type": "boolean",
+            "default": true
+        },
+        "value": {
+            "type": "number",
+            "default": 74.0
+        },
+        "valueText": {
+            "type": "string",
+            "default": ""
+        },
+        "valueDecimals": {
+            "type": "number",
+            "default": 0,
+            "minimum": 0,
+            "maximum": 3
+        },
+        "unitText": {
+            "type": "string",
+            "default": "%"
+        },
+        "titleLine1Text": {
+            "type": "string",
+            "default": "DOSING VALVE"
+        },
+        "titleLine2Text": {
+            "type": "string",
+            "default": "POSITION"
+        },
+        "fontFamily": {
+            "type": "string",
+            "default": "Rajdhani, Segoe UI, sans-serif"
+        },
+        "valueFontSize": {
+            "type": "number",
+            "default": 80.0,
+            "minimum": 12.0,
+            "maximum": 140.0
+        },
+        "unitFontSize": {
+            "type": "number",
+            "default": 34.0,
+            "minimum": 8.0,
+            "maximum": 72.0
+        },
+        "titleFontSize": {
+            "type": "number",
+            "default": 17.0,
+            "minimum": 8.0,
+            "maximum": 48.0
+        },
+        "titleLetterSpacing": {
+            "type": "number",
+            "default": 5.0,
+            "minimum": 0.0,
+            "maximum": 16.0
+        },
+        "valueGap": {
+            "type": "number",
+            "default": 6.0,
+            "minimum": 0.0,
+            "maximum": 32.0
+        },
+        "valueRowOffsetX": {
+            "type": "number",
+            "default": 18.0,
+            "minimum": -100.0,
+            "maximum": 100.0
+        },
+        "overlayBottomOffset": {
+            "type": "number",
+            "default": 38.0,
+            "minimum": 0.0,
+            "maximum": 180.0
+        },
+        "overlayHorizontalOffset": {
+            "type": "number",
+            "default": 0.0,
+            "minimum": -180.0,
+            "maximum": 180.0
+        },
+        "overlayMaskColor": {
+            "type": "string",
+            "default": "rgba(14,26,40,0.96)"
+        },
+        "overlayMaskWidth": {
+            "type": "number",
+            "default": 260.0,
+            "minimum": 60.0,
+            "maximum": 420.0
+        },
+        "overlayMaskHeight": {
+            "type": "number",
+            "default": 122.0,
+            "minimum": 40.0,
+            "maximum": 260.0
+        },
+        "overlayMaskRadius": {
+            "type": "number",
+            "default": 110.0,
+            "minimum": 0.0,
+            "maximum": 220.0
+        },
+        "overlayMaskBlur": {
+            "type": "number",
+            "default": 24.0,
+            "minimum": 0.0,
+            "maximum": 64.0
+        },
+        "valueColor": {
+            "type": "string",
+            "format": "color",
+            "default": "#e6f0fa"
+        },
+        "valueOpacity": {
+            "type": "number",
+            "default": 0.95,
+            "minimum": 0.0,
+            "maximum": 1.0
+        },
+        "unitColor": {
+            "type": "string",
+            "format": "color",
+            "default": "#b4c8dc"
+        },
+        "unitOpacity": {
+            "type": "number",
+            "default": 0.55,
+            "minimum": 0.0,
+            "maximum": 1.0
+        },
+        "titleColor": {
+            "type": "string",
+            "format": "color",
+            "default": "#b4c8dc"
+        },
+        "titleOpacity": {
+            "type": "number",
+            "default": 0.45,
+            "minimum": 0.0,
+            "maximum": 1.0
+        },
+        "showLabel": {
+            "type": "boolean",
+            "default": false
+        },
+        "label": {
+            "type": "string",
+            "default": "Dosing Valve Half Gauge"
+        },
+        "labelColor": {
+            "type": "string",
+            "format": "color",
+            "default": "#1f2937"
+        },
+        "style": {
+            "$ref": "urn:ignition-schema:schemas/style-properties.schema.json",
+            "default": {
+                "classes": ""
+            }
+        }
+    }
+}

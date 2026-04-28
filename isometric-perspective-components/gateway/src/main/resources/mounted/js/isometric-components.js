@@ -199,6 +199,52 @@ function mergeOverrideMaps(explicitMap, userMap) {
     return merged;
 }
 
+function readCustom2DGensetSymbolProps(tree, defaultLabel, defaults) {
+    const base = readCustom2DSvgProps(tree, defaultLabel);
+    const lineColor = tree.readString("lineColor", defaults.lineColor || "#10b981");
+    const topLineColor = tree.readString("topLineColor", defaults.topLineColor || lineColor);
+    const breakerColor = tree.readString("breakerColor", defaults.breakerColor || defaults.symbolFillColor || lineColor);
+    const lowerLineColor = tree.readString("lowerLineColor", defaults.lowerLineColor || lineColor);
+    const generatorColor = tree.readString("generatorColor", defaults.generatorColor || defaults.generatorFillColor || lineColor);
+    const symbolFillColor = tree.readString("symbolFillColor", defaults.symbolFillColor || breakerColor);
+    const symbolFillOpacity = tree.readNumber("symbolFillOpacity", defaults.symbolFillOpacity);
+    const generatorFillColor = tree.readString("generatorFillColor", defaults.generatorFillColor || generatorColor);
+    const glowColor = tree.readString("glowColor", defaults.glowColor || generatorColor || lineColor);
+    const glowIntensity = tree.readNumber("glowIntensity", defaults.glowIntensity || 1.0);
+    const explicitColorOverrides = {
+        "#10b981": lineColor,
+        "rgba(16, 185, 129, 0.02)": colorToRgbaString(symbolFillColor, symbolFillOpacity, lineColor),
+        "rgba(16,185,129,0.02)": colorToRgbaString(symbolFillColor, symbolFillOpacity, lineColor)
+    };
+
+    return Object.assign({}, base, {
+        colorOverrides: mergeOverrideMaps(explicitColorOverrides, base.colorOverrides),
+        lineColor: lineColor,
+        topLineColor: topLineColor,
+        breakerColor: breakerColor,
+        lowerLineColor: lowerLineColor,
+        generatorColor: generatorColor,
+        symbolFillColor: symbolFillColor,
+        symbolFillOpacity: symbolFillOpacity,
+        generatorFillColor: generatorFillColor,
+        generatorFillOpacity: tree.readNumber("generatorFillOpacity", defaults.generatorFillOpacity),
+        glowColor: glowColor,
+        glowIntensity: glowIntensity,
+        chainGlowPrimaryBlur: tree.readNumber("chainGlowPrimaryBlur", defaults.chainGlowPrimaryBlur),
+        chainGlowSecondaryBlur: tree.readNumber("chainGlowSecondaryBlur", defaults.chainGlowSecondaryBlur),
+        chainGlowTertiaryBlur: tree.readNumber("chainGlowTertiaryBlur", defaults.chainGlowTertiaryBlur),
+        chainGlowPrimaryOpacity: tree.readNumber("chainGlowPrimaryOpacity", defaults.chainGlowPrimaryOpacity),
+        chainGlowSecondaryOpacity: tree.readNumber("chainGlowSecondaryOpacity", defaults.chainGlowSecondaryOpacity),
+        chainGlowTertiaryOpacity: tree.readNumber("chainGlowTertiaryOpacity", defaults.chainGlowTertiaryOpacity),
+        circleGlowPrimaryBlur: tree.readNumber("circleGlowPrimaryBlur", defaults.circleGlowPrimaryBlur),
+        circleGlowSecondaryBlur: tree.readNumber("circleGlowSecondaryBlur", defaults.circleGlowSecondaryBlur),
+        circleGlowTertiaryBlur: tree.readNumber("circleGlowTertiaryBlur", defaults.circleGlowTertiaryBlur),
+        circleGlowPrimaryOpacity: tree.readNumber("circleGlowPrimaryOpacity", defaults.circleGlowPrimaryOpacity),
+        circleGlowSecondaryOpacity: tree.readNumber("circleGlowSecondaryOpacity", defaults.circleGlowSecondaryOpacity),
+        circleGlowTertiaryOpacity: tree.readNumber("circleGlowTertiaryOpacity", defaults.circleGlowTertiaryOpacity)
+    });
+}
+
 function readCustom2DModernGensetPanelProps(tree) {
     const base = readCustom2DSvgProps(tree, "Modern Genset Panel V7");
     const accentColor = tree.readString("accentColor", "#10b981");
@@ -298,8 +344,8 @@ function readCustom2DMvGensetScreenMainProps(tree) {
     });
 }
 
-function readCustom2DValveProps(tree) {
-    const base = readCustom2DSvgProps(tree, "Valve");
+function readCustom2DValveProps(tree, defaultLabel) {
+    const base = readCustom2DSvgProps(tree, defaultLabel || "Valve");
     const lineColor = tree.readString("lineColor", "#10b981");
     const glowColor = tree.readString("glowColor", "#10b981");
     const explicitColorOverrides = {
@@ -317,6 +363,158 @@ function readCustom2DValveProps(tree) {
         glowPrimaryBlur: tree.readNumber("glowPrimaryBlur", 2.2),
         glowSecondaryBlur: tree.readNumber("glowSecondaryBlur", 5.5),
         glowTertiaryBlur: tree.readNumber("glowTertiaryBlur", 10.5)
+    });
+}
+
+function readCustom2DBreakerStandaloneProps(tree, defaultLabel) {
+    const base = readCustom2DSvgProps(tree, defaultLabel || "Breaker Standalone");
+    const strokeColor = tree.readString("strokeColor", "#56c89b");
+    const textColor = tree.readString("textColor", "#eef2f7");
+    const glowColor = tree.readString("glowColor", strokeColor);
+    const explicitColorOverrides = {
+        "#56c89b": strokeColor,
+        "#eef2f7": textColor
+    };
+    const explicitTextOverrides = {
+        "52I": tree.readString("displayText", "52I")
+    };
+
+    return Object.assign({}, base, {
+        colorOverrides: mergeOverrideMaps(explicitColorOverrides, base.colorOverrides),
+        textOverrides: mergeOverrideMaps(explicitTextOverrides, base.textOverrides),
+        strokeColor: strokeColor,
+        textColor: textColor,
+        glowColor: glowColor,
+        glowOpacity: tree.readNumber("glowOpacity", 0.18),
+        glowBlur: tree.readNumber("glowBlur", 6.0),
+        textFontSize: tree.readNumber("textFontSize", 40.0),
+        fontFamily: tree.readString("fontFamily", "Segoe UI, sans-serif")
+    });
+}
+
+function readCustom2DDosingValveGaugeProps(tree) {
+    return {
+        value: tree.readNumber("value", 59.0),
+        minValue: tree.readNumber("minValue", 0.0),
+        maxValue: tree.readNumber("maxValue", 100.0),
+        valueText: tree.readString("valueText", ""),
+        valueDecimals: tree.readNumber("valueDecimals", 0),
+        unitText: tree.readString("unitText", "%"),
+        titleLine1Text: tree.readString("titleLine1Text", "DOSING VALVE"),
+        titleLine2Text: tree.readString("titleLine2Text", "POSITION"),
+        startAngle: tree.readNumber("startAngle", 135.0),
+        endAngle: tree.readNumber("endAngle", 405.0),
+        majorStep: tree.readNumber("majorStep", 10.0),
+        minorDivisions: tree.readNumber("minorDivisions", 5),
+        dangerThreshold: tree.readNumber("dangerThreshold", 90.0),
+        showTrackArc: !!tree.read("showTrackArc", true),
+        showProgressArc: !!tree.read("showProgressArc", true),
+        showNeedle: !!tree.read("showNeedle", true),
+        showDangerZoneTint: !!tree.read("showDangerZoneTint", true),
+        showMajorTicks: !!tree.read("showMajorTicks", true),
+        showMinorTicks: !!tree.read("showMinorTicks", true),
+        showOuterLabels: !!tree.read("showOuterLabels", true),
+        showCenterValue: !!tree.read("showCenterValue", true),
+        showCenterUnit: !!tree.read("showCenterUnit", true),
+        showTitleText: !!tree.read("showTitleText", true),
+        preserveAspectRatio: tree.readString("preserveAspectRatio", "xMidYMid meet"),
+        fontFamily: tree.readString("fontFamily", "Rajdhani, Segoe UI, sans-serif"),
+        outerLabelFontSize: tree.readNumber("outerLabelFontSize", 22.0),
+        valueFontSize: tree.readNumber("valueFontSize", 80.0),
+        unitFontSize: tree.readNumber("unitFontSize", 34.0),
+        titleFontSize: tree.readNumber("titleFontSize", 17.0),
+        titleLetterSpacing: tree.readNumber("titleLetterSpacing", 5.0),
+        bezelInnerColor: tree.readString("bezelInnerColor", "#2a3545"),
+        bezelMidColor: tree.readString("bezelMidColor", "#4a5a6a"),
+        bezelOuterColor: tree.readString("bezelOuterColor", "#1e2a38"),
+        faceInnerColor: tree.readString("faceInnerColor", "#1e2e3e"),
+        faceMidColor: tree.readString("faceMidColor", "#162535"),
+        faceOuterColor: tree.readString("faceOuterColor", "#0e1a28"),
+        innerRingColor: tree.readString("innerRingColor", "#507896"),
+        innerRingOpacity: tree.readNumber("innerRingOpacity", 0.2),
+        separatorColor: tree.readString("separatorColor", "#3c5a78"),
+        separatorOpacity: tree.readNumber("separatorOpacity", 0.18),
+        trackColor: tree.readString("trackColor", "#3c6482"),
+        trackOpacity: tree.readNumber("trackOpacity", 0.1),
+        progressColor: tree.readString("progressColor", "#1ed2ff"),
+        progressOpacity: tree.readNumber("progressOpacity", 0.85),
+        progressHaloColor: tree.readString("progressHaloColor", "#32dcff"),
+        progressHaloOpacity: tree.readNumber("progressHaloOpacity", 0.2),
+        progressTipColor: tree.readString("progressTipColor", "#78f5ff"),
+        progressTipOpacity: tree.readNumber("progressTipOpacity", 0.5),
+        progressStrokeWidth: tree.readNumber("progressStrokeWidth", 7.0),
+        progressHaloWidth: tree.readNumber("progressHaloWidth", 22.0),
+        progressTipWidth: tree.readNumber("progressTipWidth", 16.0),
+        majorTickColor: tree.readString("majorTickColor", "#c8dcf0"),
+        majorTickOpacity: tree.readNumber("majorTickOpacity", 0.65),
+        majorDangerTickColor: tree.readString("majorDangerTickColor", "#ff503c"),
+        majorDangerTickOpacity: tree.readNumber("majorDangerTickOpacity", 0.85),
+        minorTickColor: tree.readString("minorTickColor", "#c8dcf0"),
+        minorTickOpacity: tree.readNumber("minorTickOpacity", 0.3),
+        minorDangerTickColor: tree.readString("minorDangerTickColor", "#ff503c"),
+        minorDangerTickOpacity: tree.readNumber("minorDangerTickOpacity", 0.5),
+        outerLabelColor: tree.readString("outerLabelColor", "#c8dcf0"),
+        outerLabelOpacity: tree.readNumber("outerLabelOpacity", 0.7),
+        dangerLabelColor: tree.readString("dangerLabelColor", "#ff6450"),
+        dangerLabelOpacity: tree.readNumber("dangerLabelOpacity", 0.85),
+        valueColor: tree.readString("valueColor", "#e6f0fa"),
+        valueOpacity: tree.readNumber("valueOpacity", 0.95),
+        unitColor: tree.readString("unitColor", "#b4c8dc"),
+        unitOpacity: tree.readNumber("unitOpacity", 0.55),
+        titleColor: tree.readString("titleColor", "#b4c8dc"),
+        titleOpacity: tree.readNumber("titleOpacity", 0.45),
+        needleBaseColor: tree.readString("needleBaseColor", "#dc4628"),
+        needleMidColor: tree.readString("needleMidColor", "#ff6432"),
+        needleTipColor: tree.readString("needleTipColor", "#ffb478"),
+        needleHighlightColor: tree.readString("needleHighlightColor", "#ff9650"),
+        needleHighlightOpacity: tree.readNumber("needleHighlightOpacity", 0.45),
+        hubCenterColor: tree.readString("hubCenterColor", "#3a4a5c"),
+        hubMidColor: tree.readString("hubMidColor", "#2a3a4c"),
+        hubOuterColor: tree.readString("hubOuterColor", "#1a2a3c"),
+        hubStrokeColor: tree.readString("hubStrokeColor", "#64a0c8"),
+        hubStrokeOpacity: tree.readNumber("hubStrokeOpacity", 0.25),
+        dangerZoneColor: tree.readString("dangerZoneColor", "#c8281e"),
+        dangerZoneOpacity: tree.readNumber("dangerZoneOpacity", 0.05),
+        showLabel: !!tree.read("showLabel", false),
+        label: tree.readString("label", "Dosing Valve Gauge"),
+        labelColor: tree.readString("labelColor", "#1f2937"),
+        style: tree.read("style", {})
+    };
+}
+
+function readCustom2DDosingValveHalfGaugeProps(tree) {
+    const base = readCustom2DSvgProps(tree, "Dosing Valve Half Gauge");
+    return Object.assign({}, base, {
+        showOverlay: !!tree.read("showOverlay", true),
+        showValue: !!tree.read("showValue", true),
+        showUnit: !!tree.read("showUnit", true),
+        showTitleText: !!tree.read("showTitleText", true),
+        value: tree.readNumber("value", 74.0),
+        valueText: tree.readString("valueText", ""),
+        valueDecimals: tree.readNumber("valueDecimals", 0),
+        unitText: tree.readString("unitText", "%"),
+        titleLine1Text: tree.readString("titleLine1Text", "DOSING VALVE"),
+        titleLine2Text: tree.readString("titleLine2Text", "POSITION"),
+        fontFamily: tree.readString("fontFamily", "Rajdhani, Segoe UI, sans-serif"),
+        valueFontSize: tree.readNumber("valueFontSize", 80.0),
+        unitFontSize: tree.readNumber("unitFontSize", 34.0),
+        titleFontSize: tree.readNumber("titleFontSize", 17.0),
+        titleLetterSpacing: tree.readNumber("titleLetterSpacing", 5.0),
+        valueGap: tree.readNumber("valueGap", 6.0),
+        valueRowOffsetX: tree.readNumber("valueRowOffsetX", 18.0),
+        overlayBottomOffset: tree.readNumber("overlayBottomOffset", 38.0),
+        overlayHorizontalOffset: tree.readNumber("overlayHorizontalOffset", 0.0),
+        overlayMaskColor: tree.readString("overlayMaskColor", "rgba(14,26,40,0.96)"),
+        overlayMaskWidth: tree.readNumber("overlayMaskWidth", 260.0),
+        overlayMaskHeight: tree.readNumber("overlayMaskHeight", 122.0),
+        overlayMaskRadius: tree.readNumber("overlayMaskRadius", 110.0),
+        overlayMaskBlur: tree.readNumber("overlayMaskBlur", 24.0),
+        valueColor: tree.readString("valueColor", "#e6f0fa"),
+        valueOpacity: tree.readNumber("valueOpacity", 0.95),
+        unitColor: tree.readString("unitColor", "#b4c8dc"),
+        unitOpacity: tree.readNumber("unitOpacity", 0.55),
+        titleColor: tree.readString("titleColor", "#b4c8dc"),
+        titleOpacity: tree.readNumber("titleOpacity", 0.45)
     });
 }
 
@@ -338,6 +536,84 @@ function clampNumber(value, min, max, fallback) {
         return fallback;
     }
     return Math.max(min, Math.min(max, numeric));
+}
+
+function parseColorChannels(color) {
+    if (typeof color !== "string") {
+        return null;
+    }
+    const value = color.trim();
+    const hexMatch = value.match(/^#([0-9a-f]{3}|[0-9a-f]{6})$/i);
+    if (hexMatch) {
+        const hex = hexMatch[1];
+        if (hex.length === 3) {
+            return {
+                r: parseInt(hex[0] + hex[0], 16),
+                g: parseInt(hex[1] + hex[1], 16),
+                b: parseInt(hex[2] + hex[2], 16)
+            };
+        }
+        return {
+            r: parseInt(hex.slice(0, 2), 16),
+            g: parseInt(hex.slice(2, 4), 16),
+            b: parseInt(hex.slice(4, 6), 16)
+        };
+    }
+
+    const rgbMatch = value.match(/^rgba?\(([^)]+)\)$/i);
+    if (!rgbMatch) {
+        return null;
+    }
+
+    const channels = rgbMatch[1].split(",").map((entry) => Number(entry.trim()));
+    if (channels.length < 3 || channels.slice(0, 3).some((entry) => Number.isNaN(entry))) {
+        return null;
+    }
+
+    return {
+        r: clampNumber(channels[0], 0, 255, 16),
+        g: clampNumber(channels[1], 0, 255, 185),
+        b: clampNumber(channels[2], 0, 255, 129)
+    };
+}
+
+function colorToRgbaString(color, opacity, fallbackColor) {
+    const channels = parseColorChannels(color) || parseColorChannels(fallbackColor) || { r: 16, g: 185, b: 129 };
+    return `rgba(${channels.r},${channels.g},${channels.b},${clampOpacity(opacity)})`;
+}
+
+function toRadians(degrees) {
+    return Number(degrees || 0) * Math.PI / 180;
+}
+
+function polarPoint(cx, cy, radius, degrees) {
+    const radians = toRadians(degrees);
+    return {
+        x: cx + radius * Math.cos(radians),
+        y: cy + radius * Math.sin(radians)
+    };
+}
+
+function describeArc(cx, cy, radius, startDegrees, endDegrees) {
+    const start = polarPoint(cx, cy, radius, startDegrees);
+    const end = polarPoint(cx, cy, radius, endDegrees);
+    const largeArc = Math.abs(endDegrees - startDegrees) > 180 ? 1 : 0;
+    const sweep = endDegrees >= startDegrees ? 1 : 0;
+    return `M ${start.x.toFixed(3)} ${start.y.toFixed(3)} A ${radius.toFixed(3)} ${radius.toFixed(3)} 0 ${largeArc} ${sweep} ${end.x.toFixed(3)} ${end.y.toFixed(3)}`;
+}
+
+function describeSector(cx, cy, radius, startDegrees, endDegrees) {
+    const start = polarPoint(cx, cy, radius, startDegrees);
+    const end = polarPoint(cx, cy, radius, endDegrees);
+    const largeArc = Math.abs(endDegrees - startDegrees) > 180 ? 1 : 0;
+    const sweep = endDegrees >= startDegrees ? 1 : 0;
+    return `M ${cx.toFixed(3)} ${cy.toFixed(3)} L ${start.x.toFixed(3)} ${start.y.toFixed(3)} A ${radius.toFixed(3)} ${radius.toFixed(3)} 0 ${largeArc} ${sweep} ${end.x.toFixed(3)} ${end.y.toFixed(3)} Z`;
+}
+
+function formatGaugeValue(value, decimals) {
+    const safeValue = Number.isFinite(Number(value)) ? Number(value) : 0;
+    const safeDecimals = Math.round(clampNumber(decimals, 0, 3, 0));
+    return safeValue.toFixed(safeDecimals);
 }
 
 function applyColorOverrides(markup, overrides) {
@@ -1835,6 +2111,26 @@ function replaceOrInsertAttribute(elementMarkup, attributeName, attributeValue) 
     return elementMarkup;
 }
 
+function replaceFilterBlock(markup, filterId, blurValues, opacityValues, glowColor) {
+    const blockRegex = new RegExp(`<filter\\b[^>]*id="${escapeRegExp(filterId)}"[^>]*>[\\s\\S]*?</filter>`, "i");
+    const blockMatch = markup.match(blockRegex);
+    if (!blockMatch || !blockMatch[0]) {
+        return markup;
+    }
+
+    let dropShadowIndex = 0;
+    const updatedBlock = blockMatch[0].replace(/<feDropShadow\b[^>]*\/>/gi, (shadowMarkup) => {
+        const index = Math.min(dropShadowIndex, blurValues.length - 1);
+        dropShadowIndex += 1;
+        let updated = replaceOrInsertAttribute(shadowMarkup, "stdDeviation", clampNumber(blurValues[index], 0, 160, blurValues[index]));
+        updated = replaceOrInsertAttribute(updated, "flood-color", glowColor);
+        updated = replaceOrInsertAttribute(updated, "flood-opacity", clampOpacity(opacityValues[index]));
+        return updated;
+    });
+
+    return markup.replace(blockMatch[0], updatedBlock);
+}
+
 function replaceRectAtY(markup, yValue, fillColor, strokeColor) {
     const escapedY = escapeRegExp(String(yValue));
     const rectRegex = new RegExp(`<rect\\b[^>]*\\by="${escapedY}"[^>]*/>`, "i");
@@ -2062,6 +2358,112 @@ class Custom2DMvGensetScreenMain extends Custom2DSourceSvg {
 }
 Custom2DMvGensetScreenMain.SVG_FILE = "mv-genset-screen-main.svg";
 
+class Custom2DGensetSymbol extends Custom2DSourceSvg {
+    transformSvg(rawSvg, props, scopeKey) {
+        let output = transformCustom2DSvg(rawSvg, props, scopeKey);
+
+        const glowIntensity = clampNumber(props.glowIntensity, 0, 4, 1);
+        const scaleBlur = (value, fallback) => clampNumber(value, 0, 160, fallback) * glowIntensity;
+        const scaleOpacity = (value) => clampOpacity(value) * glowIntensity;
+        const symbolFillRgba = colorToRgbaString(props.symbolFillColor, props.symbolFillOpacity, props.lineColor);
+        const chainGlowRgbaPrimary = colorToRgbaString(props.glowColor, scaleOpacity(props.chainGlowPrimaryOpacity), props.lineColor);
+        const chainGlowRgbaSecondary = colorToRgbaString(props.glowColor, scaleOpacity(props.chainGlowSecondaryOpacity), props.lineColor);
+        const chainGlowRgbaTertiary = colorToRgbaString(props.glowColor, scaleOpacity(props.chainGlowTertiaryOpacity), props.lineColor);
+        const circleGlowRgbaPrimary = colorToRgbaString(props.glowColor, scaleOpacity(props.circleGlowPrimaryOpacity), props.lineColor);
+        const circleGlowRgbaSecondary = colorToRgbaString(props.glowColor, scaleOpacity(props.circleGlowSecondaryOpacity), props.lineColor);
+        const circleGlowRgbaTertiary = colorToRgbaString(props.glowColor, scaleOpacity(props.circleGlowTertiaryOpacity), props.lineColor);
+        const noGlowFilter = glowIntensity <= 0 ? "filter: none;" : null;
+
+        output = output.replace(/fill:\s*rgba\(16,\s*185,\s*129,\s*0\.02\)/gi, `fill: ${symbolFillRgba}`);
+        output = output.replace(/fill="rgba\(16,\s*185,\s*129,\s*0\.02\)"/gi, `fill="${symbolFillRgba}"`);
+        output = output.replace(/(\.chain-stroke\s*\{[\s\S]*?stroke:\s*)#[0-9a-f]{3,8}/i, `$1${props.topLineColor}`);
+        output = output.replace(/(\.chain-fill\s*\{[\s\S]*?fill:\s*)[^;\n]+/i, `$1${symbolFillRgba}`);
+        output = output.replace(/(\.chain-fill\s*\{[\s\S]*?stroke:\s*)#[0-9a-f]{3,8}/i, `$1${props.breakerColor}`);
+        output = output.replace(/(\.gen-line\s*\{[\s\S]*?stroke:\s*)#[0-9a-f]{3,8}/i, `$1${props.lowerLineColor}`);
+        output = output.replace(/(\.gen-circle(?:-el)?\s*\{[\s\S]*?stroke:\s*)#[0-9a-f]{3,8}/i, `$1${props.generatorColor}`);
+        output = output.replace(/(\.sine-wave\s*\{[\s\S]*?stroke:\s*)#[0-9a-f]{3,8}/i, `$1${props.generatorColor}`);
+        output = output.replace(/(<g\b[^>]*filter="url\(#tx3-genset2-chain-glow\)"[^>]*\bstroke=")[^"]*(")/i, `$1${props.topLineColor}$2`);
+        output = output.replace(/(<g\b[^>]*filter="url\(#tx3-genset2-chain-glow\)"[^>]*\bfill=")[^"]*(")/i, `$1${symbolFillRgba}$2`);
+        output = output.replace(/(<g\b[^>]*filter="url\(#tx3-genset2-chain-glow\)"\s+fill=")[^"]*("[^>]*>\s*<rect\b)/i, `$1${props.lowerLineColor}$2`);
+        output = output.replace(/(<circle\b[^>]*\bstroke=")[^"]*("[^>]*filter="url\(#tx3-genset2-circle-glow\)")/i, `$1${props.generatorColor}$2`);
+        output = output.replace(/(<path\b[^>]*\bstroke=")[^"]*("[^>]*filter="url\(#tx3-genset2-circle-glow\)")/i, `$1${props.generatorColor}$2`);
+        if (noGlowFilter) {
+            output = output.replace(/filter:\s*drop-shadow\([^;]+;/gi, noGlowFilter);
+            output = output.replace(/\sfilter="url\(#tx3-genset2-(?:chain|circle)-glow\)"/gi, "");
+        }
+
+        output = output.replace(
+            /drop-shadow\(0 0 15px rgba\(16,185,129,0\.8\)\)/gi,
+            `drop-shadow(0 0 ${scaleBlur(props.chainGlowPrimaryBlur, 15)}px ${chainGlowRgbaPrimary})`
+        );
+        output = output.replace(
+            /drop-shadow\(0 0 30px rgba\(16,185,129,0\.6\)\)/gi,
+            `drop-shadow(0 0 ${scaleBlur(props.chainGlowSecondaryBlur, 30)}px ${chainGlowRgbaSecondary})`
+        );
+        output = output.replace(
+            /drop-shadow\(0 0 60px rgba\(16,185,129,0\.4\)\)/gi,
+            `drop-shadow(0 0 ${scaleBlur(props.chainGlowTertiaryBlur, 60)}px ${chainGlowRgbaTertiary})`
+        );
+        output = output.replace(
+            /drop-shadow\(0 0 8px\s+rgba\(16,185,129,0\.5\)\)/gi,
+            `drop-shadow(0 0 ${scaleBlur(props.circleGlowPrimaryBlur, 8)}px ${circleGlowRgbaPrimary})`
+        );
+        output = output.replace(
+            /drop-shadow\(0 0 15px rgba\(16,185,129,0\.3\)\)/gi,
+            `drop-shadow(0 0 ${scaleBlur(props.circleGlowSecondaryBlur, 15)}px ${circleGlowRgbaSecondary})`
+        );
+        output = output.replace(
+            /drop-shadow\(0 0 30px rgba\(16,185,129,0\.15\)\)/gi,
+            `drop-shadow(0 0 ${scaleBlur(props.circleGlowTertiaryBlur, 30)}px ${circleGlowRgbaTertiary})`
+        );
+
+        output = replaceFilterBlock(output, "tx3-genset2-chain-glow", [
+            scaleBlur(props.chainGlowPrimaryBlur, 2.5),
+            scaleBlur(props.chainGlowSecondaryBlur, 5),
+            scaleBlur(props.chainGlowTertiaryBlur, 10)
+        ], [
+            scaleOpacity(props.chainGlowPrimaryOpacity),
+            scaleOpacity(props.chainGlowSecondaryOpacity),
+            scaleOpacity(props.chainGlowTertiaryOpacity)
+        ], props.glowColor);
+
+        output = replaceFilterBlock(output, "tx3-genset2-circle-glow", [
+            scaleBlur(props.circleGlowPrimaryBlur, 1.5),
+            scaleBlur(props.circleGlowSecondaryBlur, 3),
+            scaleBlur(props.circleGlowTertiaryBlur, 6)
+        ], [
+            scaleOpacity(props.circleGlowPrimaryOpacity),
+            scaleOpacity(props.circleGlowSecondaryOpacity),
+            scaleOpacity(props.circleGlowTertiaryOpacity)
+        ], props.glowColor);
+
+        output = output.replace(
+            /(<radialGradient\b[\s\S]*?<stop\b[^>]*\bstop-color=")[^"]*(")/i,
+            `$1${props.generatorFillColor}$2`
+        );
+        output = output.replace(
+            /(<radialGradient\b[\s\S]*?<stop\b[^>]*\bstop-opacity=")[^"]*(")/i,
+            (full, start, end) => `${start}${clampOpacity(props.generatorFillOpacity)}${end}`
+        );
+        output = output.replace(
+            /(<radialGradient\b[\s\S]*?<stop\b[^>]*\/>\s*<stop\b[^>]*\bstop-color=")[^"]*(")/i,
+            `$1${props.generatorFillColor}$2`
+        );
+
+        return output;
+    }
+}
+Custom2DGensetSymbol.SVG_FILE = "genset-sld.svg";
+
+class Custom2DGensetSld extends Custom2DGensetSymbol {}
+Custom2DGensetSld.SVG_FILE = "genset-sld.svg";
+
+class Custom2DGenset2 extends Custom2DGensetSymbol {}
+Custom2DGenset2.SVG_FILE = "genset_2.svg";
+
+class Custom2DGensetSldS32 extends Custom2DGensetSymbol {}
+Custom2DGensetSldS32.SVG_FILE = "genset-sld-s32.svg";
+
 class Custom2DValve extends Custom2DSourceSvg {
     transformSvg(rawSvg, props, scopeKey) {
         let output = transformCustom2DSvg(rawSvg, props, scopeKey);
@@ -2096,6 +2498,604 @@ class Custom2DValve extends Custom2DSourceSvg {
     }
 }
 Custom2DValve.SVG_FILE = "valve.svg";
+
+class Custom2DThreeWayControlValveRev2 extends Custom2DValve {}
+Custom2DThreeWayControlValveRev2.SVG_FILE = "3-way-control-valve-rev2.svg";
+
+class Custom2DBreakerStandalone extends Custom2DSourceSvg {
+    transformSvg(rawSvg, props, scopeKey) {
+        let output = transformCustom2DSvg(rawSvg, props, scopeKey);
+
+        output = output.replace(/(<feDropShadow\b[^>]*\bstdDeviation=")[^"]*(")/i, (full, start, end) => {
+            return `${start}${clampNumber(props.glowBlur, 0, 24, 6)}${end}`;
+        });
+        output = output.replace(/(<feDropShadow\b[^>]*\bflood-color=")[^"]*(")/i, `$1${props.glowColor}$2`);
+        output = output.replace(/(<feDropShadow\b[^>]*\bflood-opacity=")[^"]*(")/i, (full, start, end) => {
+            return `${start}${clampOpacity(props.glowOpacity)}${end}`;
+        });
+        output = output.replace(/(font-size:\s*)[0-9.]+px(?=\s*;)/i, (full, start) => {
+            return `${start}${clampNumber(props.textFontSize, 8, 96, 40)}px`;
+        });
+        output = output.replace(/(font-family:\s*)[^;]+(?=\s*;)/i, `$1${props.fontFamily}`);
+
+        return output;
+    }
+}
+Custom2DBreakerStandalone.SVG_FILE = "breaker-standalone.svg";
+
+class Custom2DPump extends Custom2DValve {}
+Custom2DPump.SVG_FILE = "pump.svg";
+
+class Custom2DTransformer extends Custom2DValve {}
+Custom2DTransformer.SVG_FILE = "transformer.svg";
+
+class Custom2DDosingValveGauge extends Component {
+    render() {
+        const { props, emit, store } = this.props;
+        const viewBoxSize = 520;
+        const cx = 260;
+        const cy = 260;
+        const outerRadius = 240;
+        const faceRadius = 224;
+        const separatorInnerRadius = 95;
+        const separatorOuterRadius = 200;
+        const arcRadius = 217.5;
+        const tickOuterRadius = 209;
+        const majorTickLength = 16;
+        const minorTickLength = 8;
+        const labelRadius = 243;
+        const needleLength = 170;
+        const needleTailLength = 27.5;
+
+        const minValue = Number.isFinite(Number(props.minValue)) ? Number(props.minValue) : 0;
+        let maxValue = Number.isFinite(Number(props.maxValue)) ? Number(props.maxValue) : 100;
+        if (maxValue <= minValue) {
+            maxValue = minValue + 1;
+        }
+        const value = clampNumber(props.value, minValue, maxValue, minValue);
+        const startAngle = Number.isFinite(Number(props.startAngle)) ? Number(props.startAngle) : 135;
+        const endAngle = Number.isFinite(Number(props.endAngle)) ? Number(props.endAngle) : 405;
+        const majorStep = Math.max(1, Number(props.majorStep) || 10);
+        const minorDivisions = Math.max(1, Math.round(Number(props.minorDivisions) || 5));
+        const dangerThreshold = clampNumber(props.dangerThreshold, minValue, maxValue, maxValue);
+
+        const valueToAngle = (inputValue) => {
+            const ratio = (inputValue - minValue) / (maxValue - minValue);
+            return startAngle + ratio * (endAngle - startAngle);
+        };
+
+        const currentAngle = valueToAngle(value);
+        const dangerStartAngle = valueToAngle(dangerThreshold);
+        const displayValue = props.valueText && String(props.valueText).length
+            ? String(props.valueText)
+            : formatGaugeValue(value, props.valueDecimals);
+
+        const majorValues = [];
+        for (let tickValue = minValue, guard = 0; tickValue <= maxValue + 0.0001 && guard < 200; tickValue += majorStep, guard += 1) {
+            majorValues.push(Math.min(tickValue, maxValue));
+        }
+        if (!majorValues.length || Math.abs(majorValues[majorValues.length - 1] - maxValue) > 0.0001) {
+            majorValues.push(maxValue);
+        }
+
+        const separatorLines = majorValues.map((tickValue, index) => {
+            const angle = valueToAngle(tickValue);
+            const innerPoint = polarPoint(cx, cy, separatorInnerRadius, angle);
+            const outerPoint = polarPoint(cx, cy, separatorOuterRadius, angle);
+            return React.createElement("line", {
+                key: `separator-${index}`,
+                x1: innerPoint.x,
+                y1: innerPoint.y,
+                x2: outerPoint.x,
+                y2: outerPoint.y,
+                stroke: props.separatorColor,
+                strokeOpacity: clampOpacity(props.separatorOpacity),
+                strokeWidth: 1.5
+            });
+        });
+
+        const tickElements = [];
+        const labelElements = [];
+        majorValues.forEach((tickValue, index) => {
+            const angle = valueToAngle(tickValue);
+            const isDanger = tickValue >= dangerThreshold;
+            const majorTickStart = polarPoint(cx, cy, tickOuterRadius, angle);
+            const majorTickEnd = polarPoint(cx, cy, tickOuterRadius - majorTickLength, angle);
+
+            if (props.showMajorTicks) {
+                tickElements.push(React.createElement("line", {
+                    key: `major-tick-${index}`,
+                    x1: majorTickStart.x,
+                    y1: majorTickStart.y,
+                    x2: majorTickEnd.x,
+                    y2: majorTickEnd.y,
+                    stroke: isDanger ? props.majorDangerTickColor : props.majorTickColor,
+                    strokeOpacity: isDanger ? clampOpacity(props.majorDangerTickOpacity) : clampOpacity(props.majorTickOpacity),
+                    strokeWidth: isDanger ? 3 : 2.5,
+                    strokeLinecap: "round"
+                }));
+            }
+
+            if (props.showOuterLabels) {
+                const labelPoint = polarPoint(cx, cy, labelRadius, angle);
+                labelElements.push(React.createElement("text", {
+                    key: `outer-label-${index}`,
+                    x: labelPoint.x,
+                    y: labelPoint.y,
+                    textAnchor: "middle",
+                    dominantBaseline: "middle",
+                    fontFamily: props.fontFamily,
+                    fontSize: clampNumber(props.outerLabelFontSize, 8, 48, 22),
+                    fontWeight: 600,
+                    fill: isDanger ? props.dangerLabelColor : props.outerLabelColor,
+                    fillOpacity: isDanger ? clampOpacity(props.dangerLabelOpacity) : clampOpacity(props.outerLabelOpacity)
+                }, Math.round(tickValue).toString()));
+            }
+
+            if (!props.showMinorTicks || index >= majorValues.length - 1) {
+                return;
+            }
+
+            const nextTickValue = majorValues[index + 1];
+            for (let division = 1; division < minorDivisions; division += 1) {
+                const minorValue = tickValue + ((nextTickValue - tickValue) * division / minorDivisions);
+                if (minorValue >= maxValue) {
+                    break;
+                }
+                const minorAngle = valueToAngle(minorValue);
+                const isMinorDanger = minorValue >= dangerThreshold;
+                const minorTickStart = polarPoint(cx, cy, tickOuterRadius, minorAngle);
+                const minorTickEnd = polarPoint(cx, cy, tickOuterRadius - minorTickLength, minorAngle);
+                tickElements.push(React.createElement("line", {
+                    key: `minor-tick-${index}-${division}`,
+                    x1: minorTickStart.x,
+                    y1: minorTickStart.y,
+                    x2: minorTickEnd.x,
+                    y2: minorTickEnd.y,
+                    stroke: isMinorDanger ? props.minorDangerTickColor : props.minorTickColor,
+                    strokeOpacity: isMinorDanger ? clampOpacity(props.minorDangerTickOpacity) : clampOpacity(props.minorTickOpacity),
+                    strokeWidth: isMinorDanger ? 1.8 : 1.2,
+                    strokeLinecap: "round"
+                }));
+            }
+        });
+
+        const scopeSeed = store && store.path ? String(store.path) : "dosing_valve_gauge";
+        const scopeKey = scopeSeed.replace(/[^A-Za-z0-9_]/g, "_");
+        const bezelGradientId = `${scopeKey}_dvg_bezel`;
+        const faceGradientId = `${scopeKey}_dvg_face`;
+        const hubGradientId = `${scopeKey}_dvg_hub`;
+        const needleGradientId = `${scopeKey}_dvg_needle`;
+
+        const defs = React.createElement("defs", { key: "defs" }, [
+            React.createElement("radialGradient", {
+                key: bezelGradientId,
+                id: bezelGradientId,
+                cx: "50%",
+                cy: "50%",
+                r: "50%"
+            }, [
+                React.createElement("stop", { key: "b1", offset: "0%", stopColor: props.bezelInnerColor }),
+                React.createElement("stop", { key: "b2", offset: "50%", stopColor: props.bezelMidColor }),
+                React.createElement("stop", { key: "b3", offset: "100%", stopColor: props.bezelOuterColor })
+            ]),
+            React.createElement("radialGradient", {
+                key: faceGradientId,
+                id: faceGradientId,
+                cx: "50%",
+                cy: "50%",
+                r: "50%",
+                fx: "50%",
+                fy: "35%"
+            }, [
+                React.createElement("stop", { key: "f1", offset: "0%", stopColor: props.faceInnerColor }),
+                React.createElement("stop", { key: "f2", offset: "55%", stopColor: props.faceMidColor }),
+                React.createElement("stop", { key: "f3", offset: "100%", stopColor: props.faceOuterColor })
+            ]),
+            React.createElement("radialGradient", {
+                key: hubGradientId,
+                id: hubGradientId,
+                cx: "50%",
+                cy: "50%",
+                r: "50%"
+            }, [
+                React.createElement("stop", { key: "h1", offset: "0%", stopColor: props.hubCenterColor }),
+                React.createElement("stop", { key: "h2", offset: "60%", stopColor: props.hubMidColor }),
+                React.createElement("stop", { key: "h3", offset: "100%", stopColor: props.hubOuterColor })
+            ]),
+            React.createElement("linearGradient", {
+                key: needleGradientId,
+                id: needleGradientId,
+                x1: "0%",
+                y1: "0%",
+                x2: "100%",
+                y2: "0%"
+            }, [
+                React.createElement("stop", { key: "n1", offset: "0%", stopColor: props.needleBaseColor, stopOpacity: 0.35 }),
+                React.createElement("stop", { key: "n2", offset: "30%", stopColor: props.needleBaseColor, stopOpacity: 0.8 }),
+                React.createElement("stop", { key: "n3", offset: "60%", stopColor: props.needleMidColor, stopOpacity: 0.95 }),
+                React.createElement("stop", { key: "n4", offset: "100%", stopColor: props.needleTipColor, stopOpacity: 1.0 })
+            ])
+        ]);
+
+        const needleRotation = `rotate(${currentAngle} ${cx} ${cy})`;
+        const needleElements = props.showNeedle ? React.createElement("g", {
+            key: "needle-group",
+            transform: needleRotation
+        }, [
+            React.createElement("line", {
+                key: "needle-shadow",
+                x1: cx - needleTailLength,
+                y1: cy,
+                x2: cx + needleLength,
+                y2: cy,
+                stroke: "#000000",
+                strokeOpacity: 0.3,
+                strokeWidth: 8,
+                strokeLinecap: "round"
+            }),
+            React.createElement("path", {
+                key: "needle-body",
+                d: [
+                    `M ${(cx - needleTailLength).toFixed(3)} ${(cy + 3.5).toFixed(3)}`,
+                    `L ${(cx + needleLength - 50).toFixed(3)} ${(cy + 2).toFixed(3)}`,
+                    `L ${(cx + needleLength).toFixed(3)} ${cy.toFixed(3)}`,
+                    `L ${(cx + needleLength - 50).toFixed(3)} ${(cy - 2).toFixed(3)}`,
+                    `L ${(cx - needleTailLength).toFixed(3)} ${(cy - 3.5).toFixed(3)}`,
+                    "Z"
+                ].join(" "),
+                fill: `url(#${needleGradientId})`
+            }),
+            React.createElement("line", {
+                key: "needle-highlight",
+                x1: cx + needleLength * 0.5,
+                y1: cy,
+                x2: cx + needleLength,
+                y2: cy,
+                stroke: props.needleHighlightColor,
+                strokeOpacity: clampOpacity(props.needleHighlightOpacity),
+                strokeWidth: 6,
+                strokeLinecap: "round"
+            }),
+            React.createElement("circle", {
+                key: "needle-tip-bloom",
+                cx: cx + needleLength - 20,
+                cy: cy,
+                r: 20,
+                fill: props.needleHighlightColor,
+                fillOpacity: clampOpacity(props.needleHighlightOpacity) * 0.22
+            })
+        ]) : null;
+
+        const svgChildren = [
+            defs,
+            React.createElement("circle", {
+                key: "bezel",
+                cx,
+                cy,
+                r: outerRadius,
+                fill: `url(#${bezelGradientId})`
+            }),
+            React.createElement("circle", {
+                key: "face",
+                cx,
+                cy,
+                r: faceRadius,
+                fill: `url(#${faceGradientId})`
+            }),
+            React.createElement("circle", {
+                key: "face-ring",
+                cx,
+                cy,
+                r: faceRadius,
+                fill: "none",
+                stroke: props.innerRingColor,
+                strokeOpacity: clampOpacity(props.innerRingOpacity),
+                strokeWidth: 1.5
+            })
+        ].concat(separatorLines);
+
+        if (props.showDangerZoneTint && value >= dangerThreshold) {
+            svgChildren.push(React.createElement("path", {
+                key: "danger-tint",
+                d: describeSector(cx, cy, 200, dangerStartAngle, currentAngle),
+                fill: props.dangerZoneColor,
+                fillOpacity: clampOpacity(props.dangerZoneOpacity)
+            }));
+        }
+
+        if (props.showTrackArc) {
+            svgChildren.push(React.createElement("path", {
+                key: "track-arc",
+                d: describeArc(cx, cy, arcRadius, startAngle, endAngle),
+                fill: "none",
+                stroke: props.trackColor,
+                strokeOpacity: clampOpacity(props.trackOpacity),
+                strokeWidth: 8,
+                strokeLinecap: "round"
+            }));
+        }
+
+        if (props.showProgressArc && value > minValue) {
+            svgChildren.push(React.createElement("path", {
+                key: "progress-halo",
+                d: describeArc(cx, cy, arcRadius, startAngle, currentAngle),
+                fill: "none",
+                stroke: props.progressHaloColor,
+                strokeOpacity: clampOpacity(props.progressHaloOpacity),
+                strokeWidth: clampNumber(props.progressHaloWidth, 0, 48, 22),
+                strokeLinecap: "round"
+            }));
+            svgChildren.push(React.createElement("path", {
+                key: "progress-arc",
+                d: describeArc(cx, cy, arcRadius, startAngle, currentAngle),
+                fill: "none",
+                stroke: props.progressColor,
+                strokeOpacity: clampOpacity(props.progressOpacity),
+                strokeWidth: clampNumber(props.progressStrokeWidth, 1, 32, 7),
+                strokeLinecap: "round"
+            }));
+            svgChildren.push(React.createElement("path", {
+                key: "progress-tip",
+                d: describeArc(cx, cy, arcRadius, Math.max(startAngle, currentAngle - 12), currentAngle),
+                fill: "none",
+                stroke: props.progressTipColor,
+                strokeOpacity: clampOpacity(props.progressTipOpacity),
+                strokeWidth: clampNumber(props.progressTipWidth, 0, 48, 16),
+                strokeLinecap: "round"
+            }));
+        }
+
+        svgChildren.push.apply(svgChildren, tickElements);
+        svgChildren.push.apply(svgChildren, labelElements);
+
+        if (needleElements) {
+            svgChildren.push(needleElements);
+        }
+
+        svgChildren.push(
+            React.createElement("circle", {
+                key: "hub",
+                cx,
+                cy,
+                r: 11,
+                fill: `url(#${hubGradientId})`,
+                stroke: props.hubStrokeColor,
+                strokeOpacity: clampOpacity(props.hubStrokeOpacity),
+                strokeWidth: 1.5
+            })
+        );
+
+        const valueFontSize = clampNumber(props.valueFontSize, 12, 140, 80);
+        const unitFontSize = clampNumber(props.unitFontSize, 8, 72, 34);
+        const centerValueBlockX = cx + ((props.showCenterUnit && props.unitText) ? unitFontSize * 0.4 : 0);
+
+        if (props.showCenterValue || props.showCenterUnit) {
+            const centerValueChildren = [];
+            if (props.showCenterValue) {
+                centerValueChildren.push(React.createElement("tspan", {
+                    key: "center-value-number"
+                }, displayValue));
+            }
+            if (props.showCenterUnit) {
+                centerValueChildren.push(React.createElement("tspan", {
+                    key: "center-value-unit",
+                    dx: props.showCenterValue ? "0.10em" : "0",
+                    dy: props.showCenterValue ? "0.10em" : "0",
+                    fontSize: unitFontSize,
+                    fontWeight: 400,
+                    letterSpacing: 2,
+                    fill: props.unitColor,
+                    fillOpacity: clampOpacity(props.unitOpacity)
+                }, props.unitText));
+            }
+
+            svgChildren.push(React.createElement("text", {
+                key: "center-value-block",
+                x: centerValueBlockX,
+                y: 352,
+                textAnchor: "middle",
+                dominantBaseline: "middle",
+                fontFamily: props.fontFamily,
+                fontSize: valueFontSize,
+                fontWeight: props.showCenterValue ? 600 : 400,
+                letterSpacing: props.showCenterValue ? -2 : 2,
+                fill: props.showCenterValue ? props.valueColor : props.unitColor,
+                fillOpacity: props.showCenterValue ? clampOpacity(props.valueOpacity) : clampOpacity(props.unitOpacity)
+            }, centerValueChildren));
+        }
+
+        if (props.showTitleText) {
+            svgChildren.push(React.createElement("text", {
+                key: "title-line-1",
+                x: cx,
+                y: 434,
+                textAnchor: "middle",
+                dominantBaseline: "middle",
+                fontFamily: props.fontFamily,
+                fontSize: clampNumber(props.titleFontSize, 8, 48, 17),
+                fontWeight: 500,
+                letterSpacing: clampNumber(props.titleLetterSpacing, 0, 16, 5),
+                fill: props.titleColor,
+                fillOpacity: clampOpacity(props.titleOpacity)
+            }, props.titleLine1Text));
+            svgChildren.push(React.createElement("text", {
+                key: "title-line-2",
+                x: cx,
+                y: 460,
+                textAnchor: "middle",
+                dominantBaseline: "middle",
+                fontFamily: props.fontFamily,
+                fontSize: clampNumber(props.titleFontSize, 8, 48, 17),
+                fontWeight: 500,
+                letterSpacing: clampNumber(props.titleLetterSpacing, 0, 16, 5),
+                fill: props.titleColor,
+                fillOpacity: clampOpacity(props.titleOpacity)
+            }, props.titleLine2Text));
+        }
+
+        const svg = React.createElement("svg", {
+            viewBox: `0 0 ${viewBoxSize} ${viewBoxSize}`,
+            preserveAspectRatio: props.preserveAspectRatio || "xMidYMid meet",
+            style: { width: "100%", height: "100%" }
+        }, svgChildren);
+
+        const children = [
+            React.createElement("div", {
+                key: "svg-wrap",
+                style: { width: "100%", flex: "1 1 auto", minHeight: 0 }
+            }, svg)
+        ];
+
+        if (props.showLabel) {
+            children.push(React.createElement("div", {
+                key: "label",
+                style: {
+                    width: "100%",
+                    textAlign: "center",
+                    fontSize: 12,
+                    color: props.labelColor,
+                    fontFamily: props.fontFamily
+                }
+            }, props.label));
+        }
+
+        return React.createElement("div", Object.assign({}, rootEmit(emit, props.style)), children);
+    }
+}
+
+class Custom2DDosingValveHalfGauge extends Custom2DSourceSvg {
+    renderOverlay(props) {
+        if (!props.showOverlay) {
+            return null;
+        }
+
+        const displayValue = props.valueText && String(props.valueText).length
+            ? String(props.valueText)
+            : formatGaugeValue(props.value, props.valueDecimals);
+        const maskBlur = clampNumber(props.overlayMaskBlur, 0, 64, 24);
+        const overlayChildren = [
+            React.createElement("div", {
+                key: "center-overlay-mask",
+                style: {
+                    position: "absolute",
+                    left: "50%",
+                    top: "50%",
+                    width: clampNumber(props.overlayMaskWidth, 60, 420, 260),
+                    height: clampNumber(props.overlayMaskHeight, 40, 260, 122),
+                    transform: "translate(-50%, -50%)",
+                    borderRadius: clampNumber(props.overlayMaskRadius, 0, 220, 110),
+                    background: props.overlayMaskColor,
+                    boxShadow: `0 0 ${maskBlur}px ${props.overlayMaskColor}`
+                }
+            })
+        ];
+
+        const valueRowChildren = [];
+        if (props.showValue) {
+            valueRowChildren.push(React.createElement("span", {
+                key: "center-value-number",
+                style: {
+                    fontFamily: props.fontFamily,
+                    fontSize: clampNumber(props.valueFontSize, 12, 140, 80),
+                    fontWeight: 600,
+                    lineHeight: 1,
+                    letterSpacing: "-2px",
+                    color: props.valueColor,
+                    opacity: clampOpacity(props.valueOpacity),
+                    textShadow: "0 0 20px rgba(100, 200, 240, 0.15)"
+                }
+            }, displayValue));
+        }
+        if (props.showUnit && props.unitText) {
+            valueRowChildren.push(React.createElement("span", {
+                key: "center-value-unit",
+                style: {
+                    fontFamily: props.fontFamily,
+                    fontSize: clampNumber(props.unitFontSize, 8, 72, 34),
+                    fontWeight: 400,
+                    lineHeight: 1,
+                    letterSpacing: "2px",
+                    color: props.unitColor,
+                    opacity: clampOpacity(props.unitOpacity)
+                }
+            }, props.unitText));
+        }
+
+        const contentChildren = [];
+        if (valueRowChildren.length) {
+            contentChildren.push(React.createElement("div", {
+                key: "center-value-block",
+                style: {
+                    display: "flex",
+                    alignItems: "baseline",
+                    justifyContent: "center",
+                    gap: clampNumber(props.valueGap, 0, 32, 6),
+                    transform: `translateX(${clampNumber(props.valueRowOffsetX, -100, 100, 18)}px)`
+                }
+            }, valueRowChildren));
+        }
+        if (props.showTitleText && props.titleLine1Text) {
+            contentChildren.push(React.createElement("div", {
+                key: "center-title-line-1",
+                style: {
+                    fontFamily: props.fontFamily,
+                    fontSize: clampNumber(props.titleFontSize, 8, 48, 17),
+                    fontWeight: 500,
+                    lineHeight: 1.15,
+                    letterSpacing: `${clampNumber(props.titleLetterSpacing, 0, 16, 5)}px`,
+                    color: props.titleColor,
+                    opacity: clampOpacity(props.titleOpacity),
+                    textTransform: "uppercase"
+                }
+            }, props.titleLine1Text));
+        }
+        if (props.showTitleText && props.titleLine2Text) {
+            contentChildren.push(React.createElement("div", {
+                key: "center-title-line-2",
+                style: {
+                    fontFamily: props.fontFamily,
+                    fontSize: clampNumber(props.titleFontSize, 8, 48, 17),
+                    fontWeight: 500,
+                    lineHeight: 1.15,
+                    letterSpacing: `${clampNumber(props.titleLetterSpacing, 0, 16, 5)}px`,
+                    color: props.titleColor,
+                    opacity: clampOpacity(props.titleOpacity),
+                    textTransform: "uppercase"
+                }
+            }, props.titleLine2Text));
+        }
+
+        overlayChildren.push(React.createElement("div", {
+            key: "center-overlay-content",
+            style: {
+                position: "relative",
+                display: "flex",
+                flexDirection: "column",
+                alignItems: "center",
+                justifyContent: "center",
+                textAlign: "center",
+                pointerEvents: "none"
+            }
+        }, contentChildren));
+
+        return React.createElement("div", {
+            key: "center-overlay",
+            style: {
+                position: "absolute",
+                left: `calc(50% + ${clampNumber(props.overlayHorizontalOffset, -180, 180, 0)}px)`,
+                bottom: clampNumber(props.overlayBottomOffset, 0, 180, 38),
+                transform: "translateX(-50%)",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                minWidth: clampNumber(props.overlayMaskWidth, 60, 420, 260),
+                minHeight: clampNumber(props.overlayMaskHeight, 40, 260, 122)
+            }
+        }, overlayChildren);
+    }
+}
+Custom2DDosingValveHalfGauge.SVG_FILE = "half-gauge.svg";
 
 class Custom2DBreakerClosed extends Custom2DSourceSvg {}
 Custom2DBreakerClosed.SVG_FILE = "breaker_closed.svg";
@@ -2139,6 +3139,52 @@ class Custom2DValveMeta {
 
     getPropsReducer(tree) {
         return readCustom2DValveProps(tree);
+    }
+}
+
+class Custom2DValveLikeMeta {
+    constructor(componentType, viewComponent, defaultSize, defaultLabel) {
+        this.componentType = componentType;
+        this.viewComponent = viewComponent;
+        this.defaultSize = defaultSize;
+        this.defaultLabel = defaultLabel;
+    }
+
+    getComponentType() {
+        return this.componentType;
+    }
+
+    getViewComponent() {
+        return this.viewComponent;
+    }
+
+    getDefaultSize() {
+        return this.defaultSize;
+    }
+
+    getPropsReducer(tree) {
+        return readCustom2DValveProps(tree, this.defaultLabel);
+    }
+}
+
+class Custom2DBreakerStandaloneMeta {
+    getComponentType() {
+        return "com.miguelgrillo.custom2d.breaker_standalone";
+    }
+
+    getViewComponent() {
+        return Custom2DBreakerStandalone;
+    }
+
+    getDefaultSize() {
+        return {
+            width: 114,
+            height: 114
+        };
+    }
+
+    getPropsReducer(tree) {
+        return readCustom2DBreakerStandaloneProps(tree, "Breaker Standalone");
     }
 }
 
@@ -2467,6 +3513,74 @@ class Custom2DMvGensetScreenMainMeta {
     }
 }
 
+class Custom2DGensetSymbolMeta {
+    constructor(componentType, viewComponent, defaultSize, defaultLabel, defaults) {
+        this.componentType = componentType;
+        this.viewComponent = viewComponent;
+        this.defaultSize = defaultSize;
+        this.defaultLabel = defaultLabel;
+        this.defaults = defaults;
+    }
+
+    getComponentType() {
+        return this.componentType;
+    }
+
+    getViewComponent() {
+        return this.viewComponent;
+    }
+
+    getDefaultSize() {
+        return this.defaultSize;
+    }
+
+    getPropsReducer(tree) {
+        return readCustom2DGensetSymbolProps(tree, this.defaultLabel, this.defaults);
+    }
+}
+
+class Custom2DDosingValveGaugeMeta {
+    getComponentType() {
+        return "com.miguelgrillo.custom2d.dosing_valve_gauge";
+    }
+
+    getViewComponent() {
+        return Custom2DDosingValveGauge;
+    }
+
+    getDefaultSize() {
+        return {
+            width: 520,
+            height: 520
+        };
+    }
+
+    getPropsReducer(tree) {
+        return readCustom2DDosingValveGaugeProps(tree);
+    }
+}
+
+class Custom2DDosingValveHalfGaugeMeta {
+    getComponentType() {
+        return "com.miguelgrillo.custom2d.dosing_valve_half_gauge";
+    }
+
+    getViewComponent() {
+        return Custom2DDosingValveHalfGauge;
+    }
+
+    getDefaultSize() {
+        return {
+            width: 520,
+            height: 290
+        };
+    }
+
+    getPropsReducer(tree) {
+        return readCustom2DDosingValveHalfGaugeProps(tree);
+    }
+}
+
 ComponentRegistry.register(new IsometricPumpMeta());
 ComponentRegistry.register(new IsometricValveMeta());
 ComponentRegistry.register(new IsometricTankMeta());
@@ -2479,7 +3593,121 @@ ComponentRegistry.register(new Custom2DBusbarSegmentVerticalMeta());
 ComponentRegistry.register(new Custom2DModernGensetPanelV7FullPanelMeta());
 ComponentRegistry.register(new Custom2DLvBreakerScreenFullPageMeta());
 ComponentRegistry.register(new Custom2DMvGensetScreenMainMeta());
+ComponentRegistry.register(new Custom2DGensetSymbolMeta(
+    "com.miguelgrillo.custom2d.genset_sld",
+    Custom2DGensetSld,
+    { width: 200, height: 416 },
+    "Genset SLD",
+    {
+        lineColor: "#10b981",
+        topLineColor: "#10b981",
+        breakerColor: "#10b981",
+        lowerLineColor: "#10b981",
+        generatorColor: "#10b981",
+        symbolFillColor: "#10b981",
+        symbolFillOpacity: 0.02,
+        generatorFillColor: "#10b981",
+        generatorFillOpacity: 0.15,
+        glowColor: "#10b981",
+        glowIntensity: 1.0,
+        chainGlowPrimaryBlur: 15.0,
+        chainGlowSecondaryBlur: 30.0,
+        chainGlowTertiaryBlur: 60.0,
+        chainGlowPrimaryOpacity: 0.8,
+        chainGlowSecondaryOpacity: 0.6,
+        chainGlowTertiaryOpacity: 0.4,
+        circleGlowPrimaryBlur: 8.0,
+        circleGlowSecondaryBlur: 15.0,
+        circleGlowTertiaryBlur: 30.0,
+        circleGlowPrimaryOpacity: 0.5,
+        circleGlowSecondaryOpacity: 0.3,
+        circleGlowTertiaryOpacity: 0.15
+    }
+));
+ComponentRegistry.register(new Custom2DGensetSymbolMeta(
+    "com.miguelgrillo.custom2d.genset_2",
+    Custom2DGenset2,
+    { width: 115, height: 331 },
+    "Genset 2",
+    {
+        lineColor: "#10b981",
+        topLineColor: "#10b981",
+        breakerColor: "#10b981",
+        lowerLineColor: "#10b981",
+        generatorColor: "#10b981",
+        symbolFillColor: "#10b981",
+        symbolFillOpacity: 0.02,
+        generatorFillColor: "#10b981",
+        generatorFillOpacity: 0.15,
+        glowColor: "#10b981",
+        glowIntensity: 1.0,
+        chainGlowPrimaryBlur: 2.5,
+        chainGlowSecondaryBlur: 5.0,
+        chainGlowTertiaryBlur: 10.0,
+        chainGlowPrimaryOpacity: 0.8,
+        chainGlowSecondaryOpacity: 0.6,
+        chainGlowTertiaryOpacity: 0.4,
+        circleGlowPrimaryBlur: 1.5,
+        circleGlowSecondaryBlur: 3.0,
+        circleGlowTertiaryBlur: 6.0,
+        circleGlowPrimaryOpacity: 0.5,
+        circleGlowSecondaryOpacity: 0.3,
+        circleGlowTertiaryOpacity: 0.15
+    }
+));
+ComponentRegistry.register(new Custom2DGensetSymbolMeta(
+    "com.miguelgrillo.custom2d.genset_sld_s32",
+    Custom2DGensetSldS32,
+    { width: 80, height: 328 },
+    "Genset SLD S32",
+    {
+        lineColor: "#10b981",
+        topLineColor: "#10b981",
+        breakerColor: "#10b981",
+        lowerLineColor: "#10b981",
+        generatorColor: "#10b981",
+        symbolFillColor: "#10b981",
+        symbolFillOpacity: 0.02,
+        generatorFillColor: "#10b981",
+        generatorFillOpacity: 0.15,
+        glowColor: "#10b981",
+        glowIntensity: 1.0,
+        chainGlowPrimaryBlur: 15.0,
+        chainGlowSecondaryBlur: 30.0,
+        chainGlowTertiaryBlur: 60.0,
+        chainGlowPrimaryOpacity: 0.8,
+        chainGlowSecondaryOpacity: 0.6,
+        chainGlowTertiaryOpacity: 0.4,
+        circleGlowPrimaryBlur: 8.0,
+        circleGlowSecondaryBlur: 15.0,
+        circleGlowTertiaryBlur: 30.0,
+        circleGlowPrimaryOpacity: 0.5,
+        circleGlowSecondaryOpacity: 0.3,
+        circleGlowTertiaryOpacity: 0.15
+    }
+));
+ComponentRegistry.register(new Custom2DDosingValveGaugeMeta());
+ComponentRegistry.register(new Custom2DDosingValveHalfGaugeMeta());
 ComponentRegistry.register(new Custom2DValveMeta());
+ComponentRegistry.register(new Custom2DValveLikeMeta(
+    "com.miguelgrillo.custom2d.three_way_control_valve_rev2",
+    Custom2DThreeWayControlValveRev2,
+    { width: 144, height: 190 },
+    "3-Way Control Valve Rev2"
+));
+ComponentRegistry.register(new Custom2DBreakerStandaloneMeta());
+ComponentRegistry.register(new Custom2DValveLikeMeta(
+    "com.miguelgrillo.custom2d.pump",
+    Custom2DPump,
+    { width: 184, height: 168 },
+    "Pump"
+));
+ComponentRegistry.register(new Custom2DValveLikeMeta(
+    "com.miguelgrillo.custom2d.transformer",
+    Custom2DTransformer,
+    { width: 144, height: 168 },
+    "Transformer"
+));
 ComponentRegistry.register(new Custom2DSvgMeta(
     "com.miguelgrillo.custom2d.breaker_closed",
     Custom2DBreakerClosed,

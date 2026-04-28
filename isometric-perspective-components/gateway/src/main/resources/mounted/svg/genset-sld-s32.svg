@@ -1,0 +1,88 @@
+<svg xmlns="http://www.w3.org/2000/svg"
+     viewBox="0 0 80 328"
+     width="80"
+     height="328"
+     overflow="visible"
+     aria-label="Modern genset schematic">
+  <defs>
+    <radialGradient id="gensetCircleGrad" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#10b981" stop-opacity="0.15"/>
+      <stop offset="70%" stop-color="#10b981" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <style>
+    .chain-stroke {
+      stroke: #10b981;
+      stroke-width: 2;
+      stroke-linecap: square;
+      stroke-linejoin: round;
+      fill: none;
+      vector-effect: non-scaling-stroke;
+      filter:
+        drop-shadow(0 0 15px rgba(16,185,129,0.8))
+        drop-shadow(0 0 30px rgba(16,185,129,0.6))
+        drop-shadow(0 0 60px rgba(16,185,129,0.4));
+    }
+
+    .chain-fill {
+      fill: rgba(16,185,129,0.02);
+      stroke: #10b981;
+      stroke-width: 2;
+      vector-effect: non-scaling-stroke;
+      filter:
+        drop-shadow(0 0 15px rgba(16,185,129,0.8))
+        drop-shadow(0 0 30px rgba(16,185,129,0.6))
+        drop-shadow(0 0 60px rgba(16,185,129,0.4));
+    }
+
+    .gen-line {
+      stroke: #10b981;
+      stroke-width: 2;
+      stroke-linecap: square;
+      fill: none;
+      vector-effect: non-scaling-stroke;
+      filter:
+        drop-shadow(0 0 15px rgba(16,185,129,0.8))
+        drop-shadow(0 0 30px rgba(16,185,129,0.6))
+        drop-shadow(0 0 60px rgba(16,185,129,0.4));
+    }
+
+    .gen-circle {
+      fill: url(#gensetCircleGrad);
+      stroke: #10b981;
+      stroke-width: 2;
+      vector-effect: non-scaling-stroke;
+      filter:
+        drop-shadow(0 0 8px rgba(16,185,129,0.5))
+        drop-shadow(0 0 15px rgba(16,185,129,0.3))
+        drop-shadow(0 0 30px rgba(16,185,129,0.15));
+    }
+
+    .sine-wave {
+      stroke: #10b981;
+      stroke-width: 3;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      fill: none;
+      filter:
+        drop-shadow(0 0 8px rgba(16,185,129,0.5))
+        drop-shadow(0 0 15px rgba(16,185,129,0.3))
+        drop-shadow(0 0 30px rgba(16,185,129,0.15));
+    }
+  </style>
+
+  <g transform="translate(23, 0)" aria-label="Breaker 52G upper chain">
+    <line class="chain-stroke" x1="17" y1="80" x2="17" y2="133"/>
+    <rect class="chain-fill" x="1" y="135" width="32" height="32" rx="0" ry="0"/>
+  </g>
+
+  <line class="gen-line" x1="40" y1="168" x2="40" y2="248" aria-hidden="true"/>
+
+  <circle class="gen-circle" cx="40" cy="288" r="39" aria-label="Generator symbol"/>
+
+  <path class="sine-wave"
+        transform="translate(20, 278)"
+        d="M 4 10 Q 12 -2 20 10 T 36 10"
+        aria-hidden="true"/>
+</svg>

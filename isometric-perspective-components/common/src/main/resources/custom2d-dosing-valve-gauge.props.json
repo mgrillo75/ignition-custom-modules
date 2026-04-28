@@ -1,0 +1,437 @@
+{
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {
+        "value": {
+            "type": "number",
+            "default": 59.0
+        },
+        "minValue": {
+            "type": "number",
+            "default": 0.0
+        },
+        "maxValue": {
+            "type": "number",
+            "default": 100.0
+        },
+        "valueText": {
+            "type": "string",
+            "default": ""
+        },
+        "valueDecimals": {
+            "type": "number",
+            "default": 0,
+            "minimum": 0,
+            "maximum": 3
+        },
+        "unitText": {
+            "type": "string",
+            "default": "%"
+        },
+        "titleLine1Text": {
+            "type": "string",
+            "default": "DOSING VALVE"
+        },
+        "titleLine2Text": {
+            "type": "string",
+            "default": "POSITION"
+        },
+        "startAngle": {
+            "type": "number",
+            "default": 135.0
+        },
+        "endAngle": {
+            "type": "number",
+            "default": 405.0
+        },
+        "majorStep": {
+            "type": "number",
+            "default": 10.0,
+            "minimum": 1.0,
+            "maximum": 100.0
+        },
+        "minorDivisions": {
+            "type": "number",
+            "default": 5,
+            "minimum": 1,
+            "maximum": 10
+        },
+        "dangerThreshold": {
+            "type": "number",
+            "default": 90.0
+        },
+        "showTrackArc": {
+            "type": "boolean",
+            "default": true
+        },
+        "showProgressArc": {
+            "type": "boolean",
+            "default": true
+        },
+        "showNeedle": {
+            "type": "boolean",
+            "default": true
+        },
+        "showDangerZoneTint": {
+            "type": "boolean",
+            "default": true
+        },
+        "showMajorTicks": {
+            "type": "boolean",
+            "default": true
+        },
+        "showMinorTicks": {
+            "type": "boolean",
+            "default": true
+        },
+        "showOuterLabels": {
+            "type": "boolean",
+            "default": true
+        },
+        "showCenterValue": {
+            "type": "boolean",
+            "default": true
+        },
+        "showCenterUnit": {
+            "type": "boolean",
+            "default": true
+        },
+        "showTitleText": {
+            "type": "boolean",
+            "default": true
+        },
+        "preserveAspectRatio": {
+            "type": "string",
+            "default": "xMidYMid meet"
+        },
+        "fontFamily": {
+            "type": "string",
+            "default": "Rajdhani, Segoe UI, sans-serif"
+        },
+        "outerLabelFontSize": {
+            "type": "number",
+            "default": 22.0,
+            "minimum": 8.0,
+            "maximum": 48.0
+        },
+        "valueFontSize": {
+            "type": "number",
+            "default": 80.0,
+            "minimum": 12.0,
+            "maximum": 140.0
+        },
+        "unitFontSize": {
+            "type": "number",
+            "default": 34.0,
+            "minimum": 8.0,
+            "maximum": 72.0
+        },
+        "titleFontSize": {
+            "type": "number",
+            "default": 17.0,
+            "minimum": 8.0,
+            "maximum": 48.0
+        },
+        "titleLetterSpacing": {
+            "type": "number",
+            "default": 5.0,
+            "minimum": 0.0,
+            "maximum": 16.0
+        },
+        "bezelInnerColor": {
+            "type": "string",
+            "format": "color",
+            "default": "#2a3545"
+        },
+        "bezelMidColor": {
+            "type": "string",
+            "format": "color",
+            "default": "#4a5a6a"
+        },
+        "bezelOuterColor": {
+            "type": "string",
+            "format": "color",
+            "default": "#1e2a38"
+        },
+        "faceInnerColor": {
+            "type": "string",
+            "format": "color",
+            "default": "#1e2e3e"
+        },
+        "faceMidColor": {
+            "type": "string",
+            "format": "color",
+            "default": "#162535"
+        },
+        "faceOuterColor": {
+            "type": "string",
+            "format": "color",
+            "default": "#0e1a28"
+        },
+        "innerRingColor": {
+            "type": "string",
+            "format": "color",
+            "default": "#507896"
+        },
+        "innerRingOpacity": {
+            "type": "number",
+            "default": 0.2,
+            "minimum": 0.0,
+            "maximum": 1.0
+        },
+        "separatorColor": {
+            "type": "string",
+            "format": "color",
+            "default": "#3c5a78"
+        },
+        "separatorOpacity": {
+            "type": "number",
+            "default": 0.18,
+            "minimum": 0.0,
+            "maximum": 1.0
+        },
+        "trackColor": {
+            "type": "string",
+            "format": "color",
+            "default": "#3c6482"
+        },
+        "trackOpacity": {
+            "type": "number",
+            "default": 0.1,
+            "minimum": 0.0,
+            "maximum": 1.0
+        },
+        "progressColor": {
+            "type": "string",
+            "format": "color",
+            "default": "#1ed2ff"
+        },
+        "progressOpacity": {
+            "type": "number",
+            "default": 0.85,
+            "minimum": 0.0,
+            "maximum": 1.0
+        },
+        "progressHaloColor": {
+            "type": "string",
+            "format": "color",
+            "default": "#32dcff"
+        },
+        "progressHaloOpacity": {
+            "type": "number",
+            "default": 0.2,
+            "minimum": 0.0,
+            "maximum": 1.0
+        },
+        "progressTipColor": {
+            "type": "string",
+            "format": "color",
+            "default": "#78f5ff"
+        },
+        "progressTipOpacity": {
+            "type": "number",
+            "default": 0.5,
+            "minimum": 0.0,
+            "maximum": 1.0
+        },
+        "progressStrokeWidth": {
+            "type": "number",
+            "default": 7.0,
+            "minimum": 1.0,
+            "maximum": 32.0
+        },
+        "progressHaloWidth": {
+            "type": "number",
+            "default": 22.0,
+            "minimum": 0.0,
+            "maximum": 48.0
+        },
+        "progressTipWidth": {
+            "type": "number",
+            "default": 16.0,
+            "minimum": 0.0,
+            "maximum": 48.0
+        },
+        "majorTickColor": {
+            "type": "string",
+            "format": "color",
+            "default": "#c8dcf0"
+        },
+        "majorTickOpacity": {
+            "type": "number",
+            "default": 0.65,
+            "minimum": 0.0,
+            "maximum": 1.0
+        },
+        "majorDangerTickColor": {
+            "type": "string",
+            "format": "color",
+            "default": "#ff503c"
+        },
+        "majorDangerTickOpacity": {
+            "type": "number",
+            "default": 0.85,
+            "minimum": 0.0,
+            "maximum": 1.0
+        },
+        "minorTickColor": {
+            "type": "string",
+            "format": "color",
+            "default": "#c8dcf0"
+        },
+        "minorTickOpacity": {
+            "type": "number",
+            "default": 0.3,
+            "minimum": 0.0,
+            "maximum": 1.0
+        },
+        "minorDangerTickColor": {
+            "type": "string",
+            "format": "color",
+            "default": "#ff503c"
+        },
+        "minorDangerTickOpacity": {
+            "type": "number",
+            "default": 0.5,
+            "minimum": 0.0,
+            "maximum": 1.0
+        },
+        "outerLabelColor": {
+            "type": "string",
+            "format": "color",
+            "default": "#c8dcf0"
+        },
+        "outerLabelOpacity": {
+            "type": "number",
+            "default": 0.7,
+            "minimum": 0.0,
+            "maximum": 1.0
+        },
+        "dangerLabelColor": {
+            "type": "string",
+            "format": "color",
+            "default": "#ff6450"
+        },
+        "dangerLabelOpacity": {
+            "type": "number",
+            "default": 0.85,
+            "minimum": 0.0,
+            "maximum": 1.0
+        },
+        "valueColor": {
+            "type": "string",
+            "format": "color",
+            "default": "#e6f0fa"
+        },
+        "valueOpacity": {
+            "type": "number",
+            "default": 0.95,
+            "minimum": 0.0,
+            "maximum": 1.0
+        },
+        "unitColor": {
+            "type": "string",
+            "format": "color",
+            "default": "#b4c8dc"
+        },
+        "unitOpacity": {
+            "type": "number",
+            "default": 0.55,
+            "minimum": 0.0,
+            "maximum": 1.0
+        },
+        "titleColor": {
+            "type": "string",
+            "format": "color",
+            "default": "#b4c8dc"
+        },
+        "titleOpacity": {
+            "type": "number",
+            "default": 0.45,
+            "minimum": 0.0,
+            "maximum": 1.0
+        },
+        "needleBaseColor": {
+            "type": "string",
+            "format": "color",
+            "default": "#dc4628"
+        },
+        "needleMidColor": {
+            "type": "string",
+            "format": "color",
+            "default": "#ff6432"
+        },
+        "needleTipColor": {
+            "type": "string",
+            "format": "color",
+            "default": "#ffb478"
+        },
+        "needleHighlightColor": {
+            "type": "string",
+            "format": "color",
+            "default": "#ff9650"
+        },
+        "needleHighlightOpacity": {
+            "type": "number",
+            "default": 0.45,
+            "minimum": 0.0,
+            "maximum": 1.0
+        },
+        "hubCenterColor": {
+            "type": "string",
+            "format": "color",
+            "default": "#3a4a5c"
+        },
+        "hubMidColor": {
+            "type": "string",
+            "format": "color",
+            "default": "#2a3a4c"
+        },
+        "hubOuterColor": {
+            "type": "string",
+            "format": "color",
+            "default": "#1a2a3c"
+        },
+        "hubStrokeColor": {
+            "type": "string",
+            "format": "color",
+            "default": "#64a0c8"
+        },
+        "hubStrokeOpacity": {
+            "type": "number",
+            "default": 0.25,
+            "minimum": 0.0,
+            "maximum": 1.0
+        },
+        "dangerZoneColor": {
+            "type": "string",
+            "format": "color",
+            "default": "#c8281e"
+        },
+        "dangerZoneOpacity": {
+            "type": "number",
+            "default": 0.05,
+            "minimum": 0.0,
+            "maximum": 1.0
+        },
+        "showLabel": {
+            "type": "boolean",
+            "default": false
+        },
+        "label": {
+            "type": "string",
+            "default": "Dosing Valve Gauge"
+        },
+        "labelColor": {
+            "type": "string",
+            "format": "color",
+            "default": "#1f2937"
+        },
+        "style": {
+            "$ref": "urn:ignition-schema:schemas/style-properties.schema.json",
+            "default": {
+                "classes": ""
+            }
+        }
+    }
+}
